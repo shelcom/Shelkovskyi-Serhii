@@ -22,8 +22,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
    override func viewDidLoad() {
       super.viewDidLoad()
       
-      self.emailTextField.tag = 0
-      self.passwordTextField.tag = 1
+      //Init delegate
       self.emailTextField.delegate = self
       self.passwordTextField.delegate = self
       
@@ -43,11 +42,12 @@ class ViewController: UIViewController, UITextFieldDelegate {
       print("viewDidLoad")
    }
    
-   // hide keyboard
+   // hide keyboard (Tells this object that one or more new touches occurred in a view or window.)
    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
       self.view.endEditing(true)
    }
    
+   //Asks the delegate whether to process the pressing of the Return button for the text field.
    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
       self.tagBasedTextField(textField)
       return true
@@ -55,12 +55,11 @@ class ViewController: UIViewController, UITextFieldDelegate {
    
    // transition function between field
    private func tagBasedTextField(_ textField: UITextField) {
-      let nextTextFieldTag = textField.tag + 1
-      
-      if let nextTextField = textField.superview?.viewWithTag(nextTextFieldTag) as? UITextField {
-         nextTextField.becomeFirstResponder()
-      } else {
-         textField.resignFirstResponder()
+      switch textField {
+      case self.emailTextField:
+         self.passwordTextField.becomeFirstResponder()
+      default:
+         self.passwordTextField.resignFirstResponder() //self.view.endEditing(true)
       }
    }
    
