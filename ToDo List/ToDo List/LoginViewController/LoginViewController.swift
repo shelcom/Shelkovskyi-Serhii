@@ -1,19 +1,20 @@
 //
-//  ViewController.swift
+//  LoginViewController.swift
 //  ToDo List
 //
-//  Created by Serhii on 10.10.2021.
+//  Created by Serhii on 22.10.2021.
 //
 
 import UIKit
 
-class ViewController: UIViewController, UITextFieldDelegate {
-   @IBOutlet var toDOLabel: UILabel!
+class LoginViewController: BaseViewController, UITextFieldDelegate {
+   @IBOutlet var toDoLabel: UILabel!
    @IBOutlet var emailLabel: UILabel!
    @IBOutlet var emailTextField: UITextField!
    @IBOutlet var passwordLabel: UILabel!
    @IBOutlet var passwordTextField: UITextField!
    @IBOutlet var loginButton: UIButton!
+   @IBOutlet var registrationButton: UIButton!
    
    let expectedEmail = "hi@gmail.com"
    let expectedPassword = "12345678"
@@ -40,11 +41,6 @@ class ViewController: UIViewController, UITextFieldDelegate {
       // Rounds a loginButton
       loginButton.layer.cornerRadius = 12
       print("viewDidLoad")
-   }
-   
-   // hide keyboard (Tells this object that one or more new touches occurred in a view or window.)
-   override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-      self.view.endEditing(true)
    }
    
    //Asks the delegate whether to process the pressing of the Return button for the text field.
@@ -89,26 +85,6 @@ class ViewController: UIViewController, UITextFieldDelegate {
             }
          }
       }
-      
    }
    
-   override func viewWillAppear(_ animated: Bool) {
-      super.viewWillAppear(animated)
-      print("viewWillAppear")
-   }
-   
-   override func viewDidAppear(_ animated: Bool) {
-      super.viewDidAppear(animated)
-      print("viewDidAppear")
-   }
-   
-   override func viewDidDisappear(_ animated: Bool) {
-      super.viewDidDisappear(animated)
-      print("viewDidDisappear")
-   }
-   
-   override func viewWillDisappear(_ animated: Bool) {
-      super.viewWillDisappear(animated)
-      print("viewWillDisappear")
-   }
 }
