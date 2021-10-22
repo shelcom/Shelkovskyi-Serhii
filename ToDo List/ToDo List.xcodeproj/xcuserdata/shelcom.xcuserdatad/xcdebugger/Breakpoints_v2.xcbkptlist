@@ -14,8 +14,8 @@
             filePath = "ToDo List/ViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "96"
-            endingLineNumber = "96"
+            startingLineNumber = "19"
+            endingLineNumber = "19"
             landmarkName = "viewWillAppear(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -49,22 +49,6 @@
             startingLineNumber = "26"
             endingLineNumber = "26"
             landmarkName = "application(_:configurationForConnecting:options:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "A4079C7E-CF9B-443F-8E7A-DE131BBA64E3"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "ToDo List/ViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "42"
-            endingLineNumber = "42"
-            landmarkName = "viewDidLoad()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -171,8 +155,8 @@
             filePath = "ToDo List/ViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "97"
-            endingLineNumber = "97"
+            startingLineNumber = "20"
+            endingLineNumber = "20"
             landmarkName = "viewWillAppear(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -187,8 +171,8 @@
             filePath = "ToDo List/ViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "101"
-            endingLineNumber = "101"
+            startingLineNumber = "24"
+            endingLineNumber = "24"
             landmarkName = "viewDidAppear(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -203,8 +187,8 @@
             filePath = "ToDo List/ViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "106"
-            endingLineNumber = "106"
+            startingLineNumber = "29"
+            endingLineNumber = "29"
             landmarkName = "viewDidDisappear(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -219,8 +203,8 @@
             filePath = "ToDo List/ViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "111"
-            endingLineNumber = "111"
+            startingLineNumber = "34"
+            endingLineNumber = "34"
             landmarkName = "viewWillDisappear(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -228,81 +212,109 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "F8782FE3-C4EA-44CD-B060-2434B7805EEE"
+            uuid = "3F8E91EF-28A9-4911-A57F-B5232D893E8F"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "ToDo List/ViewController.swift"
+            filePath = "ToDo List/RegistrationViewController/RegistrationViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "46"
-            endingLineNumber = "46"
-            landmarkName = "touchesBegan(_:with:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "394A76B5-F4EE-43CA-A9C2-6C7466CD6459"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "ToDo List/ViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "47"
-            endingLineNumber = "47"
-            landmarkName = "touchesBegan(_:with:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "AA5AB798-26C2-4974-9D60-7D2F8FA72259"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "ToDo List/ViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "70"
-            endingLineNumber = "70"
-            landmarkName = "touchLoginButton(_:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "DD3A20D1-B382-488F-B3C1-09635DEAD9BE"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "ToDo List/ViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "68"
-            endingLineNumber = "68"
-            landmarkName = "touchLoginButton(_:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "B5A666E1-B6E9-4D25-AE40-8200ED315176"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "ToDo List/ViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "52"
-            endingLineNumber = "52"
-            landmarkName = "textFieldShouldReturn(_:)"
-            landmarkType = "7">
+            startingLineNumber = "13"
+            endingLineNumber = "13"
+            landmarkName = "RegistrationViewController"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  uuid = "3F8E91EF-28A9-4911-A57F-B5232D893E8F - 6a978170befcd314"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "ToDo_List.RegistrationViewController.registrationEmailLable.getter : Swift.Optional&lt;__C.UILabel&gt;"
+                  moduleName = "ToDo List"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/shelcom/Desktop/Developer/Sourcetree/lesson-5-home-work/ToDo%20List/ToDo%20List/RegistrationViewController/RegistrationViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "14"
+                  endingLineNumber = "14"
+                  offsetFromSymbolStart = "126">
+               </Location>
+               <Location
+                  uuid = "3F8E91EF-28A9-4911-A57F-B5232D893E8F - 6f31b3ea8ea06b3c"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "ToDo_List.RegistrationViewController.registrationEmailLable.setter : Swift.Optional&lt;__C.UILabel&gt;"
+                  moduleName = "ToDo List"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/shelcom/Desktop/Developer/Sourcetree/lesson-5-home-work/ToDo%20List/ToDo%20List/RegistrationViewController/RegistrationViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "14"
+                  endingLineNumber = "14"
+                  offsetFromSymbolStart = "164">
+               </Location>
+               <Location
+                  uuid = "3F8E91EF-28A9-4911-A57F-B5232D893E8F - f9c2dda7e6787be8"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "ToDo_List.RegistrationViewController.registrationEmailLable.modify : Swift.Optional&lt;__C.UILabel&gt;"
+                  moduleName = "ToDo List"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/shelcom/Desktop/Developer/Sourcetree/lesson-5-home-work/ToDo%20List/ToDo%20List/RegistrationViewController/RegistrationViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "18">
+               </Location>
+               <Location
+                  uuid = "3F8E91EF-28A9-4911-A57F-B5232D893E8F - abad072e0d2ca7b8"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "ToDo_List.RegistrationViewController.registrationEmailLable.modify : Swift.Optional&lt;__C.UILabel&gt; with unmangled suffix &quot;.resume.0&quot;"
+                  moduleName = "ToDo List"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/shelcom/Desktop/Developer/Sourcetree/lesson-5-home-work/ToDo%20List/ToDo%20List/RegistrationViewController/RegistrationViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "14"
+                  endingLineNumber = "14"
+                  offsetFromSymbolStart = "8">
+               </Location>
+               <Location
+                  uuid = "3F8E91EF-28A9-4911-A57F-B5232D893E8F - be1296af980dfa21"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "ToDo_List.RegistrationViewController.init(nibName: Swift.Optional&lt;Swift.String&gt;, bundle: Swift.Optional&lt;__C.NSBundle&gt;) -&gt; ToDo_List.RegistrationViewController"
+                  moduleName = "ToDo List"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/shelcom/Desktop/Developer/Sourcetree/lesson-5-home-work/ToDo%20List/ToDo%20List/RegistrationViewController/RegistrationViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "14"
+                  endingLineNumber = "14"
+                  offsetFromSymbolStart = "269">
+               </Location>
+               <Location
+                  uuid = "3F8E91EF-28A9-4911-A57F-B5232D893E8F - 1502432ee89a8219"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "ToDo_List.RegistrationViewController.init(coder: __C.NSCoder) -&gt; Swift.Optional&lt;ToDo_List.RegistrationViewController&gt;"
+                  moduleName = "ToDo List"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/shelcom/Desktop/Developer/Sourcetree/lesson-5-home-work/ToDo%20List/ToDo%20List/RegistrationViewController/RegistrationViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "14"
+                  endingLineNumber = "14"
+                  offsetFromSymbolStart = "222">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
