@@ -59,8 +59,18 @@ class LoginViewController: BaseViewController, UITextFieldDelegate {
       }
    }
    
+   override func viewWillAppear(_ animated: Bool) {
+      //hide navbar
+      navigationController?.navigationBar.isHidden = true
+   }
+   
    // pressing the button loginButton
-   @IBAction func touchLoginButton(_ sender: Any) {
+   override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
+      
+      if identifier != "fromLoginToTaskList" {
+         return true
+      }
+      
       if let email = emailTextField.text,
          let password = passwordTextField.text {
          if email.isEmpty {
@@ -71,6 +81,7 @@ class LoginViewController: BaseViewController, UITextFieldDelegate {
                   if email == expectedEmail {
                      if password == expectedPassword {
                         resultLable.text = "Success"
+                        return true
                      } else {
                         resultLable.text = "Fail: Wrong password"
                      }
@@ -85,6 +96,7 @@ class LoginViewController: BaseViewController, UITextFieldDelegate {
             }
          }
       }
+      return false
    }
    
 }

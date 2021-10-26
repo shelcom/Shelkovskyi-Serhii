@@ -14,12 +14,30 @@ class RegistrationViewController: UIViewController, UITextFieldDelegate {
    @IBOutlet var registrationPasswordLable: UILabel!
    @IBOutlet var registrationPasswordField: UITextField!
    
+   var resultLable: UILabel!
+   
    override func viewDidLoad() {
       super.viewDidLoad()
       
       //Init delegate
       self.registrationEmailField.delegate = self
       self.registrationPasswordField.delegate = self
+      
+      //Init resultLable
+      resultLable = UILabel.init()
+      resultLable.frame = CGRect.init(x:50, y:50, width: 50, height: 40)
+      view.addSubview(resultLable)
+      resultLable!.textColor = UIColor.red
+      
+      //Init constraint for resultLabel
+      resultLable.translatesAutoresizingMaskIntoConstraints = false
+      NSLayoutConstraint.init(item: resultLable!, attribute: .bottom, relatedBy: .equal, toItem: registrationEmailLable, attribute: .top, multiplier: 1, constant: -20).isActive = true
+      NSLayoutConstraint.init(item: resultLable!, attribute: .left, relatedBy: .equal, toItem: view, attribute: .left, multiplier: 1, constant: 20).isActive = true
+   }
+   
+   // hide keyboard (Tells this object that one or more new touches occurred in a view or window.)
+   override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+      self.view.endEditing(true)
    }
    
    //Asks the delegate whether to process the pressing of the Return button for the text field.
@@ -38,6 +56,30 @@ class RegistrationViewController: UIViewController, UITextFieldDelegate {
       }
    }
    
-   @IBAction func registrationAction(_ sender: Any) {
+   override func viewWillAppear(_ animated: Bool) {
+      //navigation bar
+      navigationController?.navigationBar.isHidden = false
+   }
+   
+   // pressing the button registrationButton
+   override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
+      if let email = registrationEmailField.text,
+         let password = registrationPasswordField.text {
+         if email.isEmpty {
+            resultLable.text = "Fail: Empty fields"
+         } else {
+            if email.contains("@") {
+               if password.count >= 8 {
+                  resultLable.text = "Success"
+                  return true
+               } else {
+                  resultLable.text = "Fail: Password must be at least 8 symbols"
+               }
+            } else {
+               resultLable.text = "Fail: Wrong email format"
+            }
+         }
+      }
+      return false
    }
 }
