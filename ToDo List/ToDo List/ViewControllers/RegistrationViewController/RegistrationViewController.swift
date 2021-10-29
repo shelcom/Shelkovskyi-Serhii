@@ -56,30 +56,20 @@ class RegistrationViewController: UIViewController, UITextFieldDelegate {
       }
    }
    
+   //navigation bar
    override func viewWillAppear(_ animated: Bool) {
-      //navigation bar
       navigationController?.navigationBar.isHidden = false
    }
    
    // pressing the button registrationButton
    override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
-      if let email = registrationEmailField.text,
-         let password = registrationPasswordField.text {
-         if email.isEmpty {
-            resultLable.text = "Fail: Empty fields"
-         } else {
-            if email.contains("@") {
-               if password.count >= 8 {
-                  resultLable.text = "Success"
-                  return true
-               } else {
-                  resultLable.text = "Fail: Password must be at least 8 symbols"
-               }
-            } else {
-               resultLable.text = "Fail: Wrong email format"
-            }
-         }
-      }
-      return false
+      
+      //init Credentials
+      let credentials = Credentials()
+      credentials.email = registrationEmailField.text
+      credentials.password = registrationPasswordField.text
+      
+      //validate regitration form
+      return credentials.validate(label: resultLable!)
    }
 }

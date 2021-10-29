@@ -59,8 +59,8 @@ class LoginViewController: BaseViewController, UITextFieldDelegate {
       }
    }
    
+   //hide navbar
    override func viewWillAppear(_ animated: Bool) {
-      //hide navbar
       navigationController?.navigationBar.isHidden = true
    }
    
@@ -71,32 +71,13 @@ class LoginViewController: BaseViewController, UITextFieldDelegate {
          return true
       }
       
-      if let email = emailTextField.text,
-         let password = passwordTextField.text {
-         if email.isEmpty {
-            resultLable.text = "Fail: Empty fields"
-         } else {
-            if email.contains("@") {
-               if password.count >= 8 {
-                  if email == expectedEmail {
-                     if password == expectedPassword {
-                        resultLable.text = "Success"
-                        return true
-                     } else {
-                        resultLable.text = "Fail: Wrong password"
-                     }
-                  } else {
-                     resultLable.text = "Fail: Wrong email"
-                  }
-               } else {
-                  resultLable.text = "Fail: Password must be at least 8 symbols"
-               }
-            } else {
-               resultLable.text = "Fail: Wrong email format"
-            }
-         }
-      }
-      return false
+      //init LoginCredentials
+      let credentials = LoginCredentials()
+      credentials.email = emailTextField.text
+      credentials.password = passwordTextField.text
+      
+      //vaidate login form
+      return credentials.validate(label: resultLable!)
    }
    
 }
