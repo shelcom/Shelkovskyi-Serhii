@@ -62,14 +62,7 @@ class RegistrationViewController: UIViewController, UITextFieldDelegate {
    }
    
    // pressing the button registrationButton
-   override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
-      
-      //init Credentials
-      let credentials = Credentials()
-      credentials.email = registrationEmailField.text
-      credentials.password = registrationPasswordField.text
-      
-      //validate regitration form
-      return credentials.validate(label: resultLable!)
+   override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {      
+      return Credentials(email: registrationEmailField.text, password: registrationPasswordField.text).validate(label: resultLable!)
    }
 }

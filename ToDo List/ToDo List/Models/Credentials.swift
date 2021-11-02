@@ -13,6 +13,11 @@ class Credentials: CredentialsInterface {
    var email: String?
    var password: String?
    
+   init(email: String?, password: String?) {
+      self.email = email
+      self.password = password
+   }
+   
    //Validate email and password
    func validate(label: UILabel!) -> Bool {
       if let email = self.email,
@@ -41,6 +46,10 @@ class LoginCredentials: Credentials {
    let expectedEmail: String = "hi@gmail.com"
    let expectedPassword: String = "12345678"
    
+   override init(email: String?, password: String?) {
+      super.init(email: email, password: password)
+   }
+   
    //Validate user account email and password
    override func validate(label: UILabel!) -> Bool {
       let isValid = super.validate(label: label)
@@ -57,7 +66,5 @@ class LoginCredentials: Credentials {
          }
       }
       return false
-      // return isValid ?
-      //    (self.email == expectedEmail && self.password == expectedPassword) : false
    }
 }
