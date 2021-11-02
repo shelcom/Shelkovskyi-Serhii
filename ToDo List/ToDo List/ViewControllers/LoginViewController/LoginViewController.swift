@@ -66,18 +66,11 @@ class LoginViewController: BaseViewController, UITextFieldDelegate {
    
    // pressing the button loginButton
    override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
-      
       if identifier != "fromLoginToTaskList" {
          return true
       }
       
-      //init LoginCredentials
-      let credentials = LoginCredentials()
-      credentials.email = emailTextField.text
-      credentials.password = passwordTextField.text
-      
-      //vaidate login form
-      return credentials.validate(label: resultLable!)
+      return LoginCredentials(email: emailTextField.text, password: passwordTextField.text).validate(label: resultLable!)
    }
    
 }
