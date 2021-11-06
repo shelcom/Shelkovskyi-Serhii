@@ -42,11 +42,13 @@ class Credentials: CredentialsInterface {
 }
 
 class LoginCredentials: Credentials {
-   
-   let expectedEmail: String = "hi@gmail.com"
-   let expectedPassword: String = "12345678"
+   private var expectedEmail: String?
+   private var expectedPassword: String?
    
    override init(email: String?, password: String?) {
+      self.expectedEmail = "hi@gmail.com"
+      self.expectedPassword = "12345678"
+      
       super.init(email: email, password: password)
    }
    
