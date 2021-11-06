@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		581565CC2728162200537789 /* TaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 581565CB2728162200537789 /* TaskViewController.swift */; };
+		581DC2812735C57F00A821C1 /* TaskController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 581DC2802735C57F00A821C1 /* TaskController.swift */; };
 		5851DD1527272899007F1B39 /* TaskListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5851DD1427272899007F1B39 /* TaskListViewController.swift */; };
 		586BA8A427134BAE004C0455 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 586BA8A327134BAE004C0455 /* AppDelegate.swift */; };
 		586BA8A627134BAE004C0455 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 586BA8A527134BAE004C0455 /* SceneDelegate.swift */; };
@@ -24,6 +25,7 @@
 
 /* Begin PBXFileReference section */
 		581565CB2728162200537789 /* TaskViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskViewController.swift; sourceTree = "<group>"; };
+		581DC2802735C57F00A821C1 /* TaskController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskController.swift; sourceTree = "<group>"; };
 		5851DD1427272899007F1B39 /* TaskListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskListViewController.swift; sourceTree = "<group>"; };
 		586BA8A027134BAE004C0455 /* ToDo List.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ToDo List.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		586BA8A327134BAE004C0455 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -86,14 +88,13 @@
 		586BA8A227134BAE004C0455 /* ToDo List */ = {
 			isa = PBXGroup;
 			children = (
+				58A7591B273700CE00ADF9DC /* Base */,
 				58A51F77272AFADE00FB75F0 /* Controllers */,
 				58A51F76272AFAB400FB75F0 /* ViewControllers */,
 				58A51F73272AF79F00FB75F0 /* Models */,
 				586BA8A327134BAE004C0455 /* AppDelegate.swift */,
 				586BA8A527134BAE004C0455 /* SceneDelegate.swift */,
-				586BA8A927134BAE004C0455 /* Main.storyboard */,
 				586BA8AC27134BB0004C0455 /* Assets.xcassets */,
-				586BA8AE27134BB0004C0455 /* LaunchScreen.storyboard */,
 				586BA8B127134BB0004C0455 /* Info.plist */,
 			);
 			path = "ToDo List";
@@ -124,8 +125,18 @@
 			isa = PBXGroup;
 			children = (
 				58A51F78272AFB1700FB75F0 /* CredentialValidation.swift */,
+				581DC2802735C57F00A821C1 /* TaskController.swift */,
 			);
 			path = Controllers;
+			sourceTree = "<group>";
+		};
+		58A7591B273700CE00ADF9DC /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				586BA8AE27134BB0004C0455 /* LaunchScreen.storyboard */,
+				586BA8A927134BAE004C0455 /* Main.storyboard */,
+			);
+			path = Base;
 			sourceTree = "<group>";
 		};
 		58E904972722CD7000711C74 /* RegistrationViewController */ = {
@@ -229,6 +240,7 @@
 				58E9049D2722CDD600711C74 /* RegistrationViewController.swift in Sources */,
 				58A51F79272AFB1700FB75F0 /* CredentialValidation.swift in Sources */,
 				58E9049B2722CD9D00711C74 /* BaseViewController.swift in Sources */,
+				581DC2812735C57F00A821C1 /* TaskController.swift in Sources */,
 				586BA8A427134BAE004C0455 /* AppDelegate.swift in Sources */,
 				586BA8A627134BAE004C0455 /* SceneDelegate.swift in Sources */,
 				5851DD1527272899007F1B39 /* TaskListViewController.swift in Sources */,

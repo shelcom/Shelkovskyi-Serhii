@@ -12,6 +12,7 @@ struct Task {
    var title: String?
    var description: String?
    var taskDate: Date
+   var createdDate: Date
    var status: String?
    
 }
