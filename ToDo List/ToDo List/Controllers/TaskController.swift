@@ -26,6 +26,18 @@ class TaskController {
       tasks.append(task)
    }
    
+   func tasksCount() -> Int {
+      tasks.count
+   }
+   
+   func task(by index: Int) -> Task {
+      tasks[index]
+   }
+   
+   func remove(by index: Int) {
+      tasks.remove(at: index)
+   }
+   
    func searche(by title: String) -> [Task] {
       tasks.filter{ task in
          (task.title != nil) ? task.title!.contains(title) : false
