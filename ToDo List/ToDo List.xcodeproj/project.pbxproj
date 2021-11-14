@@ -68,6 +68,7 @@
 		5851DD1327272859007F1B39 /* TaskListViewController */ = {
 			isa = PBXGroup;
 			children = (
+				58CD5026273A9ABB00526E43 /* TableCells */,
 				5851DD1427272899007F1B39 /* TaskListViewController.swift */,
 			);
 			path = TaskListViewController;
@@ -92,11 +93,12 @@
 		586BA8A227134BAE004C0455 /* ToDo List */ = {
 			isa = PBXGroup;
 			children = (
-				58A7591B273700CE00ADF9DC /* Base */,
+				58A7591B273700CE00ADF9DC /* Storyboards */,
 				58A51F77272AFADE00FB75F0 /* Controllers */,
 				58A51F76272AFAB400FB75F0 /* ViewControllers */,
 				58A51F73272AF79F00FB75F0 /* Models */,
 				586BA8A327134BAE004C0455 /* AppDelegate.swift */,
+				586BA8AE27134BB0004C0455 /* LaunchScreen.storyboard */,
 				586BA8A527134BAE004C0455 /* SceneDelegate.swift */,
 				586BA8AC27134BB0004C0455 /* Assets.xcassets */,
 				586BA8B127134BB0004C0455 /* Info.plist */,
@@ -116,7 +118,6 @@
 		58A51F76272AFAB400FB75F0 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				58CD5026273A9ABB00526E43 /* TableCells */,
 				58E904972722CD7000711C74 /* RegistrationViewController */,
 				58E904A12722CED900711C74 /* LoginViewController */,
 				5851DD1327272859007F1B39 /* TaskListViewController */,
@@ -135,13 +136,12 @@
 			path = Controllers;
 			sourceTree = "<group>";
 		};
-		58A7591B273700CE00ADF9DC /* Base */ = {
+		58A7591B273700CE00ADF9DC /* Storyboards */ = {
 			isa = PBXGroup;
 			children = (
-				586BA8AE27134BB0004C0455 /* LaunchScreen.storyboard */,
 				586BA8A927134BAE004C0455 /* Main.storyboard */,
 			);
-			path = Base;
+			path = Storyboards;
 			sourceTree = "<group>";
 		};
 		58CD5026273A9ABB00526E43 /* TableCells */ = {

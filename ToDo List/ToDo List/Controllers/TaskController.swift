@@ -19,7 +19,7 @@ class TaskController {
       Task.init(title: "Read Book", description: "Description7", taskDate: Date(), createdDate: Date(), status: "Done"),
       Task.init(title: "Jump", description: "Description8", taskDate: Date(), createdDate: Date(), status: "Progress"),
       Task.init(title: "Sport", description: "Description9", taskDate: Date(), createdDate: Date(), status: "Done"),
-      Task.init(title: "Run", description: "Description10", taskDate: Date(), createdDate: Date(), status: "Progress")
+      Task.init(title: "RunRunRunRunRunRunRunRunRunRunRunRunRunRunRunRunRunRunRunRunRunRunRunRunRunRunRunRunRunRunRunRunRunRunRunRunRunRunRunRunRunRunRunRunRunRunRunRunRunRunRunRunRunRunRunRun", description: "Description10", taskDate: Date(), createdDate: Date(), status: "Progress")
    ]
    
    func add(new task: Task) {

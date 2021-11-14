@@ -14,5 +14,4 @@ struct Task {
    var taskDate: Date
    var createdDate: Date
    var status: String?
-   
 }
