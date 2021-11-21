@@ -19,29 +19,28 @@ class Credentials: CredentialsInterface {
    }
    
    //Validate email and password
-   func validate(label: UILabel!) -> Bool {
+   func validate() -> (Bool, String) {
       if let email = self.email,
          let password = self.password {
          if email.isEmpty {
-            label.text = "Fail: Empty fields"
          } else {
             if email.contains("@") {
                if password.count >= 8 {
-                  label.text = "Success"
-                  return true
+                  return (true, "Success")
                } else {
-                  label.text = "Fail: Password must be at least 8 symbols"
+                  return (false, "Fail: Password must be at least 8 symbols")
                }
             } else {
-               label.text = "Fail: Wrong email format"
+               return (false, "Fail: Wrong email format")
             }
          }
       }
-      return false
+      return (false, "Fail: Please enter the data")
    }
 }
 
 class LoginCredentials: Credentials {
+   
    private var expectedEmail: String?
    private var expectedPassword: String?
    
@@ -53,20 +52,20 @@ class LoginCredentials: Credentials {
    }
    
    //Validate user account email and password
-   override func validate(label: UILabel!) -> Bool {
-      let isValid = super.validate(label: label)
+   override func validate() -> (Bool, String) {
+      let isValid = super.validate()
       
-      if isValid {
+      if isValid.0 {
          if self.email == expectedEmail {
             if self.password == expectedPassword {
-               return true
+               return (true, "Good")
             } else {
-               label.text = "Fail: Wrong password"
+               return (false, "Fail: Wrong password")
             }
          } else {
-            label.text = "Fail: Wrong email address"
+            return (false, "Fail: Wrong email address")
          }
       }
-      return false
+      return (false, isValid.1)
    }
 }

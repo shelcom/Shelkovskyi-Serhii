@@ -8,6 +8,7 @@
 import UIKit
 
 class LoginViewController: BaseViewController, UITextFieldDelegate {
+  
    @IBOutlet var toDoLabel: UILabel!
    @IBOutlet var emailLabel: UILabel!
    @IBOutlet var emailTextField: UITextField!
@@ -18,7 +19,8 @@ class LoginViewController: BaseViewController, UITextFieldDelegate {
    
    let expectedEmail = "hi@gmail.com"
    let expectedPassword = "12345678"
-   var resultLable: UILabel!
+   var resultLabel: UILabel!
+   
    
    override func viewDidLoad() {
       super.viewDidLoad()
@@ -28,19 +30,19 @@ class LoginViewController: BaseViewController, UITextFieldDelegate {
       self.passwordTextField.delegate = self
       
       //Init resultLable
-      resultLable = UILabel.init()
-      resultLable.frame = CGRect.init(x:50, y:50, width: 50, height: 40)
-      view.addSubview(resultLable)
-      resultLable!.textColor = UIColor.red
+      resultLabel = UILabel.init()
+      resultLabel.frame = CGRect.init(x: 50, y: 50, width: 50, height: 40)
+      resultLabel.textColor = UIColor.red
+      view.addSubview(resultLabel)
+      
       
       //Init constraint for resultLabel
-      resultLable.translatesAutoresizingMaskIntoConstraints = false
-      NSLayoutConstraint.init(item: resultLable!, attribute: .bottom, relatedBy: .equal, toItem: emailLabel, attribute: .top, multiplier: 1, constant: -20).isActive = true
-      NSLayoutConstraint.init(item: resultLable!, attribute: .left, relatedBy: .equal, toItem: view, attribute: .left, multiplier: 1, constant: 20).isActive = true
+      resultLabel.translatesAutoresizingMaskIntoConstraints = false
+      NSLayoutConstraint.init(item: resultLabel!, attribute: .bottom, relatedBy: .equal, toItem: emailLabel, attribute: .top, multiplier: 1, constant: -20).isActive = true
+      NSLayoutConstraint.init(item: resultLabel!, attribute: .left, relatedBy: .equal, toItem: view, attribute: .left, multiplier: 1, constant: 20).isActive = true
       
       // Rounds a loginButton
       loginButton.layer.cornerRadius = 12
-      print("viewDidLoad")
    }
    
    //Asks the delegate whether to process the pressing of the Return button for the text field.
@@ -70,7 +72,12 @@ class LoginViewController: BaseViewController, UITextFieldDelegate {
          return true
       }
       
-      return LoginCredentials(email: emailTextField.text, password: passwordTextField.text).validate(label: resultLable!)
+      let result = LoginCredentials(email: emailTextField.text, password: passwordTextField.text).validate()
+      fillResaultLable(someText: result.1)
+      return result.0
    }
    
+   func fillResaultLable(someText: String) {
+      self.resultLabel.text = someText
+   }
 }

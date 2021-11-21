@@ -8,13 +8,14 @@
 import UIKit
 
 class RegistrationViewController: UIViewController, UITextFieldDelegate {
+   
    @IBOutlet var registrationLable: UILabel!
    @IBOutlet var registrationEmailField: UITextField!
    @IBOutlet var registrationEmailLable: UILabel!
    @IBOutlet var registrationPasswordLable: UILabel!
    @IBOutlet var registrationPasswordField: UITextField!
    
-   var resultLable: UILabel!
+   var resultLabel: UILabel!
    
    override func viewDidLoad() {
       super.viewDidLoad()
@@ -24,15 +25,15 @@ class RegistrationViewController: UIViewController, UITextFieldDelegate {
       self.registrationPasswordField.delegate = self
       
       //Init resultLable
-      resultLable = UILabel.init()
-      resultLable.frame = CGRect.init(x:50, y:50, width: 50, height: 40)
-      view.addSubview(resultLable)
-      resultLable!.textColor = UIColor.red
+      resultLabel = UILabel.init()
+      resultLabel.frame = CGRect.init(x: 50, y: 50, width: 50, height: 40)
+      resultLabel.textColor = UIColor.red
+      view.addSubview(resultLabel)
       
       //Init constraint for resultLabel
-      resultLable.translatesAutoresizingMaskIntoConstraints = false
-      NSLayoutConstraint.init(item: resultLable!, attribute: .bottom, relatedBy: .equal, toItem: registrationEmailLable, attribute: .top, multiplier: 1, constant: -20).isActive = true
-      NSLayoutConstraint.init(item: resultLable!, attribute: .left, relatedBy: .equal, toItem: view, attribute: .left, multiplier: 1, constant: 20).isActive = true
+      resultLabel.translatesAutoresizingMaskIntoConstraints = false
+      NSLayoutConstraint.init(item: resultLabel!, attribute: .bottom, relatedBy: .equal, toItem: registrationEmailLable, attribute: .top, multiplier: 1, constant: -20).isActive = true
+      NSLayoutConstraint.init(item: resultLabel!, attribute: .left, relatedBy: .equal, toItem: view, attribute: .left, multiplier: 1, constant: 20).isActive = true
    }
    
    // hide keyboard (Tells this object that one or more new touches occurred in a view or window.)
@@ -62,7 +63,14 @@ class RegistrationViewController: UIViewController, UITextFieldDelegate {
    }
    
    // pressing the button registrationButton
-   override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {      
-      return Credentials(email: registrationEmailField.text, password: registrationPasswordField.text).validate(label: resultLable!)
+   override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
+      let result = Credentials(email: registrationEmailField.text, password: registrationPasswordField.text).validate()
+      fillResaultLable(someText: result.1)
+      return result.0
+   }
+   
+   func fillResaultLable(someText: String) {
+      self.resultLabel.text = someText
    }
 }
+      
