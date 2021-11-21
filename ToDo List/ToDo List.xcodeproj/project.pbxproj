@@ -7,28 +7,36 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		581565CC2728162200537789 /* TaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 581565CB2728162200537789 /* TaskViewController.swift */; };
-		581DC2812735C57F00A821C1 /* TaskController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 581DC2802735C57F00A821C1 /* TaskController.swift */; };
-		5851DD1527272899007F1B39 /* TaskListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5851DD1427272899007F1B39 /* TaskListViewController.swift */; };
+		58377E6A274AE53C00DD85EF /* EatenFoodTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58377E69274AE53C00DD85EF /* EatenFoodTableViewCell.swift */; };
+		5867CD9227481CF100CBD942 /* UserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5867CD9127481CF100CBD942 /* UserManager.swift */; };
+		5867CD972748556100CBD942 /* EatenFoodTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5867CD952748556100CBD942 /* EatenFoodTableViewCell.xib */; };
+		5867CD992748656800CBD942 /* UserController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5867CD982748656800CBD942 /* UserController.swift */; };
+		5867CD9C2748FA5300CBD942 /* PlanTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5867CD9A2748FA5300CBD942 /* PlanTableViewCell.swift */; };
+		5867CD9D2748FA5300CBD942 /* PlanTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5867CD9B2748FA5300CBD942 /* PlanTableViewCell.xib */; };
+		5867CD9F27491E5D00CBD942 /* PlanController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5867CD9E27491E5D00CBD942 /* PlanController.swift */; };
+		5867CDA12749783200CBD942 /* ProductController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5867CDA02749783200CBD942 /* ProductController.swift */; };
 		586BA8A427134BAE004C0455 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 586BA8A327134BAE004C0455 /* AppDelegate.swift */; };
 		586BA8A627134BAE004C0455 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 586BA8A527134BAE004C0455 /* SceneDelegate.swift */; };
 		586BA8AB27134BAE004C0455 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 586BA8A927134BAE004C0455 /* Main.storyboard */; };
 		586BA8AD27134BB0004C0455 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 586BA8AC27134BB0004C0455 /* Assets.xcassets */; };
 		586BA8B027134BB0004C0455 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 586BA8AE27134BB0004C0455 /* LaunchScreen.storyboard */; };
-		58A51F75272AF7C500FB75F0 /* Credentials.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58A51F74272AF7C500FB75F0 /* Credentials.swift */; };
-		58A51F79272AFB1700FB75F0 /* CredentialValidation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58A51F78272AFB1700FB75F0 /* CredentialValidation.swift */; };
-		58A51F7B272B49A400FB75F0 /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58A51F7A272B49A400FB75F0 /* Task.swift */; };
-		58CD5029273A9AE400526E43 /* TaskTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58CD5027273A9AE400526E43 /* TaskTableViewCell.swift */; };
-		58CD502A273A9AE400526E43 /* TaskTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 58CD5028273A9AE400526E43 /* TaskTableViewCell.xib */; };
-		58E9049B2722CD9D00711C74 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58E9049A2722CD9D00711C74 /* BaseViewController.swift */; };
-		58E9049D2722CDD600711C74 /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58E9049C2722CDD600711C74 /* RegistrationViewController.swift */; };
-		58E904A32722CEF500711C74 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58E904A22722CEF500711C74 /* LoginViewController.swift */; };
+		58CD60102747C0C300399D59 /* UserDataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58CD600F2747C0C300399D59 /* UserDataViewController.swift */; };
+		58CD60152748061400399D59 /* HomeScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58CD60142748061400399D59 /* HomeScreenViewController.swift */; };
+		58CD601827480D1A00399D59 /* AddDishesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58CD601727480D1A00399D59 /* AddDishesViewController.swift */; };
+		58FE95E22748144E000B72BA /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58FE95E12748144D000B72BA /* UserModel.swift */; };
+		58FE95E427481467000B72BA /* ProductModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58FE95E327481467000B72BA /* ProductModel.swift */; };
+		58FE95E627481481000B72BA /* PlanModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58FE95E527481481000B72BA /* PlanModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		581565CB2728162200537789 /* TaskViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskViewController.swift; sourceTree = "<group>"; };
-		581DC2802735C57F00A821C1 /* TaskController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskController.swift; sourceTree = "<group>"; };
-		5851DD1427272899007F1B39 /* TaskListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskListViewController.swift; sourceTree = "<group>"; };
+		58377E69274AE53C00DD85EF /* EatenFoodTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EatenFoodTableViewCell.swift; sourceTree = "<group>"; };
+		5867CD9127481CF100CBD942 /* UserManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserManager.swift; sourceTree = "<group>"; };
+		5867CD952748556100CBD942 /* EatenFoodTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EatenFoodTableViewCell.xib; sourceTree = "<group>"; };
+		5867CD982748656800CBD942 /* UserController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserController.swift; sourceTree = "<group>"; };
+		5867CD9A2748FA5300CBD942 /* PlanTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanTableViewCell.swift; sourceTree = "<group>"; };
+		5867CD9B2748FA5300CBD942 /* PlanTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PlanTableViewCell.xib; sourceTree = "<group>"; };
+		5867CD9E27491E5D00CBD942 /* PlanController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanController.swift; sourceTree = "<group>"; };
+		5867CDA02749783200CBD942 /* ProductController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductController.swift; sourceTree = "<group>"; };
 		586BA8A027134BAE004C0455 /* ToDo List.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ToDo List.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		586BA8A327134BAE004C0455 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		586BA8A527134BAE004C0455 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -36,14 +44,12 @@
 		586BA8AC27134BB0004C0455 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		586BA8AF27134BB0004C0455 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		586BA8B127134BB0004C0455 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		58A51F74272AF7C500FB75F0 /* Credentials.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Credentials.swift; sourceTree = "<group>"; };
-		58A51F78272AFB1700FB75F0 /* CredentialValidation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CredentialValidation.swift; sourceTree = "<group>"; };
-		58A51F7A272B49A400FB75F0 /* Task.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
-		58CD5027273A9AE400526E43 /* TaskTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskTableViewCell.swift; sourceTree = "<group>"; };
-		58CD5028273A9AE400526E43 /* TaskTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TaskTableViewCell.xib; sourceTree = "<group>"; };
-		58E9049A2722CD9D00711C74 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
-		58E9049C2722CDD600711C74 /* RegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
-		58E904A22722CEF500711C74 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		58CD600F2747C0C300399D59 /* UserDataViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDataViewController.swift; sourceTree = "<group>"; };
+		58CD60142748061400399D59 /* HomeScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreenViewController.swift; sourceTree = "<group>"; };
+		58CD601727480D1A00399D59 /* AddDishesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddDishesViewController.swift; sourceTree = "<group>"; };
+		58FE95E12748144D000B72BA /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
+		58FE95E327481467000B72BA /* ProductModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductModel.swift; sourceTree = "<group>"; };
+		58FE95E527481481000B72BA /* PlanModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,20 +63,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		581565CA272815D900537789 /* TaskViewController */ = {
+		5867CD9027481CD700CBD942 /* Manager */ = {
 			isa = PBXGroup;
 			children = (
-				581565CB2728162200537789 /* TaskViewController.swift */,
+				5867CD9127481CF100CBD942 /* UserManager.swift */,
 			);
-			path = TaskViewController;
+			path = Manager;
 			sourceTree = "<group>";
 		};
-		5851DD1327272859007F1B39 /* TaskListViewController */ = {
+		5867CD93274854F300CBD942 /* TableCells */ = {
 			isa = PBXGroup;
 			children = (
-				5851DD1427272899007F1B39 /* TaskListViewController.swift */,
+				5867CD952748556100CBD942 /* EatenFoodTableViewCell.xib */,
+				5867CD9A2748FA5300CBD942 /* PlanTableViewCell.swift */,
+				5867CD9B2748FA5300CBD942 /* PlanTableViewCell.xib */,
+				58377E69274AE53C00DD85EF /* EatenFoodTableViewCell.swift */,
 			);
-			path = TaskListViewController;
+			path = TableCells;
 			sourceTree = "<group>";
 		};
 		586BA89727134BAE004C0455 = {
@@ -92,11 +101,13 @@
 		586BA8A227134BAE004C0455 /* ToDo List */ = {
 			isa = PBXGroup;
 			children = (
-				58A7591B273700CE00ADF9DC /* Base */,
+				5867CD9027481CD700CBD942 /* Manager */,
+				58A7591B273700CE00ADF9DC /* Storyboards */,
 				58A51F77272AFADE00FB75F0 /* Controllers */,
 				58A51F76272AFAB400FB75F0 /* ViewControllers */,
 				58A51F73272AF79F00FB75F0 /* Models */,
 				586BA8A327134BAE004C0455 /* AppDelegate.swift */,
+				586BA8AE27134BB0004C0455 /* LaunchScreen.storyboard */,
 				586BA8A527134BAE004C0455 /* SceneDelegate.swift */,
 				586BA8AC27134BB0004C0455 /* Assets.xcassets */,
 				586BA8B127134BB0004C0455 /* Info.plist */,
@@ -107,8 +118,9 @@
 		58A51F73272AF79F00FB75F0 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				58A51F74272AF7C500FB75F0 /* Credentials.swift */,
-				58A51F7A272B49A400FB75F0 /* Task.swift */,
+				58FE95E12748144D000B72BA /* UserModel.swift */,
+				58FE95E327481467000B72BA /* ProductModel.swift */,
+				58FE95E527481481000B72BA /* PlanModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -116,12 +128,9 @@
 		58A51F76272AFAB400FB75F0 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				58CD5026273A9ABB00526E43 /* TableCells */,
-				58E904972722CD7000711C74 /* RegistrationViewController */,
-				58E904A12722CED900711C74 /* LoginViewController */,
-				5851DD1327272859007F1B39 /* TaskListViewController */,
-				58E9049E2722CDE900711C74 /* BaseViewController */,
-				581565CA272815D900537789 /* TaskViewController */,
+				58CD601627480D0500399D59 /* AddDishesViewController */,
+				58CD6013274805FF00399D59 /* HomeScreenViewController */,
+				58CD600E2747C0AA00399D59 /* UserDataViewController */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -129,52 +138,44 @@
 		58A51F77272AFADE00FB75F0 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				58A51F78272AFB1700FB75F0 /* CredentialValidation.swift */,
-				581DC2802735C57F00A821C1 /* TaskController.swift */,
+				5867CD982748656800CBD942 /* UserController.swift */,
+				5867CD9E27491E5D00CBD942 /* PlanController.swift */,
+				5867CDA02749783200CBD942 /* ProductController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
 		};
-		58A7591B273700CE00ADF9DC /* Base */ = {
+		58A7591B273700CE00ADF9DC /* Storyboards */ = {
 			isa = PBXGroup;
 			children = (
-				586BA8AE27134BB0004C0455 /* LaunchScreen.storyboard */,
 				586BA8A927134BAE004C0455 /* Main.storyboard */,
 			);
-			path = Base;
+			path = Storyboards;
 			sourceTree = "<group>";
 		};
-		58CD5026273A9ABB00526E43 /* TableCells */ = {
+		58CD600E2747C0AA00399D59 /* UserDataViewController */ = {
 			isa = PBXGroup;
 			children = (
-				58CD5027273A9AE400526E43 /* TaskTableViewCell.swift */,
-				58CD5028273A9AE400526E43 /* TaskTableViewCell.xib */,
+				58CD600F2747C0C300399D59 /* UserDataViewController.swift */,
 			);
-			path = TableCells;
+			path = UserDataViewController;
 			sourceTree = "<group>";
 		};
-		58E904972722CD7000711C74 /* RegistrationViewController */ = {
+		58CD6013274805FF00399D59 /* HomeScreenViewController */ = {
 			isa = PBXGroup;
 			children = (
-				58E9049C2722CDD600711C74 /* RegistrationViewController.swift */,
+				5867CD93274854F300CBD942 /* TableCells */,
+				58CD60142748061400399D59 /* HomeScreenViewController.swift */,
 			);
-			path = RegistrationViewController;
+			path = HomeScreenViewController;
 			sourceTree = "<group>";
 		};
-		58E9049E2722CDE900711C74 /* BaseViewController */ = {
+		58CD601627480D0500399D59 /* AddDishesViewController */ = {
 			isa = PBXGroup;
 			children = (
-				58E9049A2722CD9D00711C74 /* BaseViewController.swift */,
+				58CD601727480D1A00399D59 /* AddDishesViewController.swift */,
 			);
-			path = BaseViewController;
-			sourceTree = "<group>";
-		};
-		58E904A12722CED900711C74 /* LoginViewController */ = {
-			isa = PBXGroup;
-			children = (
-				58E904A22722CEF500711C74 /* LoginViewController.swift */,
-			);
-			path = LoginViewController;
+			path = AddDishesViewController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -234,7 +235,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				58CD502A273A9AE400526E43 /* TaskTableViewCell.xib in Resources */,
+				5867CD9D2748FA5300CBD942 /* PlanTableViewCell.xib in Resources */,
+				5867CD972748556100CBD942 /* EatenFoodTableViewCell.xib in Resources */,
 				586BA8B027134BB0004C0455 /* LaunchScreen.storyboard in Resources */,
 				586BA8AD27134BB0004C0455 /* Assets.xcassets in Resources */,
 				586BA8AB27134BAE004C0455 /* Main.storyboard in Resources */,
@@ -248,18 +250,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				58E904A32722CEF500711C74 /* LoginViewController.swift in Sources */,
-				581565CC2728162200537789 /* TaskViewController.swift in Sources */,
-				58A51F7B272B49A400FB75F0 /* Task.swift in Sources */,
-				58A51F75272AF7C500FB75F0 /* Credentials.swift in Sources */,
-				58E9049D2722CDD600711C74 /* RegistrationViewController.swift in Sources */,
-				58A51F79272AFB1700FB75F0 /* CredentialValidation.swift in Sources */,
-				58E9049B2722CD9D00711C74 /* BaseViewController.swift in Sources */,
-				581DC2812735C57F00A821C1 /* TaskController.swift in Sources */,
-				58CD5029273A9AE400526E43 /* TaskTableViewCell.swift in Sources */,
+				5867CD9227481CF100CBD942 /* UserManager.swift in Sources */,
+				58CD60102747C0C300399D59 /* UserDataViewController.swift in Sources */,
+				5867CD992748656800CBD942 /* UserController.swift in Sources */,
+				58377E6A274AE53C00DD85EF /* EatenFoodTableViewCell.swift in Sources */,
+				5867CD9C2748FA5300CBD942 /* PlanTableViewCell.swift in Sources */,
+				58CD60152748061400399D59 /* HomeScreenViewController.swift in Sources */,
+				58CD601827480D1A00399D59 /* AddDishesViewController.swift in Sources */,
 				586BA8A427134BAE004C0455 /* AppDelegate.swift in Sources */,
+				58FE95E22748144E000B72BA /* UserModel.swift in Sources */,
+				5867CDA12749783200CBD942 /* ProductController.swift in Sources */,
+				5867CD9F27491E5D00CBD942 /* PlanController.swift in Sources */,
+				58FE95E427481467000B72BA /* ProductModel.swift in Sources */,
+				58FE95E627481481000B72BA /* PlanModel.swift in Sources */,
 				586BA8A627134BAE004C0455 /* SceneDelegate.swift in Sources */,
-				5851DD1527272899007F1B39 /* TaskListViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -336,7 +340,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -391,7 +395,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -416,7 +420,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "shelcom.ToDo-List";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -435,7 +439,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "shelcom.ToDo-List";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
