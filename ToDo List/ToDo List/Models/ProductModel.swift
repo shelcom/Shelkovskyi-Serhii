@@ -8,6 +8,7 @@
 import Foundation
 
 class ProductModel {
+   
    var name: String?
    var calories: Int?
    var weight: String?

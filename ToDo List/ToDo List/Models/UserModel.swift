@@ -8,16 +8,17 @@
 import Foundation
 
 class UserModel {
+   
    var name: String?
    var contactNumber: String?
    var currentWeight: Int?
    var currentLength: Int?
    var calories: Int?
-   var choosePlan: String?
+   var choosePlan: Int
    var period: Int?
    var currentPlan: PlanModel?
     
-   init(name: String?, contactNumber: String?, currentWeight: Int?, currentLength: Int?, calories: Int?, choosePlan: String?, period: Int?) {
+   init(name: String?, contactNumber: String?, currentWeight: Int?, currentLength: Int?, calories: Int?, choosePlan: Int, period: Int?) {
       self.name = name
       self.contactNumber = contactNumber
       self.currentLength = currentLength

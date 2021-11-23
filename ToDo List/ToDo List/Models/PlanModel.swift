@@ -8,6 +8,7 @@
 import Foundation
 
 class PlanModel {
+   
    var products: [ProductModel] = []
    var expectedCallories: Int
     

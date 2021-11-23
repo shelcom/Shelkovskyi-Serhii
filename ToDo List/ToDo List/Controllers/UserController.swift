@@ -11,7 +11,7 @@ class UserController {
    
    private var users: [UserModel] = []
    
-   func addNewUser(name: String?, contactNumber: String?, currentWeight: Int?, currentLength: Int?, calories: Int?, choosePlan: String?, period: Int?) -> UserModel? {
+   func addNewUser(name: String?, contactNumber: String?, currentWeight: Int?, currentLength: Int?, calories: Int?, choosePlan: Int, period: Int?) -> UserModel? {
       let newUser = UserModel.init(name: name, contactNumber: contactNumber, currentWeight: currentWeight, currentLength: currentLength, calories: calories, choosePlan: choosePlan, period: period)
       return newUser
    }

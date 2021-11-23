@@ -18,14 +18,14 @@ class UserDataViewController: UIViewController {
    @IBOutlet var weightSlider: UISlider!
    @IBOutlet var lengthSlider: UISlider!
    @IBOutlet var periodSlider: UISlider!
-   @IBOutlet var getWeightSwitch: UISwitch!
-   @IBOutlet var loseWeightSwitch: UISwitch!
-   @IBOutlet var maintainingWeightSwitch: UISwitch!
+   @IBOutlet var currentPlanSegment: UISegmentedControl!
    
-   var userCv = UserController()
+   var userController = UserController()
    
    override func viewDidLoad() {
       super.viewDidLoad()
+      
+      self.view.backgroundColor = UIColor(patternImage: UIImage(named: "backgroundPhoto1")!)
    }
    
    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -43,43 +43,13 @@ class UserDataViewController: UIViewController {
       }
    }
    
-   @IBAction func changeFirstSwitch(_ sender: Any) {
-      if (sender as AnyObject).isOn {
-         loseWeightSwitch.isOn = false
-         maintainingWeightSwitch.isOn = false
-      }
-   }
-   
-   @IBAction func changeSecondSwitch(_ sender: Any) {
-      if (sender as AnyObject).isOn {
-         getWeightSwitch.isOn = false
-         maintainingWeightSwitch.isOn = false
-      }
-   }
-   
-   @IBAction func changeThirdSwitch(_ sender: Any) {
-      if (sender as AnyObject).isOn {
-         loseWeightSwitch.isOn = false
-         getWeightSwitch.isOn = false
-      }
-   }
-   
-   func choosePlan() -> String {
-      if getWeightSwitch.isOn {
-         return "getWeightPlan"
-      } else if loseWeightSwitch.isOn {
-         return "loseWeightPlan"
-      } else {
-         return "maintainingWeightPlan"
-      }
-   }
-   
    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
       guard segue.identifier == "HomeScreenViewController" else { return }
       guard let destination = segue.destination as? HomeScreenViewController else { return }
       
-      let user = userCv.addNewUser(name: nameTextField.text, contactNumber: currentNumberTextField.text, currentWeight: Int(weightSlider.value), currentLength: Int(lengthSlider.value), calories: Int(currentCalloriesTextField.text!), choosePlan: choosePlan(), period: Int(periodSlider.value))
+      let user = userController.addNewUser(name: nameTextField.text, contactNumber: currentNumberTextField.text, currentWeight: Int(weightSlider.value), currentLength: Int(lengthSlider.value), calories: Int(currentCalloriesTextField.text!), choosePlan: currentPlanSegment.selectedSegmentIndex, period: Int(periodSlider.value))
       UserManager.shared.choosePlans(user: user)
+      guard user != nil else { return }
       destination.plan = user!.currentPlan
    }
 }

@@ -14,7 +14,7 @@ class PlanController {
    var productController = ProductController()
    
    func createGetWeightPlanPlan() -> PlanModel {
-      let getWeightPlan: PlanModel = PlanModel.init(expectedCallories: 3000)
+      let getWeightPlan: PlanModel = PlanModel.init(expectedCallories: 3200)
       getWeightPlan.products = productController.getWeightPlanProduct()
       return getWeightPlan
    }

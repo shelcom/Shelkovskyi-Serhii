@@ -11,8 +11,6 @@
 		5867CD9227481CF100CBD942 /* UserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5867CD9127481CF100CBD942 /* UserManager.swift */; };
 		5867CD972748556100CBD942 /* EatenFoodTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5867CD952748556100CBD942 /* EatenFoodTableViewCell.xib */; };
 		5867CD992748656800CBD942 /* UserController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5867CD982748656800CBD942 /* UserController.swift */; };
-		5867CD9C2748FA5300CBD942 /* PlanTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5867CD9A2748FA5300CBD942 /* PlanTableViewCell.swift */; };
-		5867CD9D2748FA5300CBD942 /* PlanTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5867CD9B2748FA5300CBD942 /* PlanTableViewCell.xib */; };
 		5867CD9F27491E5D00CBD942 /* PlanController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5867CD9E27491E5D00CBD942 /* PlanController.swift */; };
 		5867CDA12749783200CBD942 /* ProductController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5867CDA02749783200CBD942 /* ProductController.swift */; };
 		586BA8A427134BAE004C0455 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 586BA8A327134BAE004C0455 /* AppDelegate.swift */; };
@@ -33,11 +31,9 @@
 		5867CD9127481CF100CBD942 /* UserManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserManager.swift; sourceTree = "<group>"; };
 		5867CD952748556100CBD942 /* EatenFoodTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EatenFoodTableViewCell.xib; sourceTree = "<group>"; };
 		5867CD982748656800CBD942 /* UserController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserController.swift; sourceTree = "<group>"; };
-		5867CD9A2748FA5300CBD942 /* PlanTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanTableViewCell.swift; sourceTree = "<group>"; };
-		5867CD9B2748FA5300CBD942 /* PlanTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PlanTableViewCell.xib; sourceTree = "<group>"; };
 		5867CD9E27491E5D00CBD942 /* PlanController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanController.swift; sourceTree = "<group>"; };
 		5867CDA02749783200CBD942 /* ProductController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductController.swift; sourceTree = "<group>"; };
-		586BA8A027134BAE004C0455 /* ToDo List.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ToDo List.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		586BA8A027134BAE004C0455 /* Fitness App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Fitness App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		586BA8A327134BAE004C0455 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		586BA8A527134BAE004C0455 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		586BA8AA27134BAE004C0455 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -75,8 +71,6 @@
 			isa = PBXGroup;
 			children = (
 				5867CD952748556100CBD942 /* EatenFoodTableViewCell.xib */,
-				5867CD9A2748FA5300CBD942 /* PlanTableViewCell.swift */,
-				5867CD9B2748FA5300CBD942 /* PlanTableViewCell.xib */,
 				58377E69274AE53C00DD85EF /* EatenFoodTableViewCell.swift */,
 			);
 			path = TableCells;
@@ -93,7 +87,7 @@
 		586BA8A127134BAE004C0455 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				586BA8A027134BAE004C0455 /* ToDo List.app */,
+				586BA8A027134BAE004C0455 /* Fitness App.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -181,9 +175,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		586BA89F27134BAE004C0455 /* ToDo List */ = {
+		586BA89F27134BAE004C0455 /* Fitness App */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 586BA8B427134BB0004C0455 /* Build configuration list for PBXNativeTarget "ToDo List" */;
+			buildConfigurationList = 586BA8B427134BB0004C0455 /* Build configuration list for PBXNativeTarget "Fitness App" */;
 			buildPhases = (
 				586BA89C27134BAE004C0455 /* Sources */,
 				586BA89D27134BAE004C0455 /* Frameworks */,
@@ -193,9 +187,9 @@
 			);
 			dependencies = (
 			);
-			name = "ToDo List";
+			name = "Fitness App";
 			productName = "ToDo List";
-			productReference = 586BA8A027134BAE004C0455 /* ToDo List.app */;
+			productReference = 586BA8A027134BAE004C0455 /* Fitness App.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -212,7 +206,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 586BA89B27134BAE004C0455 /* Build configuration list for PBXProject "ToDo List" */;
+			buildConfigurationList = 586BA89B27134BAE004C0455 /* Build configuration list for PBXProject "Fitness App" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -225,7 +219,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				586BA89F27134BAE004C0455 /* ToDo List */,
+				586BA89F27134BAE004C0455 /* Fitness App */,
 			);
 		};
 /* End PBXProject section */
@@ -235,7 +229,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5867CD9D2748FA5300CBD942 /* PlanTableViewCell.xib in Resources */,
 				5867CD972748556100CBD942 /* EatenFoodTableViewCell.xib in Resources */,
 				586BA8B027134BB0004C0455 /* LaunchScreen.storyboard in Resources */,
 				586BA8AD27134BB0004C0455 /* Assets.xcassets in Resources */,
@@ -254,7 +247,6 @@
 				58CD60102747C0C300399D59 /* UserDataViewController.swift in Sources */,
 				5867CD992748656800CBD942 /* UserController.swift in Sources */,
 				58377E6A274AE53C00DD85EF /* EatenFoodTableViewCell.swift in Sources */,
-				5867CD9C2748FA5300CBD942 /* PlanTableViewCell.swift in Sources */,
 				58CD60152748061400399D59 /* HomeScreenViewController.swift in Sources */,
 				58CD601827480D1A00399D59 /* AddDishesViewController.swift in Sources */,
 				586BA8A427134BAE004C0455 /* AppDelegate.swift in Sources */,
@@ -446,7 +438,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		586BA89B27134BAE004C0455 /* Build configuration list for PBXProject "ToDo List" */ = {
+		586BA89B27134BAE004C0455 /* Build configuration list for PBXProject "Fitness App" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				586BA8B227134BB0004C0455 /* Debug */,
@@ -455,7 +447,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		586BA8B427134BB0004C0455 /* Build configuration list for PBXNativeTarget "ToDo List" */ = {
+		586BA8B427134BB0004C0455 /* Build configuration list for PBXNativeTarget "Fitness App" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				586BA8B527134BB0004C0455 /* Debug */,

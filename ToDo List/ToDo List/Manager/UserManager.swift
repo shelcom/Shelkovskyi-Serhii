@@ -8,6 +8,7 @@
 import Foundation
 
 class UserManager {
+   
    static let shared = UserManager()
     
    var user: UserModel?
@@ -16,11 +17,11 @@ class UserManager {
    func choosePlans(user: UserModel?) {
       if user != nil {
          switch user!.choosePlan {
-            case "getWeightPlan":
+            case 0:
                user!.currentPlan = planController.createGetWeightPlanPlan()
-            case "loseWeightPlan":
+            case 1:
                user!.currentPlan = planController.createLoseWeightPlan()
-            case "maintainingWeightPlan":
+            case 2:
                user!.currentPlan = planController.createMaintainingWeightPlan()
             default:
                break

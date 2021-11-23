@@ -9,47 +9,53 @@ import UIKit
 
 class AddDishesViewController: UIViewController {
    
-   @IBOutlet var firstFoodSwitch: UISwitch!
-   @IBOutlet var secondFoodSwitch: UISwitch!
-   @IBOutlet var thirdFoodSwitch: UISwitch!
-   @IBOutlet var firstCountTextField: UITextField!
-   @IBOutlet var secondCountTextField: UITextField!
-   @IBOutlet var thirdCountTextField: UITextField!
-   @IBOutlet var firstNameLabel: UILabel!
-   @IBOutlet var secondNameLabel: UILabel!
-   @IBOutlet var thirdNameLabel: UILabel!
+   @IBOutlet var addFoodTable: UITableView!
    
    let productController = ProductController()
-   var competion: (([ProductModel]?) -> ())?
-   var firstProduct: [String]? = []
-   var secondProduct: [String]? = []
-   var thirdProduct: [String]? = []
+   var competion: ((ProductModel?) -> ())?
+   var chooseProduct: ProductModel?
    
    override func viewDidLoad() {
       super.viewDidLoad()
+      
+      prepareTableView()
+   }
+   
+   func prepareTableView() {
+      addFoodTable.delegate = self
+      addFoodTable.dataSource = self
+      addFoodTable.register(UINib.init(nibName: "EatenFoodTableViewCell", bundle: nil), forCellReuseIdentifier: "EatenFoodCell")
    }
    
    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
       self.view.endEditing(true)
    }
    
-   func checkFirstEatenProduct() {
-      firstFoodSwitch.isOn ? firstProduct!.append(contentsOf: [firstNameLabel.text!, firstCountTextField!.text!]) : nil
-   }
-   
-   func checkSecondEatenProduct() {
-      secondFoodSwitch.isOn ? secondProduct!.append(contentsOf: [secondNameLabel.text!, secondCountTextField!.text!]) : nil
-   }
-   
-   func checkThirdEatenProduct() {
-      thirdFoodSwitch.isOn ? thirdProduct!.append(contentsOf: [thirdNameLabel.text!, thirdCountTextField!.text!]) : nil
-   }
-   
    @IBAction func closeAction(_ sender: Any) {
-      checkFirstEatenProduct()
-      checkSecondEatenProduct()
-      checkThirdEatenProduct()
-      competion?(productController.chooseEatenProduct(firstProduct: firstProduct, secondProduct: secondProduct, thirdProduct: thirdProduct))
+      competion?(chooseProduct)
       self.dismiss(animated: true, completion: nil)
+   }
+}
+
+extension AddDishesViewController: UITableViewDelegate, UITableViewDataSource {
+   
+   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+      return productController.productsCount()
+   }
+   
+   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+      if tableView == addFoodTable,
+         let cell = addFoodTable.dequeueReusableCell(withIdentifier: "EatenFoodCell") as? EatenFoodTableViewCell {
+         if productController.productsCount() > 0 {
+            cell.fill(with: productController.product(by: indexPath.row))
+         }
+         return cell
+      }
+      
+      return UITableViewCell()
+   }
+   
+   func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+      chooseProduct = productController.product(by: indexPath.row)
    }
 }

@@ -10,7 +10,6 @@ import UIKit
 class EatenFoodTableViewCell: UITableViewCell {
 
    @IBOutlet var nameLabel: UILabel!
-   @IBOutlet var countLabel: UILabel!
    @IBOutlet var caloriesLabel: UILabel!
       
    override func awakeFromNib() {
@@ -19,7 +18,6 @@ class EatenFoodTableViewCell: UITableViewCell {
       
    func fill(with model: ProductModel?) {
       nameLabel.text = model!.name
-      countLabel.text = model!.count
       caloriesLabel.text = "\(model!.calories!)"
    }
 }
