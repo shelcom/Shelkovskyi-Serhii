@@ -17,10 +17,7 @@ class LoginViewController: BaseViewController, UITextFieldDelegate {
    @IBOutlet var loginButton: UIButton!
    @IBOutlet var registrationButton: UIButton!
    
-   let expectedEmail = "hi@gmail.com"
-   let expectedPassword = "12345678"
    var resultLabel: UILabel!
-   
    
    override func viewDidLoad() {
       super.viewDidLoad()
@@ -71,10 +68,19 @@ class LoginViewController: BaseViewController, UITextFieldDelegate {
       if identifier != "fromLoginToTaskList" {
          return true
       }
+
+      let credentialController = CredentialsController(credentials: Credentials(email: emailTextField.text,
+                                                                                password: passwordTextField.text))
+      let result = credentialController.validate()
       
-      let result = LoginCredentials(email: emailTextField.text, password: passwordTextField.text).validate()
-      fillResaultLable(someText: result.1)
-      return result.0
+      if result.0 {
+         let checkCredentials = credentialController.checkCredentials()
+         fillResaultLable(someText: checkCredentials.1)
+         return checkCredentials.0
+      } else {
+         fillResaultLable(someText: result.1)
+         return result.0
+      }
    }
    
    func fillResaultLable(someText: String) {
