@@ -34,11 +34,14 @@ class RegistrationViewController: UIViewController, UITextFieldDelegate {
       resultLabel.translatesAutoresizingMaskIntoConstraints = false
       NSLayoutConstraint.init(item: resultLabel!, attribute: .bottom, relatedBy: .equal, toItem: registrationEmailLable, attribute: .top, multiplier: 1, constant: -20).isActive = true
       NSLayoutConstraint.init(item: resultLabel!, attribute: .left, relatedBy: .equal, toItem: view, attribute: .left, multiplier: 1, constant: 20).isActive = true
+      
+      let tapGesture = UITapGestureRecognizer.init(target: self, action: #selector(hideKeyboard))
+      view.isUserInteractionEnabled = true
+      view.addGestureRecognizer(tapGesture)
    }
    
-   // hide keyboard (Tells this object that one or more new touches occurred in a view or window.)
-   override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-      self.view.endEditing(true)
+   @objc func hideKeyboard() {
+      view.endEditing(true)
    }
    
    //Asks the delegate whether to process the pressing of the Return button for the text field.
@@ -64,7 +67,8 @@ class RegistrationViewController: UIViewController, UITextFieldDelegate {
    
    // pressing the button registrationButton
    override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
-      let result = Credentials(email: registrationEmailField.text, password: registrationPasswordField.text).validate()
+      let result = CredentialsController(credentials: Credentials(email:registrationEmailField.text,password:
+                                                                  registrationPasswordField.text)).validate()
       fillResaultLable(someText: result.1)
       return result.0
    }
