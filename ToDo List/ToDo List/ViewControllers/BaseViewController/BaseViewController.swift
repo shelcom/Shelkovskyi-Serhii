@@ -13,10 +13,13 @@ class BaseViewController: UIViewController {
       super.viewDidLoad()
       
       view.backgroundColor = .orange
+      
+      let tapGesture = UITapGestureRecognizer.init(target: self, action: #selector(hideKeyboard))
+      view.isUserInteractionEnabled = true
+      view.addGestureRecognizer(tapGesture)
    }
    
-   // hide keyboard (Tells this object that one or more new touches occurred in a view or window.)
-   override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-      self.view.endEditing(true)
+   @objc func hideKeyboard() {
+      view.endEditing(true)
    }
 }
