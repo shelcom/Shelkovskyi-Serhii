@@ -17,10 +17,7 @@ class LoginViewController: BaseViewController, UITextFieldDelegate {
    @IBOutlet var loginButton: UIButton!
    @IBOutlet var registrationButton: UIButton!
    
-   let expectedEmail = "hi@gmail.com"
-   let expectedPassword = "12345678"
    var resultLabel: UILabel!
-   
    
    override func viewDidLoad() {
       super.viewDidLoad()
@@ -42,7 +39,7 @@ class LoginViewController: BaseViewController, UITextFieldDelegate {
       NSLayoutConstraint.init(item: resultLabel!, attribute: .left, relatedBy: .equal, toItem: view, attribute: .left, multiplier: 1, constant: 20).isActive = true
       
       // Rounds a loginButton
-      loginButton.layer.cornerRadius = 12
+      loginButton.layer.cornerRadius = loginButton.layer.frame.height / 2
    }
    
    //Asks the delegate whether to process the pressing of the Return button for the text field.
@@ -71,13 +68,16 @@ class LoginViewController: BaseViewController, UITextFieldDelegate {
       if identifier != "fromLoginToTaskList" {
          return true
       }
-      
-      let result = LoginCredentials(email: emailTextField.text, password: passwordTextField.text).validate()
-      fillResaultLable(someText: result.1)
-      return result.0
-   }
-   
-   func fillResaultLable(someText: String) {
-      self.resultLabel.text = someText
+
+      let credentialController = CredentialsController(credentials: Credentials(email: emailTextField.text,
+                                                                                password: passwordTextField.text))
+      do {
+         try credentialController.validate()
+         try credentialController.checkCredentials()
+         return true
+      } catch {
+         resultLabel.text = (error as! CredentialsError).description
+         return false
+      }
    }
 }
