@@ -39,7 +39,7 @@ class LoginViewController: BaseViewController, UITextFieldDelegate {
       NSLayoutConstraint.init(item: resultLabel!, attribute: .left, relatedBy: .equal, toItem: view, attribute: .left, multiplier: 1, constant: 20).isActive = true
       
       // Rounds a loginButton
-      loginButton.layer.cornerRadius = 12
+      loginButton.layer.cornerRadius = loginButton.layer.frame.height / 2
    }
    
    //Asks the delegate whether to process the pressing of the Return button for the text field.
@@ -71,19 +71,13 @@ class LoginViewController: BaseViewController, UITextFieldDelegate {
 
       let credentialController = CredentialsController(credentials: Credentials(email: emailTextField.text,
                                                                                 password: passwordTextField.text))
-      let result = credentialController.validate()
-      
-      if result.0 {
-         let checkCredentials = credentialController.checkCredentials()
-         fillResaultLable(someText: checkCredentials.1)
-         return checkCredentials.0
-      } else {
-         fillResaultLable(someText: result.1)
-         return result.0
+      do {
+         try credentialController.validate()
+         try credentialController.checkCredentials()
+         return true
+      } catch {
+         resultLabel.text = (error as! CredentialsError).description
+         return false
       }
-   }
-   
-   func fillResaultLable(someText: String) {
-      self.resultLabel.text = someText
    }
 }

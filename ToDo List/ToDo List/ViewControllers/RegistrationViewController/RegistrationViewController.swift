@@ -14,6 +14,7 @@ class RegistrationViewController: UIViewController, UITextFieldDelegate {
    @IBOutlet var registrationEmailLable: UILabel!
    @IBOutlet var registrationPasswordLable: UILabel!
    @IBOutlet var registrationPasswordField: UITextField!
+   @IBOutlet var registrationButton: UIButton!
    
    var resultLabel: UILabel!
    
@@ -38,6 +39,8 @@ class RegistrationViewController: UIViewController, UITextFieldDelegate {
       let tapGesture = UITapGestureRecognizer.init(target: self, action: #selector(hideKeyboard))
       view.isUserInteractionEnabled = true
       view.addGestureRecognizer(tapGesture)
+      
+      registrationButton.layer.cornerRadius = registrationButton.layer.frame.height / 2
    }
    
    @objc func hideKeyboard() {
@@ -67,14 +70,14 @@ class RegistrationViewController: UIViewController, UITextFieldDelegate {
    
    // pressing the button registrationButton
    override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
-      let result = CredentialsController(credentials: Credentials(email:registrationEmailField.text,password:
-                                                                  registrationPasswordField.text)).validate()
-      fillResaultLable(someText: result.1)
-      return result.0
-   }
-   
-   func fillResaultLable(someText: String) {
-      self.resultLabel.text = someText
+      let credentialController = CredentialsController(credentials: Credentials(email:registrationEmailField.text,
+                                                                                password:registrationPasswordField.text))
+      do {
+         try credentialController.validate()
+         return true
+      } catch {
+         resultLabel.text = (error as! CredentialsError).description
+         return false
+      }
    }
 }
-      

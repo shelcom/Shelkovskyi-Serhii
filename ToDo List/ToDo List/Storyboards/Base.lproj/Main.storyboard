@@ -35,12 +35,12 @@
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Pleace type your password" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="aUk-W2-AS5" userLabel="passwordField">
                                 <rect key="frame" x="20" y="484" width="350" height="34"/>
                                 <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="words" keyboardType="numbersAndPunctuation" returnKeyType="done" enablesReturnKeyAutomatically="YES" secureTextEntry="YES" textContentType="password"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation" returnKeyType="done" enablesReturnKeyAutomatically="YES" secureTextEntry="YES" textContentType="password"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Pleace type your email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Gnb-p0-oeU" userLabel="emailField">
                                 <rect key="frame" x="16" y="380" width="354" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="words" keyboardType="emailAddress" returnKeyType="next" textContentType="email"/>
+                                <textInputTraits key="textInputTraits" keyboardType="emailAddress" returnKeyType="next" textContentType="email"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZhG-uf-09I" userLabel="emailLabel">
                                 <rect key="frame" x="20" y="332.33333333333331" width="350" height="27.666666666666686"/>
@@ -56,7 +56,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <segue destination="hC5-ck-xa6" kind="show" id="ggj-Uq-une"/>
+                                    <segue destination="hC5-ck-xa6" kind="show" identifier="RegistrationViewController" id="ggj-Uq-une"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="68w-DL-xpU" userLabel="loginButton">
@@ -102,7 +102,7 @@
                     <connections>
                         <outlet property="emailLabel" destination="ZhG-uf-09I" id="PdX-hj-doq"/>
                         <outlet property="emailTextField" destination="Gnb-p0-oeU" id="jkt-TD-ppC"/>
-                        <outlet property="loginButton" destination="rKX-7D-L7H" id="gHh-ZZ-ddg"/>
+                        <outlet property="loginButton" destination="68w-DL-xpU" id="K2D-Kv-RUf"/>
                         <outlet property="passwordLabel" destination="6xg-Ej-O23" id="dLs-ff-fPj"/>
                         <outlet property="passwordTextField" destination="aUk-W2-AS5" id="hLy-mO-0J5"/>
                         <outlet property="registrationButton" destination="rKX-7D-L7H" id="XbO-vZ-dsB"/>
@@ -127,7 +127,9 @@
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ViH-Fv-CmY">
                                 <rect key="frame" x="278" y="726" width="96" height="63"/>
-                                <state key="normal" title="Create"/>
+                                <state key="normal" title="Create">
+                                    <color key="titleColor" systemColor="systemOrangeColor"/>
+                                </state>
                                 <connections>
                                     <segue destination="oDx-Vt-xnZ" kind="presentation" id="cXT-kF-CxZ"/>
                                 </connections>
@@ -174,7 +176,7 @@
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <attributedString key="attributedText">
                                     <fragment>
-                                        <mutableString key="content">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda. </mutableString>
+                                        <string key="content">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda. </string>
                                         <attributes>
                                             <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                             <font key="NSFont" metaFont="system" size="14"/>
@@ -245,7 +247,7 @@
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Pleace type your email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jmP-l0-Mka" userLabel="emailField">
                                 <rect key="frame" x="16" y="380" width="354" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="words" keyboardType="emailAddress" returnKeyType="next" textContentType="email"/>
+                                <textInputTraits key="textInputTraits" keyboardType="emailAddress" returnKeyType="next" textContentType="email"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0OJ-LK-B7p" userLabel="registrationEmailLabel">
                                 <rect key="frame" x="20" y="331.33333333333331" width="350" height="28.666666666666686"/>
@@ -290,6 +292,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="Zgn-n6-Dao"/>
                     <connections>
+                        <outlet property="registrationButton" destination="gL8-Dy-XNz" id="9bo-a7-8NX"/>
                         <outlet property="registrationEmailField" destination="jmP-l0-Mka" id="K49-6L-Mdj"/>
                         <outlet property="registrationEmailLable" destination="0OJ-LK-B7p" id="lQO-gr-cvo"/>
                         <outlet property="registrationLable" destination="Cka-6T-pqi" id="6Md-gf-daT"/>
@@ -321,7 +324,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="VsO-r9-Mfn"/>
+        <segue reference="wR8-d6-fM0"/>
     </inferredMetricsTieBreakers>
     <resources>
         <systemColor name="systemBackgroundColor">

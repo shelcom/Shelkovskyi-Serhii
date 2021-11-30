@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		581565CC2728162200537789 /* TaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 581565CB2728162200537789 /* TaskViewController.swift */; };
+		581AEDAB275636E700E01399 /* CredentialsError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 581AEDAA275636E700E01399 /* CredentialsError.swift */; };
 		581DC2812735C57F00A821C1 /* TaskController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 581DC2802735C57F00A821C1 /* TaskController.swift */; };
 		5851DD1527272899007F1B39 /* TaskListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5851DD1427272899007F1B39 /* TaskListViewController.swift */; };
 		586BA8A427134BAE004C0455 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 586BA8A327134BAE004C0455 /* AppDelegate.swift */; };
@@ -27,6 +28,7 @@
 
 /* Begin PBXFileReference section */
 		581565CB2728162200537789 /* TaskViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskViewController.swift; sourceTree = "<group>"; };
+		581AEDAA275636E700E01399 /* CredentialsError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CredentialsError.swift; sourceTree = "<group>"; };
 		581DC2802735C57F00A821C1 /* TaskController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskController.swift; sourceTree = "<group>"; };
 		5851DD1427272899007F1B39 /* TaskListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskListViewController.swift; sourceTree = "<group>"; };
 		586BA8A027134BAE004C0455 /* ToDo List.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ToDo List.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -63,6 +65,14 @@
 				581565CB2728162200537789 /* TaskViewController.swift */,
 			);
 			path = TaskViewController;
+			sourceTree = "<group>";
+		};
+		581AEDA9275636AA00E01399 /* Errors */ = {
+			isa = PBXGroup;
+			children = (
+				581AEDAA275636E700E01399 /* CredentialsError.swift */,
+			);
+			path = Errors;
 			sourceTree = "<group>";
 		};
 		5851DD1327272859007F1B39 /* TaskListViewController */ = {
@@ -138,6 +148,7 @@
 		58A51F77272AFADE00FB75F0 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				581AEDA9275636AA00E01399 /* Errors */,
 				581DC2802735C57F00A821C1 /* TaskController.swift */,
 				5876ACB82751191600B0F496 /* CredentialsController.swift */,
 			);
@@ -265,6 +276,7 @@
 				581DC2812735C57F00A821C1 /* TaskController.swift in Sources */,
 				58CD5029273A9AE400526E43 /* TaskTableViewCell.swift in Sources */,
 				586BA8A427134BAE004C0455 /* AppDelegate.swift in Sources */,
+				581AEDAB275636E700E01399 /* CredentialsError.swift in Sources */,
 				586BA8A627134BAE004C0455 /* SceneDelegate.swift in Sources */,
 				5876ACB92751191600B0F496 /* CredentialsController.swift in Sources */,
 				5851DD1527272899007F1B39 /* TaskListViewController.swift in Sources */,

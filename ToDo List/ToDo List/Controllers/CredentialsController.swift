@@ -17,34 +17,34 @@ class CredentialsController {
    }
    
    //Validate email and password
-   func validate() -> (Bool, String) {
+   func validate() throws {
       if let email = credentials.email,
          let password = credentials.password {
          if email.isEmpty {
+            throw CredentialsError.emptyFields
          } else {
             if email.contains("@") {
                if password.count >= 8 {
-                  return (true, "Success")
+                  print("Success")
                } else {
-                  return (false, "Fail: Password must be at least 8 symbols")
+                  throw CredentialsError.wrongPasswordFormat
                }
             } else {
-               return (false, "Fail: Wrong email format")
+               throw CredentialsError.wrongEmailFormat
             }
          }
       }
-      return (false, "Fail: Please enter the data")
    }
    
-   func checkCredentials() -> (Bool, String) {
+   func checkCredentials() throws {
       if credentials.email == expectedCredentials.email {
-         if credentials.password == credentials.password {
-            return (true, "Success")
+         if credentials.password == expectedCredentials.password {
+            print("Success")
          } else {
-            return (false, "Fail: Wrong passeord")
+            throw CredentialsError.wrongPassword
          }
       } else {
-         return (false, "Fail: Wrong email addess")
+         throw CredentialsError.wrongEmail
       }
    }
 }
