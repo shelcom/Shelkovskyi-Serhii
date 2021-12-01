@@ -12,15 +12,21 @@ class ProductController {
    private var products: [ProductModel] = [ProductModel.init(name: "BigMac", calories: 1000, weight: "300", count: "1"),
                                            ProductModel.init(name: "Soup", calories: 500, weight: "300", count: "1"),
                                            ProductModel.init(name: "Lemon", calories: 100, weight: "300", count: "1"),
-                                           ProductModel.init(name: "Bread", calories: 200, weight: "300", count: "1"),
-                                           ProductModel.init(name: "Cherry", calories: 200, weight: "300", count: "1"),
                                            ProductModel.init(name: "Steak", calories: 1200, weight: "300", count: "1"),
                                            ProductModel.init(name: "Soup", calories: 800, weight: "300", count: "1"),
                                            ProductModel.init(name: "Salad", calories: 400, weight: "300", count: "1"),
                                            ProductModel.init(name: "Fish", calories: 400, weight: "300", count: "1"),
                                            ProductModel.init(name: "Rice", calories: 400, weight: "300", count: "1"),
-                                           ProductModel.init(name: "Pizza", calories: 1000, weight: "300", count: "1"),
-                                           ProductModel.init(name: "Eggs", calories: 800, weight: "300", count: "1"),]
+                                           ProductModel.init(name: "Pizza", calories: 1000, weight: "300", count: "1")]
+   
+   func initNewProduct(name: String, calories: Int, weight: String, count: String) -> ProductModel {
+      let product = ProductModel.init(name: name, calories: calories, weight: weight, count: count)
+      return product
+   }
+   
+   func add(product: ProductModel) {
+      products.append(product)
+   }
    
    func product(by index: Int) -> ProductModel {
       products[index]

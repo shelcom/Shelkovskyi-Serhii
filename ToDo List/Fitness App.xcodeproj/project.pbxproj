@@ -18,6 +18,7 @@
 		586BA8AB27134BAE004C0455 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 586BA8A927134BAE004C0455 /* Main.storyboard */; };
 		586BA8AD27134BB0004C0455 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 586BA8AC27134BB0004C0455 /* Assets.xcassets */; };
 		586BA8B027134BB0004C0455 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 586BA8AE27134BB0004C0455 /* LaunchScreen.storyboard */; };
+		589FC1352756AC5100D93734 /* AddNewDishesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 589FC1342756AC5100D93734 /* AddNewDishesViewController.swift */; };
 		58CD60102747C0C300399D59 /* UserDataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58CD600F2747C0C300399D59 /* UserDataViewController.swift */; };
 		58CD60152748061400399D59 /* HomeScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58CD60142748061400399D59 /* HomeScreenViewController.swift */; };
 		58CD601827480D1A00399D59 /* AddDishesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58CD601727480D1A00399D59 /* AddDishesViewController.swift */; };
@@ -40,6 +41,7 @@
 		586BA8AC27134BB0004C0455 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		586BA8AF27134BB0004C0455 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		586BA8B127134BB0004C0455 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		589FC1342756AC5100D93734 /* AddNewDishesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewDishesViewController.swift; sourceTree = "<group>"; };
 		58CD600F2747C0C300399D59 /* UserDataViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDataViewController.swift; sourceTree = "<group>"; };
 		58CD60142748061400399D59 /* HomeScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreenViewController.swift; sourceTree = "<group>"; };
 		58CD601727480D1A00399D59 /* AddDishesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddDishesViewController.swift; sourceTree = "<group>"; };
@@ -109,6 +111,14 @@
 			path = "ToDo List";
 			sourceTree = "<group>";
 		};
+		589FC1332756AC0B00D93734 /* AddNewDishesViewController */ = {
+			isa = PBXGroup;
+			children = (
+				589FC1342756AC5100D93734 /* AddNewDishesViewController.swift */,
+			);
+			path = AddNewDishesViewController;
+			sourceTree = "<group>";
+		};
 		58A51F73272AF79F00FB75F0 /* Models */ = {
 			isa = PBXGroup;
 			children = (
@@ -122,6 +132,7 @@
 		58A51F76272AFAB400FB75F0 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				589FC1332756AC0B00D93734 /* AddNewDishesViewController */,
 				58CD601627480D0500399D59 /* AddDishesViewController */,
 				58CD6013274805FF00399D59 /* HomeScreenViewController */,
 				58CD600E2747C0AA00399D59 /* UserDataViewController */,
@@ -251,6 +262,7 @@
 				58CD601827480D1A00399D59 /* AddDishesViewController.swift in Sources */,
 				586BA8A427134BAE004C0455 /* AppDelegate.swift in Sources */,
 				58FE95E22748144E000B72BA /* UserModel.swift in Sources */,
+				589FC1352756AC5100D93734 /* AddNewDishesViewController.swift in Sources */,
 				5867CDA12749783200CBD942 /* ProductController.swift in Sources */,
 				5867CD9F27491E5D00CBD942 /* PlanController.swift in Sources */,
 				58FE95E427481467000B72BA /* ProductModel.swift in Sources */,

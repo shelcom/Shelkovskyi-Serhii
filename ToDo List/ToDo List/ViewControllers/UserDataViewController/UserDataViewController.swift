@@ -19,6 +19,7 @@ class UserDataViewController: UIViewController {
    @IBOutlet var lengthSlider: UISlider!
    @IBOutlet var periodSlider: UISlider!
    @IBOutlet var currentPlanSegment: UISegmentedControl!
+   @IBOutlet var calculateButton: UIButton!
    
    var userController = UserController()
    
@@ -26,6 +27,7 @@ class UserDataViewController: UIViewController {
       super.viewDidLoad()
       
       self.view.backgroundColor = UIColor(patternImage: UIImage(named: "backgroundPhoto1")!)
+      calculateButton.layer.cornerRadius = calculateButton.layer.frame.height / 2
    }
    
    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {

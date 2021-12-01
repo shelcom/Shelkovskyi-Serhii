@@ -10,13 +10,16 @@ import UIKit
 class AddDishesViewController: UIViewController {
    
    @IBOutlet var addFoodTable: UITableView!
+   @IBOutlet var addFoodButton: UIButton!
    
    let productController = ProductController()
    var competion: ((ProductModel?) -> ())?
+   var competionTwo: (() -> (ProductModel?))?
    var chooseProduct: ProductModel?
    
    override func viewDidLoad() {
       super.viewDidLoad()
+      addFoodButton.layer.cornerRadius = addFoodButton.layer.frame.height / 2
       
       prepareTableView()
    }
@@ -31,9 +34,18 @@ class AddDishesViewController: UIViewController {
       self.view.endEditing(true)
    }
    
+   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+      if let vc = segue.destination as? AddNewDishesViewController {
+         vc.competionTwo = { (nfn) in
+            self.productController.add(product: nfn!)
+            self.addFoodTable.reloadData()
+            }
+         }
+      }
+   
    @IBAction func closeAction(_ sender: Any) {
       competion?(chooseProduct)
-      self.dismiss(animated: true, completion: nil)
+      self.navigationController?.popViewController(animated: true)
    }
 }
 

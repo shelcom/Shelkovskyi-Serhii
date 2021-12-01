@@ -11,7 +11,7 @@
         <!--Add Your Params-->
         <scene sceneID="hzl-8i-0ZF">
             <objects>
-                <viewController id="yPe-an-gwh" customClass="UserDataViewController" customModule="ToDo_List" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="yPe-an-gwh" customClass="UserDataViewController" customModule="Fitness_App" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="PwY-e1-1e2">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -177,6 +177,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="Add Your Params" id="XAW-75-zpz"/>
                     <connections>
+                        <outlet property="calculateButton" destination="1UW-Zu-OKM" id="2V1-zw-JB3"/>
                         <outlet property="currentCalloriesTextField" destination="lrI-tZ-ASo" id="tCp-qB-tdU"/>
                         <outlet property="currentLengthLabel" destination="Var-i5-2RF" id="U3x-Sz-f5V"/>
                         <outlet property="currentNumberTextField" destination="BrC-3e-aCs" id="T0e-8a-XO5"/>
@@ -196,7 +197,7 @@
         <!--Home Screen View Controller-->
         <scene sceneID="TEi-Ne-7hn">
             <objects>
-                <viewController id="mfc-r0-xAa" customClass="HomeScreenViewController" customModule="ToDo_List" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="mfc-r0-xAa" customClass="HomeScreenViewController" customModule="Fitness_App" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="TUc-I1-7eF">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -262,7 +263,7 @@
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Add Food"/>
                                 <connections>
-                                    <segue destination="smP-iM-TqP" kind="presentation" identifier="AddDishesViewController" id="JaO-P5-5ln"/>
+                                    <segue destination="smP-iM-TqP" kind="show" identifier="AddDishesViewController" id="JaO-P5-5ln"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -303,6 +304,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="vqc-SA-Rmn"/>
                     <connections>
+                        <outlet property="addFoodButton" destination="eSh-pa-06l" id="kdv-o7-y0M"/>
                         <outlet property="caloriesPerDayLabel" destination="1yh-zu-vtm" id="gON-3K-rZe"/>
                         <outlet property="caloriesSlider" destination="glM-1f-HjG" id="Ubx-Zp-jST"/>
                         <outlet property="foodTableView" destination="BuQ-ED-BNm" id="Gyb-BH-Gno"/>
@@ -318,21 +320,21 @@
         <!--Add Dishes View Controller-->
         <scene sceneID="ady-GU-67l">
             <objects>
-                <viewController id="smP-iM-TqP" customClass="AddDishesViewController" customModule="ToDo_List" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="smP-iM-TqP" customClass="AddDishesViewController" customModule="Fitness_App" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ttl-of-vHv">
-                        <rect key="frame" x="0.0" y="0.0" width="390" height="790"/>
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add Food" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="abe-lO-yOT">
-                                <rect key="frame" x="20" y="10" width="350" height="32.333333333333336"/>
+                                <rect key="frame" x="20" y="98" width="350" height="32.333333333333343"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="27"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="o6X-hL-b50">
-                                <rect key="frame" x="20" y="705" width="350" height="31"/>
-                                <color key="backgroundColor" systemColor="systemBrownColor"/>
-                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <rect key="frame" x="20" y="710" width="350" height="31"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="tintColor" systemColor="systemBrownColor"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Add Food"/>
                                 <connections>
@@ -340,7 +342,7 @@
                                 </connections>
                             </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="BrR-Kb-bfd">
-                                <rect key="frame" x="0.0" y="62.333333333333314" width="390" height="622.66666666666674"/>
+                                <rect key="frame" x="0.0" y="150.33333333333331" width="390" height="539.66666666666674"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <color key="sectionIndexBackgroundColor" red="1" green="0.98675527507647076" blue="0.84600384935310635" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </tableView>
@@ -360,13 +362,105 @@
                             <constraint firstItem="Xgt-Yq-tI0" firstAttribute="trailing" secondItem="o6X-hL-b50" secondAttribute="trailing" constant="20" id="tLs-Vi-H6u"/>
                         </constraints>
                     </view>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" id="fae-ZD-yLi">
+                        <barButtonItem key="rightBarButtonItem" title="Add New Food" id="Ghz-e7-BCj">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <connections>
+                                <segue destination="iAH-jG-M4P" kind="presentation" id="FjQ-oe-TaP"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="addFoodButton" destination="o6X-hL-b50" id="wP8-vw-Rxi"/>
                         <outlet property="addFoodTable" destination="BrR-Kb-bfd" id="z1X-ju-R9N"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wgk-N6-MLY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2447.6923076923076" y="-326.30331753554503"/>
+        </scene>
+        <!--Add New Dishes View Controller-->
+        <scene sceneID="g7I-px-Ot2">
+            <objects>
+                <viewController id="iAH-jG-M4P" customClass="AddNewDishesViewController" customModule="Fitness_App" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="sfn-QU-ZWD">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="790"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add New Food" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SWE-mo-zxJ">
+                                <rect key="frame" x="20" y="20.000000000000004" width="350" height="32.333333333333343"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="27"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Name Product" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="faP-a6-jTa">
+                                <rect key="frame" x="20" y="92.333333333333329" width="350" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="next"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Calories" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zf8-sO-IKn">
+                                <rect key="frame" x="20" y="146.33333333333334" width="350" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="next"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Weight" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9bG-xq-z5j">
+                                <rect key="frame" x="20" y="200.33333333333334" width="350" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="next"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Count" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4Pi-fB-RqD">
+                                <rect key="frame" x="20" y="254.33333333333337" width="350" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a0S-y1-g9h">
+                                <rect key="frame" x="20" y="328.33333333333331" width="350" height="31"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="tintColor" systemColor="systemBrownColor"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Add New Food"/>
+                                <connections>
+                                    <action selector="addNewFood:" destination="iAH-jG-M4P" eventType="touchUpInside" id="BNi-hG-sSV"/>
+                                    <action selector="closeAction:" destination="smP-iM-TqP" eventType="touchUpInside" id="Zxv-eF-I5Y"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="hJb-O8-knV"/>
+                        <color key="backgroundColor" systemColor="systemBrownColor"/>
+                        <constraints>
+                            <constraint firstItem="a0S-y1-g9h" firstAttribute="top" secondItem="4Pi-fB-RqD" secondAttribute="bottom" constant="40" id="0KE-HU-zqc"/>
+                            <constraint firstItem="faP-a6-jTa" firstAttribute="top" secondItem="SWE-mo-zxJ" secondAttribute="bottom" constant="40" id="4im-zy-exP"/>
+                            <constraint firstItem="hJb-O8-knV" firstAttribute="trailing" secondItem="SWE-mo-zxJ" secondAttribute="trailing" constant="20" id="4ry-4m-9Y4"/>
+                            <constraint firstItem="hJb-O8-knV" firstAttribute="trailing" secondItem="faP-a6-jTa" secondAttribute="trailing" constant="20" id="AOb-HH-kSA"/>
+                            <constraint firstItem="a0S-y1-g9h" firstAttribute="leading" secondItem="hJb-O8-knV" secondAttribute="leading" constant="20" id="DhT-gI-W1M"/>
+                            <constraint firstItem="hJb-O8-knV" firstAttribute="trailing" secondItem="zf8-sO-IKn" secondAttribute="trailing" constant="20" id="DlL-9v-BoV"/>
+                            <constraint firstItem="SWE-mo-zxJ" firstAttribute="leading" secondItem="hJb-O8-knV" secondAttribute="leading" constant="20" id="Mcs-iV-ed2"/>
+                            <constraint firstItem="9bG-xq-z5j" firstAttribute="leading" secondItem="hJb-O8-knV" secondAttribute="leading" constant="20" id="ThE-XT-pOp"/>
+                            <constraint firstItem="hJb-O8-knV" firstAttribute="trailing" secondItem="9bG-xq-z5j" secondAttribute="trailing" constant="20" id="UnR-hL-Ypd"/>
+                            <constraint firstItem="faP-a6-jTa" firstAttribute="leading" secondItem="hJb-O8-knV" secondAttribute="leading" constant="20" id="UsL-ee-Oz6"/>
+                            <constraint firstItem="SWE-mo-zxJ" firstAttribute="top" secondItem="hJb-O8-knV" secondAttribute="top" constant="20" id="WsD-EP-yGf"/>
+                            <constraint firstItem="hJb-O8-knV" firstAttribute="trailing" secondItem="4Pi-fB-RqD" secondAttribute="trailing" constant="20" id="dfq-kf-9gN"/>
+                            <constraint firstItem="4Pi-fB-RqD" firstAttribute="top" secondItem="9bG-xq-z5j" secondAttribute="bottom" constant="20" id="hTA-pr-7eL"/>
+                            <constraint firstItem="hJb-O8-knV" firstAttribute="trailing" secondItem="a0S-y1-g9h" secondAttribute="trailing" constant="20" id="i8a-pH-8Pn"/>
+                            <constraint firstItem="4Pi-fB-RqD" firstAttribute="leading" secondItem="hJb-O8-knV" secondAttribute="leading" constant="20" id="qzD-jJ-rbZ"/>
+                            <constraint firstItem="zf8-sO-IKn" firstAttribute="top" secondItem="faP-a6-jTa" secondAttribute="bottom" constant="20" id="r8P-tS-f5w"/>
+                            <constraint firstItem="zf8-sO-IKn" firstAttribute="leading" secondItem="hJb-O8-knV" secondAttribute="leading" constant="20" id="rIJ-kD-wZP"/>
+                            <constraint firstItem="9bG-xq-z5j" firstAttribute="top" secondItem="zf8-sO-IKn" secondAttribute="bottom" constant="20" id="spw-hZ-5Wb"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="addNewFoodButton" destination="a0S-y1-g9h" id="NLr-rH-VO4"/>
+                        <outlet property="caloriesProductTextField" destination="zf8-sO-IKn" id="JxN-Jc-PuI"/>
+                        <outlet property="countProductTextField" destination="4Pi-fB-RqD" id="DZ6-ZC-Qah"/>
+                        <outlet property="nameProductTextField" destination="faP-a6-jTa" id="ZcT-Ff-zgx"/>
+                        <outlet property="weightProductTextField" destination="9bG-xq-z5j" id="waG-xZ-XCl"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="T3j-dG-EWy" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3236.9230769230767" y="-326.30331753554503"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="oBj-Jo-FnN">

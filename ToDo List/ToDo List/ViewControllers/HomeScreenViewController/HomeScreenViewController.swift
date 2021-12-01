@@ -15,6 +15,7 @@ class HomeScreenViewController: UIViewController {
    @IBOutlet var sliderCaloriesValue: UILabel!
    @IBOutlet var caloriesSlider: UISlider!
    @IBOutlet var caloriesPerDayLabel: UILabel!
+   @IBOutlet var addFoodButton: UIButton!
    
    var plan: PlanModel?
    var newProduct: ProductModel?
@@ -24,6 +25,8 @@ class HomeScreenViewController: UIViewController {
       super.viewDidLoad()
       
       self.view.backgroundColor = UIColor(patternImage: UIImage(named: "backgroundPhoto")!)
+      addFoodButton.layer.cornerRadius = addFoodButton.layer.frame.height / 2
+      
       prepareTableView()
    }
    
