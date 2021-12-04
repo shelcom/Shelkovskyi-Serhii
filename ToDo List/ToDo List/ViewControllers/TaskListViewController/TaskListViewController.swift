@@ -16,7 +16,7 @@ class TaskListViewController: BaseViewController {
    override func viewDidLoad() {
       super.viewDidLoad()
       
-      navigationController?.navigationBar.isHidden = true
+      navigationController?.navigationBar.isHidden = false
    
       prepareTableView()
    }
@@ -25,6 +25,11 @@ class TaskListViewController: BaseViewController {
       tableView.delegate = self
       tableView.dataSource = self
       tableView.register(UINib.init(nibName: "TaskTableViewCell", bundle: nil), forCellReuseIdentifier: "TaskCell")
+   }
+   
+   //navigation bar
+   override func viewWillAppear(_ animated: Bool) {
+      tableView.reloadData()
    }
    
 }

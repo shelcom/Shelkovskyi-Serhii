@@ -9,21 +9,26 @@ import Foundation
 
 class TaskController {
    
-   private var tasks: [Task] = [
-      Task.init(title: "Some title", description: "Description1", taskDate: Date(), createdDate: Date(), status: "Done"),
-      Task.init(title: "1 Some title", description: "Description2", taskDate: Date(), createdDate: Date(), status: "Progress"),
-      Task.init(title: "2 Some title", description: "Description3", taskDate: Date(), createdDate: Date(), status: "Progress"),
-      Task.init(title: "3 Some title", description: "Description4", taskDate: Date(), createdDate: Date(), status: "Progress"),
-      Task.init(title: "New title", description: "Description5", taskDate: Date(), createdDate: Date(), status: "Progress"),
-      Task.init(title: "Task", description: "Description6", taskDate: Date(), createdDate: Date(), status: "Done"),
-      Task.init(title: "Read Book", description: "Description7", taskDate: Date(), createdDate: Date(), status: "Done"),
-      Task.init(title: "Jump", description: "Description8", taskDate: Date(), createdDate: Date(), status: "Progress"),
-      Task.init(title: "Sport", description: "Description9", taskDate: Date(), createdDate: Date(), status: "Done"),
-      Task.init(title: "RunRunRunRunRunRunRunRunRunRunRunRunRunRunRunRunRunRunRunRunRunRunRunRunRunRunRunRunRunRunRunRunRunRunRunRunRunRunRunRunRunRunRunRunRunRunRunRunRunRunRunRunRunRunRunRun", description: "Description10", taskDate: Date(), createdDate: Date(), status: "Progress")
-   ]
+   let defaults = UserDefaults.standard
    
-   func add(new task: Task) {
-      tasks.append(task)
+   private var tasks: [Task] {
+      get {
+         if let data = defaults.value(forKey: "tasks") as? Data {
+            return try! PropertyListDecoder().decode([Task].self, from: data)
+         } else {
+            return [Task]()
+         }
+      }
+      set {
+         guard let data = try? PropertyListEncoder().encode(newValue) else { return }
+         defaults.set(data, forKey: "tasks")
+      }
+   }
+   
+   func add(name: String, description: String, taskDate: Date) -> Task {
+      let newTask = Task.init(title: name, description: description, taskDate: taskDate, createdDate: Date(), status: "Done")
+      tasks.append(newTask)
+      return newTask
    }
    
    func tasksCount() -> Int {

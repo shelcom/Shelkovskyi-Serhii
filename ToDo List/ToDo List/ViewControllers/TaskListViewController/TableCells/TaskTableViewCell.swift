@@ -21,7 +21,13 @@ class TaskTableViewCell: UITableViewCell {
    // fill taskTableCell
    func fill(with model: Task) {
       titleLable.text = model.title
-      createDateLable.text = "01.01.2000"
-      startDateLable.text = "02.01.2000"
+      
+      let dateFormatter = DateFormatter()
+      dateFormatter.dateFormat = "EEEE, MMMM d, HH:mm"
+      let taskDateString = dateFormatter.string(from: model.taskDate)
+      let createdDateString = dateFormatter.string(from: model.createdDate)
+      
+      startDateLable.text = "start day" + " " + taskDateString
+      createDateLable.text = "create day" + " " + createdDateString
    }
 }
