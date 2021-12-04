@@ -60,7 +60,13 @@ class LoginViewController: BaseViewController, UITextFieldDelegate {
    
    //hide navbar
    override func viewWillAppear(_ animated: Bool) {
+      super.viewWillAppear(animated)
       navigationController?.navigationBar.isHidden = true
+      
+      guard let isLoggedIn = UserDefaults.standard.value(forKey: "isLoggedIn") as? Bool else {return}
+      if isLoggedIn {
+         performSegue(withIdentifier: "fromLoginToTaskList", sender: self)
+      }
    }
    
    // pressing the button loginButton
@@ -74,6 +80,8 @@ class LoginViewController: BaseViewController, UITextFieldDelegate {
       do {
          try credentialController.validate()
          try credentialController.checkCredentials()
+         UserDefaults.standard.set(true, forKey: "isLoggedIn")
+         
          return true
       } catch {
          resultLabel.text = (error as! CredentialsError).description
