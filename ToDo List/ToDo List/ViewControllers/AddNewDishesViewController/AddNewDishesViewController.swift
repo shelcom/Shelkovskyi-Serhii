@@ -15,7 +15,7 @@ class AddNewDishesViewController: UIViewController {
    @IBOutlet var countProductTextField: UITextField!
    @IBOutlet var addNewFoodButton: UIButton!
    
-   var competionTwo: ((ProductModel?) -> ())?
+   var competionNewProduct: (() -> ())?
    var newProduct: ProductModel?
    
    override func viewDidLoad() {
@@ -38,17 +38,27 @@ class AddNewDishesViewController: UIViewController {
    }
    
    @IBAction func addNewFood(_ sender: Any) {
-      competionTwo?(createNewDishes())
+      createNewDishes()
+      competionNewProduct?()
       self.dismiss(animated: true, completion: nil)
    }
    
-   func createNewDishes() -> ProductModel? {
+   func createNewDishes() {
       let productController = ProductController()
-      let product = productController.initNewProduct(name: nameProductTextField.text!, calories: Int(caloriesProductTextField.text!)!, weight: weightProductTextField.text!, count: countProductTextField.text!)
-      return product
+      
+      if nameProductTextField.text!.isEmpty || caloriesProductTextField.text!.isEmpty || weightProductTextField.text!.isEmpty || countProductTextField.text!.isEmpty {
+         let allertCont = UIAlertController(title: "Error", message: "Please enter the Name", preferredStyle: .alert)
+         let cancleAction = UIAlertAction(title: "Ok", style: .default)
+         allertCont.addAction(cancleAction)
+         present(allertCont, animated: true, completion: nil)
+      } else {
+         productController.initNewProduct(name: nameProductTextField.text!,
+                                          calories: Int(caloriesProductTextField.text!)!,
+                                          weight: weightProductTextField.text!,
+                                          count: countProductTextField.text!)
+         }
+      }
    }
-   
-}
 
 extension AddNewDishesViewController: UITextFieldDelegate {
    

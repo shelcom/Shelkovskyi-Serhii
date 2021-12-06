@@ -9,19 +9,25 @@ import Foundation
 
 class ProductController {
    
-   private var products: [ProductModel] = [ProductModel.init(name: "BigMac", calories: 1000, weight: "300", count: "1"),
-                                           ProductModel.init(name: "Soup", calories: 500, weight: "300", count: "1"),
-                                           ProductModel.init(name: "Lemon", calories: 100, weight: "300", count: "1"),
-                                           ProductModel.init(name: "Steak", calories: 1200, weight: "300", count: "1"),
-                                           ProductModel.init(name: "Soup", calories: 800, weight: "300", count: "1"),
-                                           ProductModel.init(name: "Salad", calories: 400, weight: "300", count: "1"),
-                                           ProductModel.init(name: "Fish", calories: 400, weight: "300", count: "1"),
-                                           ProductModel.init(name: "Rice", calories: 400, weight: "300", count: "1"),
-                                           ProductModel.init(name: "Pizza", calories: 1000, weight: "300", count: "1")]
+   let defaults = UserDefaults.standard
    
-   func initNewProduct(name: String, calories: Int, weight: String, count: String) -> ProductModel {
+   private var products: [ProductModel] {
+      get {
+         if let data = defaults.value(forKey: "products") as? Data {
+            return try! PropertyListDecoder().decode([ProductModel].self, from: data)
+         } else {
+            return [ProductModel]()
+         }
+      }
+      set {
+         guard let data = try? PropertyListEncoder().encode(newValue) else { return }
+         defaults.set(data, forKey: "products")
+      }
+   }
+
+   func initNewProduct(name: String, calories: Int, weight: String, count: String) {
       let product = ProductModel.init(name: name, calories: calories, weight: weight, count: count)
-      return product
+      products.append(product)
    }
    
    func add(product: ProductModel) {

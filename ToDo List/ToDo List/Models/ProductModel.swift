@@ -7,7 +7,7 @@
 
 import Foundation
 
-class ProductModel {
+class ProductModel: Codable {
    
    var name: String?
    var calories: Int?

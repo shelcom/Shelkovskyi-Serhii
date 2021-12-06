@@ -14,7 +14,7 @@ class AddDishesViewController: UIViewController {
    
    let productController = ProductController()
    var competion: ((ProductModel?) -> ())?
-   var competionTwo: (() -> (ProductModel?))?
+   var competionNewProduct: (() -> ())?
    var chooseProduct: ProductModel?
    
    override func viewDidLoad() {
@@ -36,12 +36,11 @@ class AddDishesViewController: UIViewController {
    
    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
       if let vc = segue.destination as? AddNewDishesViewController {
-         vc.competionTwo = { (nfn) in
-            self.productController.add(product: nfn!)
+         vc.competionNewProduct = {
             self.addFoodTable.reloadData()
-            }
          }
       }
+   }
    
    @IBAction func closeAction(_ sender: Any) {
       competion?(chooseProduct)
