@@ -43,7 +43,6 @@ extension TaskListViewController : UITableViewDelegate, UITableViewDataSource {
    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
       let cell = tableView.dequeueReusableCell(withIdentifier: "TaskCell") as! TaskTableViewCell
       cell.fill(with: taskController.task(by: indexPath.row))
-      
       return cell
    }
    

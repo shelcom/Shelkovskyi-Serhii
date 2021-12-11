@@ -18,6 +18,7 @@ class LoginViewController: BaseViewController, UITextFieldDelegate {
    @IBOutlet var registrationButton: UIButton!
    
    var resultLabel: UILabel!
+   let userController = UserController()
    
    override func viewDidLoad() {
       super.viewDidLoad()
@@ -25,18 +26,6 @@ class LoginViewController: BaseViewController, UITextFieldDelegate {
       //Init delegate
       self.emailTextField.delegate = self
       self.passwordTextField.delegate = self
-      
-      //Init resultLable
-      resultLabel = UILabel.init()
-      resultLabel.frame = CGRect.init(x: 50, y: 50, width: 50, height: 40)
-      resultLabel.textColor = UIColor.red
-      view.addSubview(resultLabel)
-      
-      
-      //Init constraint for resultLabel
-      resultLabel.translatesAutoresizingMaskIntoConstraints = false
-      NSLayoutConstraint.init(item: resultLabel!, attribute: .bottom, relatedBy: .equal, toItem: emailLabel, attribute: .top, multiplier: 1, constant: -20).isActive = true
-      NSLayoutConstraint.init(item: resultLabel!, attribute: .left, relatedBy: .equal, toItem: view, attribute: .left, multiplier: 1, constant: 20).isActive = true
       
       // Rounds a loginButton
       loginButton.layer.cornerRadius = loginButton.layer.frame.height / 2
@@ -54,7 +43,32 @@ class LoginViewController: BaseViewController, UITextFieldDelegate {
       case self.emailTextField:
          self.passwordTextField.becomeFirstResponder()
       default:
-         self.passwordTextField.resignFirstResponder() //self.view.endEditing(true)
+         self.passwordTextField.resignFirstResponder() 
+      }
+   }
+   
+   
+   @IBAction func loginButton(_ sender: Any) {
+      let storyboard = UIStoryboard(name: "TabBar", bundle: nil)
+      let vc = storyboard.instantiateViewController(withIdentifier: "TabBar")
+      
+      let email = emailTextField.text ?? ""
+      let password = passwordTextField.text ?? ""
+      
+      if email.isEmpty {
+         alert(title: "Пустой емайл", message: "Пустой емайл")
+      } else {
+         if email.contains("@") {
+            if password.count >= 8 {
+               guard let user = userController.searchUser(currentUserEmail: emailTextField.text ?? "") else { return }
+               UserDefaults.standard.setValue(user.id ?? "", forKey: "currentUserId")
+               self.navigationController?.pushViewController(vc, animated: true)
+            } else {
+               alert(title: "Длина пароля", message: "Длина пароля")
+            }
+         } else {
+            alert(title: "Формат емейла", message: "Формат емейла")
+         }
       }
    }
    
@@ -62,30 +76,14 @@ class LoginViewController: BaseViewController, UITextFieldDelegate {
    override func viewWillAppear(_ animated: Bool) {
       super.viewWillAppear(animated)
       navigationController?.navigationBar.isHidden = true
-      
-      guard let isLoggedIn = UserDefaults.standard.value(forKey: "isLoggedIn") as? Bool else {return}
-      if isLoggedIn {
-         performSegue(withIdentifier: "fromLoginToTaskList", sender: self)
-      }
+//      resetDefaults()
    }
    
-   // pressing the button loginButton
-   override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
-      if identifier != "fromLoginToTaskList" {
-         return true
-      }
-
-      let credentialController = CredentialsController(credentials: Credentials(email: emailTextField.text,
-                                                                                password: passwordTextField.text))
-      do {
-         try credentialController.validate()
-         try credentialController.checkCredentials()
-         UserDefaults.standard.set(true, forKey: "isLoggedIn")
-         
-         return true
-      } catch {
-         resultLabel.text = (error as! CredentialsError).description
-         return false
-      }
+   func resetDefaults() {
+       let defaults = UserDefaults.standard
+       let dictionary = defaults.dictionaryRepresentation()
+       dictionary.keys.forEach { key in
+           defaults.removeObject(forKey: key)
+       }
    }
 }

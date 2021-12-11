@@ -17,6 +17,8 @@ class RegistrationViewController: UIViewController, UITextFieldDelegate {
    @IBOutlet var registrationButton: UIButton!
    
    var resultLabel: UILabel!
+   let userController = UserController()
+   let noteController = NoteController()
    
    override func viewDidLoad() {
       super.viewDidLoad()
@@ -24,17 +26,6 @@ class RegistrationViewController: UIViewController, UITextFieldDelegate {
       //Init delegate
       self.registrationEmailField.delegate = self
       self.registrationPasswordField.delegate = self
-      
-      //Init resultLable
-      resultLabel = UILabel.init()
-      resultLabel.frame = CGRect.init(x: 50, y: 50, width: 50, height: 40)
-      resultLabel.textColor = UIColor.red
-      view.addSubview(resultLabel)
-      
-      //Init constraint for resultLabel
-      resultLabel.translatesAutoresizingMaskIntoConstraints = false
-      NSLayoutConstraint.init(item: resultLabel!, attribute: .bottom, relatedBy: .equal, toItem: registrationEmailLable, attribute: .top, multiplier: 1, constant: -20).isActive = true
-      NSLayoutConstraint.init(item: resultLabel!, attribute: .left, relatedBy: .equal, toItem: view, attribute: .left, multiplier: 1, constant: 20).isActive = true
       
       let tapGesture = UITapGestureRecognizer.init(target: self, action: #selector(hideKeyboard))
       view.isUserInteractionEnabled = true
@@ -68,16 +59,28 @@ class RegistrationViewController: UIViewController, UITextFieldDelegate {
       navigationController?.navigationBar.isHidden = false
    }
    
-   // pressing the button registrationButton
-   override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
-      let credentialController = CredentialsController(credentials: Credentials(email:registrationEmailField.text,
-                                                                                password:registrationPasswordField.text))
-      do {
-         try credentialController.validate()
-         return true
-      } catch {
-         resultLabel.text = (error as! CredentialsError).description
-         return false
+   @IBAction func registerButton(_ sender: Any) {
+      let storyboard = UIStoryboard(name: "TabBar", bundle: nil)
+      let vc = storyboard.instantiateViewController(withIdentifier: "TabBar")
+      
+      let email = registrationEmailField.text ?? ""
+      let password = registrationPasswordField.text ?? ""
+      
+      if email.isEmpty {
+         alert(title: "Пустой емайл", message: "Пустой емайл")
+      } else {
+         if email.contains("@") {
+            if password.count >= 8 {
+               guard let user = userController.add(email: email, password: password) else { return }
+               UserDefaults.standard.setValue(user.id ?? "", forKey: "currentUserId")
+               noteController.addTestNotes(userId: user.id ?? 0)
+               self.navigationController?.pushViewController(vc, animated: true)
+            } else {
+               alert(title: "Длина пароля", message: "Длина пароля")
+            }
+         } else {
+            alert(title: "Формат емейла", message: "Формат емейла")
+         }
       }
    }
 }

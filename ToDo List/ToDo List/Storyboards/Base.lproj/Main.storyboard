@@ -56,7 +56,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <segue destination="hC5-ck-xa6" kind="show" identifier="RegistrationViewController" id="ggj-Uq-une"/>
+                                    <segue destination="hC5-ck-xa6" kind="show" identifier="RegistrationViewController" id="ghk-xj-P48"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="68w-DL-xpU" userLabel="loginButton">
@@ -68,7 +68,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <segue destination="fLc-Wl-ekA" kind="show" identifier="fromLoginToTaskList" id="VsO-r9-Mfn"/>
+                                    <action selector="loginButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Gdy-3a-kub"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -122,7 +122,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="mIf-nP-hSc">
-                                <rect key="frame" x="0.0" y="88" width="390" height="756"/>
+                                <rect key="frame" x="0.0" y="44" width="390" height="800"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ViH-Fv-CmY">
@@ -169,25 +169,25 @@
             <objects>
                 <viewController id="YgP-RH-cLw" customClass="AddTaskViewController" customModule="ToDo_List" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="bBb-7S-BID">
-                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="790"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" style="compact" translatesAutoresizingMaskIntoConstraints="NO" id="18t-9y-Ilv">
-                                <rect key="frame" x="107" y="162" width="263" height="31"/>
+                                <rect key="frame" x="107" y="74" width="263" height="31"/>
                             </datePicker>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Task Time:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4aS-du-wfn">
-                                <rect key="frame" x="20" y="167.33333333333334" width="81.666666666666671" height="20.333333333333343"/>
+                                <rect key="frame" x="20" y="79.333333333333329" width="81.666666666666671" height="20.333333333333329"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="M7b-0W-J4h">
-                                <rect key="frame" x="20" y="108" width="350" height="34"/>
+                                <rect key="frame" x="20" y="20" width="350" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" usesAttributedText="YES" translatesAutoresizingMaskIntoConstraints="NO" id="RWb-V0-gyA">
-                                <rect key="frame" x="20" y="213" width="350" height="577"/>
+                                <rect key="frame" x="20" y="125" width="350" height="611"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <attributedString key="attributedText">
                                     <fragment>
@@ -340,7 +340,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <segue destination="fLc-Wl-ekA" kind="show" identifier="fromRegistrationToTaskList" id="wR8-d6-fM0"/>
+                                    <action selector="registerButton:" destination="hC5-ck-xa6" eventType="touchUpInside" id="uvp-q1-foh"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -400,9 +400,6 @@
             <point key="canvasLocation" x="-212.30769230769229" y="-516.11374407582935"/>
         </scene>
     </scenes>
-    <inferredMetricsTieBreakers>
-        <segue reference="VsO-r9-Mfn"/>
-    </inferredMetricsTieBreakers>
     <resources>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
