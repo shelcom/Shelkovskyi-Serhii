@@ -10,28 +10,24 @@ import UIKit
 class AllNotesViewController: UIViewController {
    
    @IBOutlet var notesTable: UITableView!
-   @IBOutlet var searchBar: UISearchBar!
    @IBOutlet var allTagsButton: UIButton!
    @IBOutlet var firstTagButton: UIButton!
    @IBOutlet var secondTagButton: UIButton!
    
    let noteController = NoteController()
-   var activeTag = "allTag"
+   var activeTag = tag.allTag.rawValue
    
    override func viewDidLoad() {
       super.viewDidLoad()
        
       prepareTableView()
-      searchBar.delegate = self
-      
+      prepareButton()
+   }
+   
+   func prepareButton() {
       allTagsButton.layer.cornerRadius = 12.0
       firstTagButton.layer.cornerRadius = 12.0
       secondTagButton.layer.cornerRadius = 12.0
-      
-      if allTagsButton.isEnabled {
-         allTagsButton.backgroundColor = UIColor(named: "buttonActiveColor")
-         allTagsButton.setTitleColor(.white, for: .normal)
-      }
    }
    
    func prepareTableView() {
@@ -42,28 +38,43 @@ class AllNotesViewController: UIViewController {
    
    @IBAction func tagNotes(_ sender: UIButton) {
       if sender == allTagsButton {
-         
-      } else if sender == firstTagButton {
-         activeTag = "firstTag"
+         activeTag = tag.allTag.rawValue
          sender.backgroundColor = UIColor(named: "buttonActiveColor")
-         sender.setTitleColor(.white, for: .normal)
-         allTagsButton.backgroundColor = UIColor(named: "tableColor")
-         allTagsButton.setTitleColor(.black, for: .normal)
-         secondTagButton.backgroundColor = UIColor(named: "tableColor")
-         secondTagButton.setTitleColor(.black, for: .normal)
-      } else {
-         activeTag = "secondTag"
-         sender.backgroundColor = UIColor(named: "buttonActiveColor")
-         sender.setTitleColor(.white, for: .normal)
-         allTagsButton.backgroundColor = UIColor(named: "tableColor")
-         allTagsButton.setTitleColor(.black, for: .normal)
          firstTagButton.backgroundColor = UIColor(named: "tableColor")
-         firstTagButton.setTitleColor(.black, for: .normal)
+         secondTagButton.backgroundColor = UIColor(named: "tableColor")
+         notesTable.reloadData()
+      } else if sender == firstTagButton {
+         activeTag = tag.firstTag.rawValue
+         sender.backgroundColor = UIColor(named: "buttonActiveColor")
+         allTagsButton.backgroundColor = UIColor(named: "tableColor")
+         secondTagButton.backgroundColor = UIColor(named: "tableColor")
+         notesTable.reloadData()
+      } else {
+         activeTag = tag.secondTag.rawValue
+         sender.backgroundColor = UIColor(named: "buttonActiveColor")
+         allTagsButton.backgroundColor = UIColor(named: "tableColor")
+         firstTagButton.backgroundColor = UIColor(named: "tableColor")
+         notesTable.reloadData()
       }
    }
    
    override func viewWillAppear(_ animated: Bool) {
+      allTagsButton.backgroundColor = UIColor(named: "buttonActiveColor")
+      firstTagButton.backgroundColor = UIColor(named: "tableColor")
+      secondTagButton.backgroundColor = UIColor(named: "tableColor")
+      activeTag = tag.allTag.rawValue
+      
+      navigationController?.setNavigationBarHidden(true, animated: animated)
+      
       notesTable.reloadData()
+   }
+   
+   override func viewWillDisappear(_ animated: Bool) {
+      super.viewWillDisappear(animated)
+      
+      navigationController?.setNavigationBarHidden(false, animated: animated)
+      self.tabBarController?.tabBar.isHidden = false
+      self.tabBarController?.tabBar.layer.zPosition = -0
    }
 }
 
@@ -71,47 +82,32 @@ extension AllNotesViewController: UITableViewDelegate,UITableViewDataSource {
    
    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
       let currentUserId = UserDefaults.standard.integer(forKey: "currentUserId")
-      
-      if searchBar.text!.isEmpty {
-         return noteController.notesCount(userId: currentUserId)
-      } else {
-//         return noteController.filterNotesForTag(tag: activeTag, userId: currentUserId)
-         return 5
-      }
-   }
-   
-   func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-      return 50
+      return noteController.notesCount(userId: currentUserId, tag: activeTag)
    }
    
    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
       let cell = tableView.dequeueReusableCell(withIdentifier: "AllNotesCell") as! AllNotesTableViewCell
       let currentUserId = UserDefaults.standard.integer(forKey: "currentUserId")
-      
-      if searchBar.text!.isEmpty {
-         cell.fill(with: noteController.note(by: indexPath.row, userId: currentUserId))
-      } else {
-         cell.fill(with: noteController.searchNote(by: indexPath.row))
-      }
-      
+      cell.fill(with: noteController.note(by: indexPath.row, userId: currentUserId, tag: activeTag))
+      notesTable.separatorStyle = .none
+   
       return cell
    }
    
-   func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-      return 300
+   func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+      performSegue(withIdentifier: "EditNoteViewController", sender: indexPath.row)
    }
    
-   func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
-      return 50
+   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+      if segue.identifier == "EditNoteViewController" {
+         guard let vc = segue.destination as? EditNoteViewController else { return }
+         let currentUserId = UserDefaults.standard.integer(forKey: "currentUserId")
+         let note = findNote(sender: sender as! Int, currentUserId: currentUserId)
+         vc.note = note
+      }
    }
-}
-
-extension AllNotesViewController: UISearchBarDelegate {
    
-   func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-      guard let text = self.searchBar.text else { return }
-      
-      noteController.searchUserNotes(text: text, userId: UserDefaults.standard.integer(forKey: "currentUserId"))
-      notesTable.reloadData()
+   func findNote(sender: Int, currentUserId: Int) -> Note {
+      noteController.note(by: sender, userId: currentUserId, tag: activeTag)
    }
 }

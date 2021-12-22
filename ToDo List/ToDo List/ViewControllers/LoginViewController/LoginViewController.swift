@@ -7,7 +7,7 @@
 
 import UIKit
 
-class LoginViewController: BaseViewController, UITextFieldDelegate {
+class LoginViewController: UIViewController, UITextFieldDelegate {
   
    @IBOutlet var toDoLabel: UILabel!
    @IBOutlet var emailLabel: UILabel!
@@ -18,26 +18,40 @@ class LoginViewController: BaseViewController, UITextFieldDelegate {
    @IBOutlet var registrationButton: UIButton!
    
    var resultLabel: UILabel!
-   let userController = UserController()
    
    override func viewDidLoad() {
       super.viewDidLoad()
       
-      //Init delegate
-      self.emailTextField.delegate = self
-      self.passwordTextField.delegate = self
+      prepareView()
       
-      // Rounds a loginButton
-      loginButton.layer.cornerRadius = loginButton.layer.frame.height / 2
+      initDelegate()
    }
    
-   //Asks the delegate whether to process the pressing of the Return button for the text field.
+   func initDelegate() {
+      self.emailTextField.delegate = self
+      self.passwordTextField.delegate = self
+   }
+   
+   func prepareView() {
+      self.view.backgroundColor = UIColor(patternImage: UIImage(named: "loggin.png")!)
+      
+      loginButton.layer.cornerRadius = loginButton.layer.frame.height / 2
+      registrationButton.layer.cornerRadius = loginButton.layer.frame.height / 2
+      
+      let tapGesture = UITapGestureRecognizer.init(target: self, action: #selector(hideKeyboard))
+      view.isUserInteractionEnabled = true
+      view.addGestureRecognizer(tapGesture)
+   }
+   
+   @objc func hideKeyboard() {
+      view.endEditing(true)
+   }
+   
    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
       self.tagBasedTextField(textField)
       return true
    }
    
-   // transition function between field
    private func tagBasedTextField(_ textField: UITextField) {
       switch textField {
       case self.emailTextField:
@@ -47,43 +61,15 @@ class LoginViewController: BaseViewController, UITextFieldDelegate {
       }
    }
    
-   
    @IBAction func loginButton(_ sender: Any) {
-      let storyboard = UIStoryboard(name: "TabBar", bundle: nil)
-      let vc = storyboard.instantiateViewController(withIdentifier: "TabBar")
-      
       let email = emailTextField.text ?? ""
       let password = passwordTextField.text ?? ""
       
-      if email.isEmpty {
-         alert(title: "Пустой емайл", message: "Пустой емайл")
-      } else {
-         if email.contains("@") {
-            if password.count >= 8 {
-               guard let user = userController.searchUser(currentUserEmail: emailTextField.text ?? "") else { return }
-               UserDefaults.standard.setValue(user.id ?? "", forKey: "currentUserId")
-               self.navigationController?.pushViewController(vc, animated: true)
-            } else {
-               alert(title: "Длина пароля", message: "Длина пароля")
-            }
-         } else {
-            alert(title: "Формат емейла", message: "Формат емейла")
-         }
-      }
+      login(email: email, password: password)
    }
    
-   //hide navbar
    override func viewWillAppear(_ animated: Bool) {
       super.viewWillAppear(animated)
       navigationController?.navigationBar.isHidden = true
-//      resetDefaults()
-   }
-   
-   func resetDefaults() {
-       let defaults = UserDefaults.standard
-       let dictionary = defaults.dictionaryRepresentation()
-       dictionary.keys.forEach { key in
-           defaults.removeObject(forKey: key)
-       }
    }
 }

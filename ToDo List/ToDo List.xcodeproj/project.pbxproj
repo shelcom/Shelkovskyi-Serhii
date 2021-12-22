@@ -7,12 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		581565CC2728162200537789 /* TaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 581565CB2728162200537789 /* TaskViewController.swift */; };
-		581AEDAB275636E700E01399 /* CredentialsError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 581AEDAA275636E700E01399 /* CredentialsError.swift */; };
-		581DC2812735C57F00A821C1 /* TaskController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 581DC2802735C57F00A821C1 /* TaskController.swift */; };
+		5825D6CE276CBA4F006C33E1 /* FavoritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5825D6CD276CBA4F006C33E1 /* FavoritesViewController.swift */; };
 		5846AEB32763BAE9009F13B0 /* AllNotesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5846AEB12763BAE9009F13B0 /* AllNotesTableViewCell.swift */; };
 		5846AEB42763BAE9009F13B0 /* AllNotesTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5846AEB22763BAE9009F13B0 /* AllNotesTableViewCell.xib */; };
-		5851DD1527272899007F1B39 /* TaskListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5851DD1427272899007F1B39 /* TaskListViewController.swift */; };
+		585026DA2770F7BE002F24F2 /* NotificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 585026D92770F7BE002F24F2 /* NotificationViewController.swift */; };
 		586B3DB6275F84CF009E9E5B /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 586B3DB5275F84CF009E9E5B /* TabBarViewController.swift */; };
 		586B3DB9275F85BE009E9E5B /* CreateNoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 586B3DB8275F85BE009E9E5B /* CreateNoteViewController.swift */; };
 		586B3DBB275F8613009E9E5B /* Note.swift in Sources */ = {isa = PBXBuildFile; fileRef = 586B3DBA275F8613009E9E5B /* Note.swift */; };
@@ -26,26 +24,23 @@
 		586CC820275EB16E0059A999 /* UserController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 586CC81F275EB16E0059A999 /* UserController.swift */; };
 		586CC823275EB7820059A999 /* AuthentificationAlert + Extansion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 586CC822275EB7820059A999 /* AuthentificationAlert + Extansion.swift */; };
 		586CC82A275ED3270059A999 /* TabBar.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 586CC829275ED3270059A999 /* TabBar.storyboard */; };
-		5876ACB92751191600B0F496 /* CredentialsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5876ACB82751191600B0F496 /* CredentialsController.swift */; };
+		5872D2A127733E6500877830 /* Authentification + Extrnsion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5872D2A027733E6500877830 /* Authentification + Extrnsion.swift */; };
 		588A75712760CFF6003FAA1E /* NoteController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 588A75702760CFF6003FAA1E /* NoteController.swift */; };
-		588A75742760EFB9003FAA1E /* NotesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 588A75732760EFB9003FAA1E /* NotesViewController.swift */; };
-		58A51F75272AF7C500FB75F0 /* Credentials.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58A51F74272AF7C500FB75F0 /* Credentials.swift */; };
 		58A51F7B272B49A400FB75F0 /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58A51F7A272B49A400FB75F0 /* Task.swift */; };
-		58AA46D3275B9156000BAB7F /* AddTaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58AA46D2275B9156000BAB7F /* AddTaskViewController.swift */; };
-		58CD5029273A9AE400526E43 /* TaskTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58CD5027273A9AE400526E43 /* TaskTableViewCell.swift */; };
-		58CD502A273A9AE400526E43 /* TaskTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 58CD5028273A9AE400526E43 /* TaskTableViewCell.xib */; };
-		58E9049B2722CD9D00711C74 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58E9049A2722CD9D00711C74 /* BaseViewController.swift */; };
+		58D45EB5276C0824002DA4CD /* SearcheNoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58D45EB4276C0824002DA4CD /* SearcheNoteViewController.swift */; };
 		58E9049D2722CDD600711C74 /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58E9049C2722CDD600711C74 /* RegistrationViewController.swift */; };
 		58E904A32722CEF500711C74 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58E904A22722CEF500711C74 /* LoginViewController.swift */; };
+		58F3FD25276A291900131194 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58F3FD24276A291900131194 /* SettingsViewController.swift */; };
+		58F3FD29276A2E4500131194 /* SettingsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58F3FD27276A2E4500131194 /* SettingsTableViewCell.swift */; };
+		58F3FD2A276A2E4500131194 /* SettingsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 58F3FD28276A2E4500131194 /* SettingsTableViewCell.xib */; };
+		58F3FD2D276A715600131194 /* EditNoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58F3FD2C276A715600131194 /* EditNoteViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		581565CB2728162200537789 /* TaskViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskViewController.swift; sourceTree = "<group>"; };
-		581AEDAA275636E700E01399 /* CredentialsError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CredentialsError.swift; sourceTree = "<group>"; };
-		581DC2802735C57F00A821C1 /* TaskController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskController.swift; sourceTree = "<group>"; };
+		5825D6CD276CBA4F006C33E1 /* FavoritesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewController.swift; sourceTree = "<group>"; };
 		5846AEB12763BAE9009F13B0 /* AllNotesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllNotesTableViewCell.swift; sourceTree = "<group>"; };
 		5846AEB22763BAE9009F13B0 /* AllNotesTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AllNotesTableViewCell.xib; sourceTree = "<group>"; };
-		5851DD1427272899007F1B39 /* TaskListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskListViewController.swift; sourceTree = "<group>"; };
+		585026D92770F7BE002F24F2 /* NotificationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationViewController.swift; sourceTree = "<group>"; };
 		586B3DB5275F84CF009E9E5B /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
 		586B3DB8275F85BE009E9E5B /* CreateNoteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateNoteViewController.swift; sourceTree = "<group>"; };
 		586B3DBA275F8613009E9E5B /* Note.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Note.swift; sourceTree = "<group>"; };
@@ -61,17 +56,16 @@
 		586CC81F275EB16E0059A999 /* UserController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserController.swift; sourceTree = "<group>"; };
 		586CC822275EB7820059A999 /* AuthentificationAlert + Extansion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AuthentificationAlert + Extansion.swift"; sourceTree = "<group>"; };
 		586CC829275ED3270059A999 /* TabBar.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TabBar.storyboard; sourceTree = "<group>"; };
-		5876ACB82751191600B0F496 /* CredentialsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CredentialsController.swift; sourceTree = "<group>"; };
+		5872D2A027733E6500877830 /* Authentification + Extrnsion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Authentification + Extrnsion.swift"; sourceTree = "<group>"; };
 		588A75702760CFF6003FAA1E /* NoteController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteController.swift; sourceTree = "<group>"; };
-		588A75732760EFB9003FAA1E /* NotesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesViewController.swift; sourceTree = "<group>"; };
-		58A51F74272AF7C500FB75F0 /* Credentials.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Credentials.swift; sourceTree = "<group>"; };
 		58A51F7A272B49A400FB75F0 /* Task.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
-		58AA46D2275B9156000BAB7F /* AddTaskViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTaskViewController.swift; sourceTree = "<group>"; };
-		58CD5027273A9AE400526E43 /* TaskTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskTableViewCell.swift; sourceTree = "<group>"; };
-		58CD5028273A9AE400526E43 /* TaskTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TaskTableViewCell.xib; sourceTree = "<group>"; };
-		58E9049A2722CD9D00711C74 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		58D45EB4276C0824002DA4CD /* SearcheNoteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearcheNoteViewController.swift; sourceTree = "<group>"; };
 		58E9049C2722CDD600711C74 /* RegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
 		58E904A22722CEF500711C74 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		58F3FD24276A291900131194 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		58F3FD27276A2E4500131194 /* SettingsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewCell.swift; sourceTree = "<group>"; };
+		58F3FD28276A2E4500131194 /* SettingsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingsTableViewCell.xib; sourceTree = "<group>"; };
+		58F3FD2C276A715600131194 /* EditNoteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditNoteViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,20 +79,12 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		581565CA272815D900537789 /* TaskViewController */ = {
+		5825D6CB276CBA0F006C33E1 /* FavoritesNoteViewController */ = {
 			isa = PBXGroup;
 			children = (
-				581565CB2728162200537789 /* TaskViewController.swift */,
+				5825D6CD276CBA4F006C33E1 /* FavoritesViewController.swift */,
 			);
-			path = TaskViewController;
-			sourceTree = "<group>";
-		};
-		581AEDA9275636AA00E01399 /* Errors */ = {
-			isa = PBXGroup;
-			children = (
-				581AEDAA275636E700E01399 /* CredentialsError.swift */,
-			);
-			path = Errors;
+			path = FavoritesNoteViewController;
 			sourceTree = "<group>";
 		};
 		5846AEAF2763BA98009F13B0 /* AllNotesViewController */ = {
@@ -119,13 +105,12 @@
 			path = TableCells;
 			sourceTree = "<group>";
 		};
-		5851DD1327272859007F1B39 /* TaskListViewController */ = {
+		585026D82770F79D002F24F2 /* NotificationViewController */ = {
 			isa = PBXGroup;
 			children = (
-				58CD5026273A9ABB00526E43 /* TableCells */,
-				5851DD1427272899007F1B39 /* TaskListViewController.swift */,
+				585026D92770F7BE002F24F2 /* NotificationViewController.swift */,
 			);
-			path = TaskListViewController;
+			path = NotificationViewController;
 			sourceTree = "<group>";
 		};
 		586B3DB7275F8587009E9E5B /* CreateNoteViewController */ = {
@@ -155,7 +140,6 @@
 		586BA8A227134BAE004C0455 /* ToDo List */ = {
 			isa = PBXGroup;
 			children = (
-				586CC829275ED3270059A999 /* TabBar.storyboard */,
 				586CC821275EB7560059A999 /* Extentions */,
 				58A7591B273700CE00ADF9DC /* Storyboards */,
 				58A51F77272AFADE00FB75F0 /* Controllers */,
@@ -174,30 +158,22 @@
 			isa = PBXGroup;
 			children = (
 				586CC822275EB7820059A999 /* AuthentificationAlert + Extansion.swift */,
+				5872D2A027733E6500877830 /* Authentification + Extrnsion.swift */,
 			);
 			path = Extentions;
 			sourceTree = "<group>";
 		};
-		5876ACB72751180500B0F496 /* Credentials */ = {
+		5872D2A227734B8100877830 /* TabBarViewController */ = {
 			isa = PBXGroup;
 			children = (
-				58A51F74272AF7C500FB75F0 /* Credentials.swift */,
+				586B3DB5275F84CF009E9E5B /* TabBarViewController.swift */,
 			);
-			path = Credentials;
-			sourceTree = "<group>";
-		};
-		588A75722760EF9E003FAA1E /* NotesViewController */ = {
-			isa = PBXGroup;
-			children = (
-				588A75732760EFB9003FAA1E /* NotesViewController.swift */,
-			);
-			path = NotesViewController;
+			path = TabBarViewController;
 			sourceTree = "<group>";
 		};
 		58A51F73272AF79F00FB75F0 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				5876ACB72751180500B0F496 /* Credentials */,
 				58A51F7A272B49A400FB75F0 /* Task.swift */,
 				586CC81D275EB1160059A999 /* User.swift */,
 				586B3DBA275F8613009E9E5B /* Note.swift */,
@@ -208,16 +184,16 @@
 		58A51F76272AFAB400FB75F0 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				5872D2A227734B8100877830 /* TabBarViewController */,
+				585026D82770F79D002F24F2 /* NotificationViewController */,
+				5825D6CB276CBA0F006C33E1 /* FavoritesNoteViewController */,
+				58D45EB3276C07FB002DA4CD /* SearcheNoteViewController */,
+				58F3FD2B276A711D00131194 /* EditNoteViewController */,
+				58F3FD23276A28F400131194 /* SettingsViewController */,
 				5846AEAF2763BA98009F13B0 /* AllNotesViewController */,
-				588A75722760EF9E003FAA1E /* NotesViewController */,
 				586B3DB7275F8587009E9E5B /* CreateNoteViewController */,
-				58AA46D1275B912C000BAB7F /* AddTaskViewController */,
 				58E904972722CD7000711C74 /* RegistrationViewController */,
 				58E904A12722CED900711C74 /* LoginViewController */,
-				5851DD1327272859007F1B39 /* TaskListViewController */,
-				58E9049E2722CDE900711C74 /* BaseViewController */,
-				581565CA272815D900537789 /* TaskViewController */,
-				586B3DB5275F84CF009E9E5B /* TabBarViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -225,9 +201,6 @@
 		58A51F77272AFADE00FB75F0 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				581AEDA9275636AA00E01399 /* Errors */,
-				581DC2802735C57F00A821C1 /* TaskController.swift */,
-				5876ACB82751191600B0F496 /* CredentialsController.swift */,
 				586CC81F275EB16E0059A999 /* UserController.swift */,
 				588A75702760CFF6003FAA1E /* NoteController.swift */,
 			);
@@ -237,26 +210,18 @@
 		58A7591B273700CE00ADF9DC /* Storyboards */ = {
 			isa = PBXGroup;
 			children = (
+				586CC829275ED3270059A999 /* TabBar.storyboard */,
 				586BA8A927134BAE004C0455 /* Main.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
 		};
-		58AA46D1275B912C000BAB7F /* AddTaskViewController */ = {
+		58D45EB3276C07FB002DA4CD /* SearcheNoteViewController */ = {
 			isa = PBXGroup;
 			children = (
-				58AA46D2275B9156000BAB7F /* AddTaskViewController.swift */,
+				58D45EB4276C0824002DA4CD /* SearcheNoteViewController.swift */,
 			);
-			path = AddTaskViewController;
-			sourceTree = "<group>";
-		};
-		58CD5026273A9ABB00526E43 /* TableCells */ = {
-			isa = PBXGroup;
-			children = (
-				58CD5027273A9AE400526E43 /* TaskTableViewCell.swift */,
-				58CD5028273A9AE400526E43 /* TaskTableViewCell.xib */,
-			);
-			path = TableCells;
+			path = SearcheNoteViewController;
 			sourceTree = "<group>";
 		};
 		58E904972722CD7000711C74 /* RegistrationViewController */ = {
@@ -267,20 +232,38 @@
 			path = RegistrationViewController;
 			sourceTree = "<group>";
 		};
-		58E9049E2722CDE900711C74 /* BaseViewController */ = {
-			isa = PBXGroup;
-			children = (
-				58E9049A2722CD9D00711C74 /* BaseViewController.swift */,
-			);
-			path = BaseViewController;
-			sourceTree = "<group>";
-		};
 		58E904A12722CED900711C74 /* LoginViewController */ = {
 			isa = PBXGroup;
 			children = (
 				58E904A22722CEF500711C74 /* LoginViewController.swift */,
 			);
 			path = LoginViewController;
+			sourceTree = "<group>";
+		};
+		58F3FD23276A28F400131194 /* SettingsViewController */ = {
+			isa = PBXGroup;
+			children = (
+				58F3FD26276A2E1900131194 /* TableCells */,
+				58F3FD24276A291900131194 /* SettingsViewController.swift */,
+			);
+			path = SettingsViewController;
+			sourceTree = "<group>";
+		};
+		58F3FD26276A2E1900131194 /* TableCells */ = {
+			isa = PBXGroup;
+			children = (
+				58F3FD27276A2E4500131194 /* SettingsTableViewCell.swift */,
+				58F3FD28276A2E4500131194 /* SettingsTableViewCell.xib */,
+			);
+			path = TableCells;
+			sourceTree = "<group>";
+		};
+		58F3FD2B276A711D00131194 /* EditNoteViewController */ = {
+			isa = PBXGroup;
+			children = (
+				58F3FD2C276A715600131194 /* EditNoteViewController.swift */,
+			);
+			path = EditNoteViewController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -340,8 +323,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				58F3FD2A276A2E4500131194 /* SettingsTableViewCell.xib in Resources */,
 				586CC82A275ED3270059A999 /* TabBar.storyboard in Resources */,
-				58CD502A273A9AE400526E43 /* TaskTableViewCell.xib in Resources */,
 				586BA8B027134BB0004C0455 /* LaunchScreen.storyboard in Resources */,
 				5846AEB42763BAE9009F13B0 /* AllNotesTableViewCell.xib in Resources */,
 				586BA8AD27134BB0004C0455 /* Assets.xcassets in Resources */,
@@ -356,30 +339,27 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5825D6CE276CBA4F006C33E1 /* FavoritesViewController.swift in Sources */,
 				58E904A32722CEF500711C74 /* LoginViewController.swift in Sources */,
-				581565CC2728162200537789 /* TaskViewController.swift in Sources */,
 				586CC820275EB16E0059A999 /* UserController.swift in Sources */,
 				58A51F7B272B49A400FB75F0 /* Task.swift in Sources */,
+				58D45EB5276C0824002DA4CD /* SearcheNoteViewController.swift in Sources */,
 				586B3DB6275F84CF009E9E5B /* TabBarViewController.swift in Sources */,
-				58A51F75272AF7C500FB75F0 /* Credentials.swift in Sources */,
 				58E9049D2722CDD600711C74 /* RegistrationViewController.swift in Sources */,
-				58E9049B2722CD9D00711C74 /* BaseViewController.swift in Sources */,
-				581DC2812735C57F00A821C1 /* TaskController.swift in Sources */,
+				58F3FD2D276A715600131194 /* EditNoteViewController.swift in Sources */,
+				58F3FD25276A291900131194 /* SettingsViewController.swift in Sources */,
 				586CC81E275EB1160059A999 /* User.swift in Sources */,
 				586B3DB9275F85BE009E9E5B /* CreateNoteViewController.swift in Sources */,
-				58CD5029273A9AE400526E43 /* TaskTableViewCell.swift in Sources */,
+				5872D2A127733E6500877830 /* Authentification + Extrnsion.swift in Sources */,
 				586BA8A427134BAE004C0455 /* AppDelegate.swift in Sources */,
-				581AEDAB275636E700E01399 /* CredentialsError.swift in Sources */,
 				586BA8A627134BAE004C0455 /* SceneDelegate.swift in Sources */,
-				588A75742760EFB9003FAA1E /* NotesViewController.swift in Sources */,
 				586B3DBB275F8613009E9E5B /* Note.swift in Sources */,
-				5876ACB92751191600B0F496 /* CredentialsController.swift in Sources */,
+				58F3FD29276A2E4500131194 /* SettingsTableViewCell.swift in Sources */,
 				588A75712760CFF6003FAA1E /* NoteController.swift in Sources */,
 				5846AEB32763BAE9009F13B0 /* AllNotesTableViewCell.swift in Sources */,
-				5851DD1527272899007F1B39 /* TaskListViewController.swift in Sources */,
+				585026DA2770F7BE002F24F2 /* NotificationViewController.swift in Sources */,
 				586B3DBD275FC077009E9E5B /* AllNotesViewController.swift in Sources */,
 				586CC823275EB7820059A999 /* AuthentificationAlert + Extansion.swift in Sources */,
-				58AA46D3275B9156000BAB7F /* AddTaskViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

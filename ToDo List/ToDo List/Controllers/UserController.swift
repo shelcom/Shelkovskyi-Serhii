@@ -35,6 +35,15 @@ class UserController {
       users.isEmpty ? 1 : (users.last?.id ?? 0) + 1
    }
    
+   func checkUserEmail(email: String) -> Bool {
+      users.firstIndex { $0.email == email } == nil ? true : false
+   }
+   
+   func checkUserPassword(email: String, password: String) -> Bool {
+      let index = users.firstIndex { $0.email == email }
+      return users[index ?? 0].password == password ? true : false
+   }
+   
    func searchUser(currentUserEmail: String) -> User? {
       let user = users.filter { user in
          user.email == currentUserEmail
