@@ -3,11 +3,13 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		581565CC2728162200537789 /* TaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 581565CB2728162200537789 /* TaskViewController.swift */; };
+		581905A6278DC936003EA1F8 /* WeatherTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 581905A4278DC936003EA1F8 /* WeatherTableViewCell.swift */; };
+		581905A7278DC936003EA1F8 /* WeatherTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 581905A5278DC936003EA1F8 /* WeatherTableViewCell.xib */; };
 		581AEDAB275636E700E01399 /* CredentialsError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 581AEDAA275636E700E01399 /* CredentialsError.swift */; };
 		581DC2812735C57F00A821C1 /* TaskController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 581DC2802735C57F00A821C1 /* TaskController.swift */; };
 		5851DD1527272899007F1B39 /* TaskListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5851DD1427272899007F1B39 /* TaskListViewController.swift */; };
@@ -16,6 +18,9 @@
 		586BA8AB27134BAE004C0455 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 586BA8A927134BAE004C0455 /* Main.storyboard */; };
 		586BA8AD27134BB0004C0455 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 586BA8AC27134BB0004C0455 /* Assets.xcassets */; };
 		586BA8B027134BB0004C0455 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 586BA8AE27134BB0004C0455 /* LaunchScreen.storyboard */; };
+		586F5694278CE7D500EC94A2 /* WeatherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 586F5693278CE7D500EC94A2 /* WeatherViewController.swift */; };
+		586F5697278CE8B600EC94A2 /* RequestManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 586F5696278CE8B600EC94A2 /* RequestManager.swift */; };
+		586F5699278CEF5D00EC94A2 /* Weather.swift in Sources */ = {isa = PBXBuildFile; fileRef = 586F5698278CEF5D00EC94A2 /* Weather.swift */; };
 		5876ACB92751191600B0F496 /* CredentialsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5876ACB82751191600B0F496 /* CredentialsController.swift */; };
 		58A51F75272AF7C500FB75F0 /* Credentials.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58A51F74272AF7C500FB75F0 /* Credentials.swift */; };
 		58A51F7B272B49A400FB75F0 /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58A51F7A272B49A400FB75F0 /* Task.swift */; };
@@ -31,6 +36,8 @@
 /* Begin PBXFileReference section */
 		48454B500C654ECDA7991048 /* Pods-ToDoList.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ToDoList.release.xcconfig"; path = "Target Support Files/Pods-ToDoList/Pods-ToDoList.release.xcconfig"; sourceTree = "<group>"; };
 		581565CB2728162200537789 /* TaskViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskViewController.swift; sourceTree = "<group>"; };
+		581905A4278DC936003EA1F8 /* WeatherTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherTableViewCell.swift; sourceTree = "<group>"; };
+		581905A5278DC936003EA1F8 /* WeatherTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WeatherTableViewCell.xib; sourceTree = "<group>"; };
 		581AEDAA275636E700E01399 /* CredentialsError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CredentialsError.swift; sourceTree = "<group>"; };
 		581DC2802735C57F00A821C1 /* TaskController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskController.swift; sourceTree = "<group>"; };
 		5851DD1427272899007F1B39 /* TaskListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskListViewController.swift; sourceTree = "<group>"; };
@@ -41,6 +48,9 @@
 		586BA8AC27134BB0004C0455 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		586BA8AF27134BB0004C0455 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		586BA8B127134BB0004C0455 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		586F5693278CE7D500EC94A2 /* WeatherViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherViewController.swift; sourceTree = "<group>"; };
+		586F5696278CE8B600EC94A2 /* RequestManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestManager.swift; sourceTree = "<group>"; };
+		586F5698278CEF5D00EC94A2 /* Weather.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Weather.swift; sourceTree = "<group>"; };
 		5876ACB82751191600B0F496 /* CredentialsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CredentialsController.swift; sourceTree = "<group>"; };
 		58A51F74272AF7C500FB75F0 /* Credentials.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Credentials.swift; sourceTree = "<group>"; };
 		58A51F7A272B49A400FB75F0 /* Task.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
@@ -72,7 +82,6 @@
 				A42FF2002EDD0432B9133908 /* Pods-ToDoList.debug.xcconfig */,
 				48454B500C654ECDA7991048 /* Pods-ToDoList.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -90,6 +99,15 @@
 				581565CB2728162200537789 /* TaskViewController.swift */,
 			);
 			path = TaskViewController;
+			sourceTree = "<group>";
+		};
+		581905A1278DC8E9003EA1F8 /* TableCells */ = {
+			isa = PBXGroup;
+			children = (
+				581905A4278DC936003EA1F8 /* WeatherTableViewCell.swift */,
+				581905A5278DC936003EA1F8 /* WeatherTableViewCell.xib */,
+			);
+			path = TableCells;
 			sourceTree = "<group>";
 		};
 		581AEDA9275636AA00E01399 /* Errors */ = {
@@ -130,6 +148,7 @@
 		586BA8A227134BAE004C0455 /* ToDo List */ = {
 			isa = PBXGroup;
 			children = (
+				586F5695278CE89B00EC94A2 /* Managers */,
 				58A7591B273700CE00ADF9DC /* Storyboards */,
 				58A51F77272AFADE00FB75F0 /* Controllers */,
 				58A51F76272AFAB400FB75F0 /* ViewControllers */,
@@ -141,6 +160,23 @@
 				586BA8B127134BB0004C0455 /* Info.plist */,
 			);
 			path = "ToDo List";
+			sourceTree = "<group>";
+		};
+		586F5692278CE7AF00EC94A2 /* WeatherViewController */ = {
+			isa = PBXGroup;
+			children = (
+				581905A1278DC8E9003EA1F8 /* TableCells */,
+				586F5693278CE7D500EC94A2 /* WeatherViewController.swift */,
+			);
+			path = WeatherViewController;
+			sourceTree = "<group>";
+		};
+		586F5695278CE89B00EC94A2 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				586F5696278CE8B600EC94A2 /* RequestManager.swift */,
+			);
+			path = Managers;
 			sourceTree = "<group>";
 		};
 		5876ACB72751180500B0F496 /* Credentials */ = {
@@ -156,6 +192,7 @@
 			children = (
 				5876ACB72751180500B0F496 /* Credentials */,
 				58A51F7A272B49A400FB75F0 /* Task.swift */,
+				586F5698278CEF5D00EC94A2 /* Weather.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -163,6 +200,7 @@
 		58A51F76272AFAB400FB75F0 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				586F5692278CE7AF00EC94A2 /* WeatherViewController */,
 				58AA46D1275B912C000BAB7F /* AddTaskViewController */,
 				58E904972722CD7000711C74 /* RegistrationViewController */,
 				58E904A12722CED900711C74 /* LoginViewController */,
@@ -293,6 +331,7 @@
 			files = (
 				58CD502A273A9AE400526E43 /* TaskTableViewCell.xib in Resources */,
 				586BA8B027134BB0004C0455 /* LaunchScreen.storyboard in Resources */,
+				581905A7278DC936003EA1F8 /* WeatherTableViewCell.xib in Resources */,
 				586BA8AD27134BB0004C0455 /* Assets.xcassets in Resources */,
 				586BA8AB27134BAE004C0455 /* Main.storyboard in Resources */,
 			);
@@ -348,14 +387,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				58E904A32722CEF500711C74 /* LoginViewController.swift in Sources */,
+				586F5699278CEF5D00EC94A2 /* Weather.swift in Sources */,
+				586F5694278CE7D500EC94A2 /* WeatherViewController.swift in Sources */,
 				581565CC2728162200537789 /* TaskViewController.swift in Sources */,
 				58A51F7B272B49A400FB75F0 /* Task.swift in Sources */,
 				58A51F75272AF7C500FB75F0 /* Credentials.swift in Sources */,
+				581905A6278DC936003EA1F8 /* WeatherTableViewCell.swift in Sources */,
 				58E9049D2722CDD600711C74 /* RegistrationViewController.swift in Sources */,
 				58E9049B2722CD9D00711C74 /* BaseViewController.swift in Sources */,
 				581DC2812735C57F00A821C1 /* TaskController.swift in Sources */,
 				58CD5029273A9AE400526E43 /* TaskTableViewCell.swift in Sources */,
 				586BA8A427134BAE004C0455 /* AppDelegate.swift in Sources */,
+				586F5697278CE8B600EC94A2 /* RequestManager.swift in Sources */,
 				581AEDAB275636E700E01399 /* CredentialsError.swift in Sources */,
 				586BA8A627134BAE004C0455 /* SceneDelegate.swift in Sources */,
 				5876ACB92751191600B0F496 /* CredentialsController.swift in Sources */,
