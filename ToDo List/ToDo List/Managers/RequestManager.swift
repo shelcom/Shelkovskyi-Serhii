@@ -8,21 +8,30 @@
 import Foundation
 import Alamofire
 
-protocol OpenWeatherMapDelegate {
-   func updateWeatherInfo()
-}
-
 class RequestManager {
+
+   private var weather: [Weathers]?
+   private var weathers: [Weather]?
+   private var weatherForFifteenHours: [WeatherForFifteenHours]?
    
-   var delegate: OpenWeatherMapDelegate!
-   var weather: [Weather]?
-   
-   func request(headers: HTTPHeaders, url: String) {
-      AF.request(url, method: .get, parameters: nil, encoding: URLEncoding.default, headers: headers).responseDecodable(of: WeatherResponse.self) { [self] response in
+   func requestOfManyDay(headers: HTTPHeaders, url: String, completion: @escaping ([Weathers]?) -> Void) {
+      AF.request(url, method: .get, parameters: nil, encoding: URLEncoding.default, headers: headers).responseDecodable(of: WeathersResponse.self) { [self] response in
          weather = response.value?.data ?? nil
-         
-         self.delegate.updateWeatherInfo()
+         completion(weather)
       }
    }
    
+   func requestOfOneDay(headers: HTTPHeaders, url: String, completion: @escaping ([Weather]?) -> Void) {
+      AF.request(url, method: .get, parameters: nil, encoding: URLEncoding.default, headers: headers).responseDecodable(of: WeatherResponse.self) { [self] response in
+         weathers = response.value?.data ?? nil
+         completion(weathers)
+      }
+   }
+   
+   func requestOfFifteenHours(headers: HTTPHeaders, url: String, completion: @escaping ([WeatherForFifteenHours]?) -> Void) {
+      AF.request(url, method: .get, parameters: nil, encoding: URLEncoding.default, headers: headers).responseDecodable(of: WeatherResponseForFifteenHours.self) { [self] response in
+         weatherForFifteenHours = response.value?.data ?? nil
+         completion(weatherForFifteenHours)
+      }
+   }
 }
