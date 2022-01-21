@@ -52,7 +52,7 @@ class WeatherViewController: UIViewController {
    func getWeather() {
       let headers: HTTPHeaders = [
          "x-rapidapi-host": "weatherbit-v1-mashape.p.rapidapi.com",
-         "x-rapidapi-key": "43d1935a49msh0ca7bb4b1904b49p11e23fjsnd9ccbcfce989"
+         "x-rapidapi-key": "e92a2869camsh3383fa9a8d1ee5fp1df7cdjsn40fcf2dcbd7c"
       ]
       let url: String = "https://weatherbit-v1-mashape.p.rapidapi.com/forecast/daily?lat=49.4285&lon=32.0621"
       requestManager.requestOfManyDay(headers: headers, url: url) { [self] response in
@@ -72,7 +72,7 @@ class WeatherViewController: UIViewController {
    func getWaethers() {
       let headers: HTTPHeaders = [
          "x-rapidapi-host": "weatherbit-v1-mashape.p.rapidapi.com",
-         "x-rapidapi-key": "43d1935a49msh0ca7bb4b1904b49p11e23fjsnd9ccbcfce989"
+         "x-rapidapi-key": "e92a2869camsh3383fa9a8d1ee5fp1df7cdjsn40fcf2dcbd7c"
       ]
       let url: String = "https://weatherbit-v1-mashape.p.rapidapi.com/current?lon=32.0621&lat=49.4285"
       requestManager.requestOfOneDay(headers: headers, url: url) { [self] response in
@@ -87,7 +87,7 @@ class WeatherViewController: UIViewController {
    func getWaethersForFifteenHours() {
       let headers: HTTPHeaders = [
          "x-rapidapi-host": "weatherbit-v1-mashape.p.rapidapi.com",
-         "x-rapidapi-key": "43d1935a49msh0ca7bb4b1904b49p11e23fjsnd9ccbcfce989"
+         "x-rapidapi-key": "e92a2869camsh3383fa9a8d1ee5fp1df7cdjsn40fcf2dcbd7c"
       ]
       let url: String = "https://weatherbit-v1-mashape.p.rapidapi.com/forecast/hourly?lat=49.4285&lon=32.0621&hours=15"
       requestManager.requestOfFifteenHours(headers: headers, url: url) { [self] response in
