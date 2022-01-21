@@ -14,7 +14,7 @@ class ProcessingDataRequestManager {
    func processingData(weathers: [Weathers]?) -> [AboutWather]? {
       let weather = weathers?.first
       aboutWather = [.init(title: "UV-Index", intValue: nil, type: .first, doubleValue: weather?.uv),
-                     .init(title: "Sunrise", intValue: weather?.sunriseTs, type: .second, doubleValue: nil),
+                     .init(title: "Sunrise", intValue: nil, type: .second, doubleValue: weather?.sunriseTs),
                      .init(title: "Wind", intValue: nil, type: .third, doubleValue: weather?.windSpd),
                      .init(title: "Precip", intValue: nil, type: .fourth, doubleValue: weather?.precip),
                      .init(title: "Feels Like", intValue: nil, type: .fifth, doubleValue: weather?.appMaxTemp),

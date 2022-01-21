@@ -20,6 +20,7 @@
 		586F5699278CEF5D00EC94A2 /* Weather.swift in Sources */ = {isa = PBXBuildFile; fileRef = 586F5698278CEF5D00EC94A2 /* Weather.swift */; };
 		587A5F8A27919CBD005E3FDA /* FirstCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 587A5F8827919CBD005E3FDA /* FirstCollectionViewCell.swift */; };
 		587A5F8B27919CBD005E3FDA /* FirstCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 587A5F8927919CBD005E3FDA /* FirstCollectionViewCell.xib */; };
+		589478352799CBB400898D10 /* WeatherController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 589478342799CBB400898D10 /* WeatherController.swift */; };
 		58B7AAB827947DA800686A21 /* ThirdViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58B7AAB627947DA800686A21 /* ThirdViewCell.swift */; };
 		58B7AAB927947DA800686A21 /* ThirdViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 58B7AAB727947DA800686A21 /* ThirdViewCell.xib */; };
 		58B7AABC27947E6E00686A21 /* FourthViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58B7AABA27947E6E00686A21 /* FourthViewCell.swift */; };
@@ -56,6 +57,7 @@
 		586F5698278CEF5D00EC94A2 /* Weather.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Weather.swift; sourceTree = "<group>"; };
 		587A5F8827919CBD005E3FDA /* FirstCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstCollectionViewCell.swift; sourceTree = "<group>"; };
 		587A5F8927919CBD005E3FDA /* FirstCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FirstCollectionViewCell.xib; sourceTree = "<group>"; };
+		589478342799CBB400898D10 /* WeatherController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherController.swift; sourceTree = "<group>"; };
 		58B7AAB627947DA800686A21 /* ThirdViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirdViewCell.swift; sourceTree = "<group>"; };
 		58B7AAB727947DA800686A21 /* ThirdViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ThirdViewCell.xib; sourceTree = "<group>"; };
 		58B7AABA27947E6E00686A21 /* FourthViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FourthViewCell.swift; sourceTree = "<group>"; };
@@ -204,6 +206,7 @@
 		58A51F77272AFADE00FB75F0 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				589478342799CBB400898D10 /* WeatherController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -348,6 +351,7 @@
 				581905A6278DC936003EA1F8 /* WeatherTableViewCell.swift in Sources */,
 				58B7AAD42794849F00686A21 /* SecondViewCell.swift in Sources */,
 				58B7AABC27947E6E00686A21 /* FourthViewCell.swift in Sources */,
+				589478352799CBB400898D10 /* WeatherController.swift in Sources */,
 				58B7AAB827947DA800686A21 /* ThirdViewCell.swift in Sources */,
 				58B7AAC027947E8C00686A21 /* FifthViewCell.swift in Sources */,
 				58B7AAC427947EA800686A21 /* SixthViewCell.swift in Sources */,

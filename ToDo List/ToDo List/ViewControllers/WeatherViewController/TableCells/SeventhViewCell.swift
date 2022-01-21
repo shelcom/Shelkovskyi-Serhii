@@ -8,15 +8,22 @@
 import UIKit
 
 class SeventhViewCell: UICollectionViewCell {
+   
+   @IBOutlet var titleLabel: UILabel!
+   @IBOutlet var valueLabel: UILabel!
+   
+   var weatherController = WeatherController()
 
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-       contentView.layer.cornerRadius = 12
-    }
+   override func awakeFromNib() {
+      super.awakeFromNib()
+      
+      contentView.layer.cornerRadius = 12
+      contentView.backgroundColor =  UIColor.black.withAlphaComponent(0.25)
+   }
    
    func fill(with model: AboutWather?) {
-//      title.text = model?.title
+      let value = "\(model?.doubleValue ?? 0)"
+      titleLabel.text = model?.title
+      valueLabel.text = weatherController.formateValueForVisibility(value: value)
    }
-
 }

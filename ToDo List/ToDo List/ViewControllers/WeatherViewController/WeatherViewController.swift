@@ -26,7 +26,6 @@ class WeatherViewController: UIViewController {
    var requestManager = RequestManager()
    var processingDataRequestManager = ProcessingDataRequestManager()
    
-   
    let flowLayout: UICollectionViewFlowLayout = {
        let layout = UICollectionViewFlowLayout()
        layout.minimumInteritemSpacing = 0
@@ -38,6 +37,7 @@ class WeatherViewController: UIViewController {
    override func viewDidLoad() {
       super.viewDidLoad()
       
+      view.backgroundColor = UIColor(patternImage: UIImage(named: "background")!)
       prepareTableView()
       prepareCollectionView()
       requests()
@@ -49,21 +49,21 @@ class WeatherViewController: UIViewController {
       getWaethersForFifteenHours()
    }
    
-   override func viewDidAppear(_ animated: Bool) {
-     
-   }
-   
    func getWeather() {
       let headers: HTTPHeaders = [
          "x-rapidapi-host": "weatherbit-v1-mashape.p.rapidapi.com",
-         "x-rapidapi-key": "e92a2869camsh3383fa9a8d1ee5fp1df7cdjsn40fcf2dcbd7c"
+         "x-rapidapi-key": "43d1935a49msh0ca7bb4b1904b49p11e23fjsnd9ccbcfce989"
       ]
       let url: String = "https://weatherbit-v1-mashape.p.rapidapi.com/forecast/daily?lat=49.4285&lon=32.0621"
       requestManager.requestOfManyDay(headers: headers, url: url) { [self] response in
          weather = response
+         
          aboutWather = processingDataRequestManager.processingData(weathers: response)
-         minTempLabel.text = "Min: \(Int(weather?.first?.minTemp ?? 0))"
-         maxTempLabel.text = "Max: \(Int(weather?.first?.maxTemp ?? 0))"
+         let minTemp = NSString(format: "Min: \(Int(weather?.first?.minTemp ?? 0))" + "%@" as NSString, "\u{00B0}") as String
+         let maxTemp = NSString(format: "Max: \(Int(weather?.first?.maxTemp ?? 0))" + "%@" as NSString, "\u{00B0}") as String
+         minTempLabel.text = minTemp
+         maxTempLabel.text = maxTemp
+         
          weatherTable.reloadData()
          secondUICollectionView.reloadData()
      }
@@ -72,13 +72,14 @@ class WeatherViewController: UIViewController {
    func getWaethers() {
       let headers: HTTPHeaders = [
          "x-rapidapi-host": "weatherbit-v1-mashape.p.rapidapi.com",
-         "x-rapidapi-key": "e92a2869camsh3383fa9a8d1ee5fp1df7cdjsn40fcf2dcbd7c"
+         "x-rapidapi-key": "43d1935a49msh0ca7bb4b1904b49p11e23fjsnd9ccbcfce989"
       ]
       let url: String = "https://weatherbit-v1-mashape.p.rapidapi.com/current?lon=32.0621&lat=49.4285"
       requestManager.requestOfOneDay(headers: headers, url: url) { [self] response in
          weathers = response
+         
          cityNameLabel.text = weathers?.first?.cityName
-         temperatureLabel.text = "\(Int(weathers?.first?.temp ?? 0))"
+         temperatureLabel.text = NSString(format: " \(Int(weathers?.first?.temp ?? 0))" + "%@" as NSString, "\u{00B0}") as String
          descriptionLabel.text = weathers?.first?.weather?.description
      }
    }
@@ -86,7 +87,7 @@ class WeatherViewController: UIViewController {
    func getWaethersForFifteenHours() {
       let headers: HTTPHeaders = [
          "x-rapidapi-host": "weatherbit-v1-mashape.p.rapidapi.com",
-         "x-rapidapi-key": "e92a2869camsh3383fa9a8d1ee5fp1df7cdjsn40fcf2dcbd7c"
+         "x-rapidapi-key": "43d1935a49msh0ca7bb4b1904b49p11e23fjsnd9ccbcfce989"
       ]
       let url: String = "https://weatherbit-v1-mashape.p.rapidapi.com/forecast/hourly?lat=49.4285&lon=32.0621&hours=15"
       requestManager.requestOfFifteenHours(headers: headers, url: url) { [self] response in
@@ -101,20 +102,26 @@ class WeatherViewController: UIViewController {
       weatherTable.dataSource = self
       weatherTable.register(UINib.init(nibName: "WeatherTableViewCell", bundle: nil), forCellReuseIdentifier: "WeatherCell")
       weatherTable.layer.cornerRadius = 12.0
-      view.backgroundColor = UIColor(patternImage: UIImage(named: "background")!)
+      weatherTable.backgroundView = UIImageView(image: UIImage(named: "background"))
    }
    
    func prepareCollectionView() {
+      prepareFirstCollectionView()
+      prepareSecondCollectionView()
+   }
+   
+   func prepareFirstCollectionView() {
       firstUICollectionView.delegate = self
       firstUICollectionView.dataSource = self
       firstUICollectionView.register(UINib.init(nibName: "FirstCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "FirstCollectionCell")
       firstUICollectionView.layer.cornerRadius = 12.0
-      
+      firstUICollectionView.backgroundView = UIImageView(image: UIImage(named: "background"))
+   }
+   
+   func prepareSecondCollectionView() {
       secondUICollectionView.delegate = self
       secondUICollectionView.dataSource = self
-      
       registerCellsSecondUICollection()
-      
       secondUICollectionView.layer.cornerRadius = 12.0
       secondUICollectionView.backgroundView = UIImageView(image: UIImage(named: "background"))
    }
@@ -208,9 +215,7 @@ extension WeatherViewController: UICollectionViewDelegate, UICollectionViewDataS
    
    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize
        {
-      if collectionView == self.firstUICollectionView {
-         return CGSize(width: 40.0, height: 128.0)
-      } else {
+      if collectionView == self.secondUICollectionView {
          let width = CGFloat(325.0)
          let numberOfItemsPerRow: CGFloat = 2
          let spacing: CGFloat = flowLayout.minimumInteritemSpacing
@@ -218,6 +223,7 @@ extension WeatherViewController: UICollectionViewDelegate, UICollectionViewDataS
          let itemDimension = floor(availableWidth / numberOfItemsPerRow)
          return CGSize(width: itemDimension, height: itemDimension)
       }
+      return CGSize(width: 40, height: 200)
    }
    
    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {

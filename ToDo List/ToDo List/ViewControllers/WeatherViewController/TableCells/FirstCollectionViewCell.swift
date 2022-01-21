@@ -13,17 +13,22 @@ class FirstCollectionViewCell: UICollectionViewCell {
    @IBOutlet var tempLabel: UILabel!
    @IBOutlet var imageView: UIImageView!
    
+   var weatherController = WeatherController()
+   
    override func awakeFromNib() {
       super.awakeFromNib()
+      
+      contentView.backgroundColor = UIColor.black.withAlphaComponent(0.25)
    }
    
    func fill(with model: WeatherForFifteenHours) {
       guard let time = model.timestampLocal else { return }
       guard let temp = model.temp else { return }
       guard let icon = model.weather?.icon else { return }
+      let tempToString: String = "\(temp)"
       
-      timeLabel.text = "\(time)"
+      timeLabel.text = weatherController.formatDateForHours(date: time)
       imageView.image = UIImage(named: icon)
-      tempLabel.text = "\(temp)"
+      tempLabel.text = weatherController.formatMinAndMaxTemp(temp: tempToString)
    }
 }

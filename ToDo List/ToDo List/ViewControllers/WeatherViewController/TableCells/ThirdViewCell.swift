@@ -9,14 +9,19 @@ import UIKit
 
 class ThirdViewCell: UICollectionViewCell {
 
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-       contentView.layer.cornerRadius = 12
-    }
+   @IBOutlet var titleLabel: UILabel!
+   @IBOutlet var valueLabel: UILabel!
+   
+   override func awakeFromNib() {
+      super.awakeFromNib()
+      
+      contentView.layer.cornerRadius = 12
+      contentView.backgroundColor =  UIColor.black.withAlphaComponent(0.25)
+   }
    
    func fill(with model: AboutWather?) {
-//      title.text = model?.title
+      let value = "\(model?.doubleValue ?? 0)"
+      titleLabel.text = model?.title
+      valueLabel.text = value
    }
-
 }

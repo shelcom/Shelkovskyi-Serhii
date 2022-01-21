@@ -8,28 +8,30 @@
 import UIKit
 
 class WeatherTableViewCell: UITableViewCell {
-   @IBOutlet var minTempLabel: UILabel!
+
+   @IBOutlet var dayLabel: UILabel!
    @IBOutlet var weatherImage: UIImageView!
-   @IBOutlet var view: UIView!
+   @IBOutlet var minTempLabel: UILabel!
+   @IBOutlet var maxTempLabel: UILabel!
+   
+   var weatherController = WeatherController()
    
    override func awakeFromNib() {
       super.awakeFromNib()
-      
-      prepareView()
    }
    
-   func prepareView() {
-//         contentView.layer.cornerRadius = 12.0
-//         view.layer.cornerRadius = 12.0
-         view.backgroundColor = UIColor.gray
-      }
-   
    func fill(with model: Weathers) {
+      guard let date = model.dateTime else { return }
       guard let minTemp = model.minTemp else { return }
-//      guard let maxTemp = model.maxTemp else { return }
+      guard let maxTemp = model.maxTemp else { return }
       guard let icon = model.weather?.icon else { return }
+      let minTempToString: String = "\(minTemp)"
+      let maxTempToString: String = "\(maxTemp)"
+      let newDate = weatherController.formatDate(date: date)
       
-      minTempLabel.text = "\(minTemp)"
       weatherImage.image = UIImage(named: icon)
+      dayLabel.text = "\(newDate)"
+      minTempLabel.text = weatherController.formatMinAndMaxTemp(temp: minTempToString)
+      maxTempLabel.text = weatherController.formatMinAndMaxTemp(temp: maxTempToString)
    }
 }
