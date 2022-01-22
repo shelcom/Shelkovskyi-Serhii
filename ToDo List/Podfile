@@ -9,5 +9,5 @@ target 'ToDoList' do
 
   # Pods for ToDoList
   pod 'Alamofire'
-
+  pod 'Kingfisher', '~> 7.0'
 end

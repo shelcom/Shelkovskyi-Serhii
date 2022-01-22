@@ -10,28 +10,38 @@ import Alamofire
 
 class RequestManager {
 
-   private var weather: [Weathers]?
-   private var weathers: [Weather]?
-   private var weatherForFifteenHours: [WeatherForFifteenHours]?
+//   private var weather: [Weathers]?
+   private var game: oneGameResponse?
+   private var gamesTop: [topGameResponse]?
+   private var gamesBottom: [topGameResponse]?
+//   private var weathers: [Weather]?
+//   private var weatherForFifteenHours: [WeatherForFifteenHours]?
    
-   func requestOfManyDay(headers: HTTPHeaders, url: String, completion: @escaping ([Weathers]?) -> Void) {
-      AF.request(url, method: .get, parameters: nil, encoding: URLEncoding.default, headers: headers).responseDecodable(of: WeathersResponse.self) { [self] response in
-         weather = response.value?.data ?? nil
-         completion(weather)
+//   func requestOfManyDay(headers: HTTPHeaders, url: String, completion: @escaping ([Weathers]?) -> Void) {
+//      AF.request(url, method: .get, parameters: nil, encoding: URLEncoding.default, headers: headers).responseDecodable(of: WeathersResponse.self) { [self] response in
+//         weather = response.value?.data ?? nil
+//         completion(weather)
+//      }
+//   }
+   
+   func requestOfOneGame(headers: HTTPHeaders, url: String) {
+      AF.request(url, method: .get, parameters: nil, encoding: URLEncoding.default, headers: headers).responseDecodable(of: oneGameResponse.self) { [self] response in
+         game = response.value ?? nil
+//         completion(weather)
       }
    }
    
-   func requestOfOneDay(headers: HTTPHeaders, url: String, completion: @escaping ([Weather]?) -> Void) {
-      AF.request(url, method: .get, parameters: nil, encoding: URLEncoding.default, headers: headers).responseDecodable(of: WeatherResponse.self) { [self] response in
-         weathers = response.value?.data ?? nil
-         completion(weathers)
+   func requestForTopGame(headers: HTTPHeaders, url: String, completion: @escaping ([topGameResponse]?) -> Void) {
+      AF.request(url, method: .get, parameters: nil, encoding: URLEncoding.default, headers: headers).responseDecodable(of: [topGameResponse].self) { [self] response in
+         gamesTop = response.value ?? nil
+         completion(gamesTop)
       }
    }
    
-   func requestOfFifteenHours(headers: HTTPHeaders, url: String, completion: @escaping ([WeatherForFifteenHours]?) -> Void) {
-      AF.request(url, method: .get, parameters: nil, encoding: URLEncoding.default, headers: headers).responseDecodable(of: WeatherResponseForFifteenHours.self) { [self] response in
-         weatherForFifteenHours = response.value?.data ?? nil
-         completion(weatherForFifteenHours)
+   func requestForBottomGame(headers: HTTPHeaders, url: String) {
+      AF.request(url, method: .get, parameters: nil, encoding: URLEncoding.default, headers: headers).responseDecodable(of: [topGameResponse].self) { [self] response in
+         gamesBottom = response.value ?? nil
+//         completion(weather)
       }
    }
 }
