@@ -62,69 +62,7 @@ extension AppsFirstCell: UICollectionViewDelegate, UICollectionViewDataSource {
       return cellFirst
    }
    
-//   private func collectionView(_ collectionView: UICollectionView, didSelectRowAt indexPath: IndexPath) {
-////         shouldPerformSegue(withIdentifier: "GameViewController", sender: indexPath.row)
-////      let vc = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "AlertViewController")
-////      vc.modalPresentationStyle = .overFullScreen
-////      present(vc, animated: true, completion: nil)
-//      print("hi")
-//   }
-   
    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-      let vc = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "GameViewController")
-//      prepareForSegue(segue: vc, sender: collectionView)
-      
-//      let vc = storyboard?.instantiateViewController(withIdentifier: "DetailViewController") as? DetailViewController
-//             vc?.image = UIImage(named: names[indexPath.row] )!
-//             vc?.name = names[indexPath.row]
-//      self.pushViewController(vc, animated: true)
-//      prepare(for: vc, sender: indexPath)
-      
+//      let vc = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "GameViewController")
    }
-   
-   func prepareForSegue(segue: UIViewController, sender: AnyObject!) {
-//      if let cell = sender as? UICollectionViewCell {
-////         let i = self.tableView.indexPath(for: cell)!.row
-////         if segue.identifier == "toRestaurant" {
-//            let vc = segue.destination as! GameViewController
-//            vc.data = currentResponse[i] as NSDictionary
-////         }
-//      }
-   }
-   
-//   func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
-//         if identifier != "fromLoginToTaskList" {
-//            return true
-//         }
-//
-//         let credentialController = CredentialsController(credentials: Credentials(email: emailTextField.text,
-//                                                                                   password: passwordTextField.text))
-//         do {
-//            try credentialController.validate()
-//            try credentialController.checkCredentials()
-//            return true
-//         } catch {
-//            resultLabel.text = (error as! CredentialsError).description
-//            return false
-//         }
-//      }
-
-   func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-      if segue.identifier == "GameViewController" {
-         guard let vc = segue.destination as? GameViewController else { return }
-//         let currentUserId = UserDefaults.standard.integer(forKey: "currentUserId")
-//         let note = findNote(sender: sender as! Int, currentUserId: currentUserId)
-         vc.newString = "Fuck"
-      }
-   }
-
-//extension UIResponder {
-//    func next<T:UIResponder>(ofType: T.Type) -> T? {
-//        let r = self.next
-//        if let r = r as? T ?? r?.next(ofType: T.self) {
-//            return r
-//        } else {
-//            return nil
-//        }
-//    }
 }

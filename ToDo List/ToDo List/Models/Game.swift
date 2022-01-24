@@ -44,24 +44,3 @@ struct topGameResponse: Decodable {
       case screenshots
    }
 }
-
-//struct Games: Decodable {
-//   
-//   var id: Int?
-//   var title: String?
-//   var thumbnail: String?
-//   var genre: String?
-//   var screenshots : [Screenshots]?
-//   
-//   enum CodingKeys : String, CodingKey {
-//      case id
-//      case title
-//      case thumbnail
-//      case genre
-//      case screenshots
-//   }
-//}
-
-
-
-

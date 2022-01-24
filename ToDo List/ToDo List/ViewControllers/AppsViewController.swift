@@ -56,20 +56,7 @@ class AppsViewController: UIViewController {
       
       appsTable.register(UINib.init(nibName: "AppsFirstCell", bundle: nil), forCellReuseIdentifier: "FirstCell")
       appsTable.register(UINib.init(nibName: "AppsSecondCell", bundle: nil), forCellReuseIdentifier: "SecondCell")
-      
-//      imageBarButton. = 20
-//      imageBarButton.clipsToBounds = true
-//      imageBarButton.translatesAutoresizingMaskIntoConstraints = false
    }
-   
-//   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//          if  segue.identifier == "GameViewController",
-//              let destination = segue.destination as? GameViewController,
-//              let blogIndex = appsTable.indexPathForSelectedRow?.row
-//          {
-//              destination.newString = "swiftBlogs[blogIndex]"
-//          }
-//      }
 }
 
 extension AppsViewController: UITableViewDelegate, UITableViewDataSource {

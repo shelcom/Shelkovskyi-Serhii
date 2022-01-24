@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		5826C5092793223700B71D12 /* ProcessingDataRequestManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5826C5082793223700B71D12 /* ProcessingDataRequestManager.swift */; };
 		586B8098279B215C0023FD67 /* AppsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 586B8097279B215C0023FD67 /* AppsViewController.swift */; };
 		586B809C279B2D9C0023FD67 /* AppsFirstCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 586B809A279B2D9C0023FD67 /* AppsFirstCell.swift */; };
 		586B809D279B2D9C0023FD67 /* AppsFirstCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 586B809B279B2D9C0023FD67 /* AppsFirstCell.xib */; };
@@ -27,15 +26,12 @@
 		586BA8AD27134BB0004C0455 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 586BA8AC27134BB0004C0455 /* Assets.xcassets */; };
 		586BA8B027134BB0004C0455 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 586BA8AE27134BB0004C0455 /* LaunchScreen.storyboard */; };
 		586F5697278CE8B600EC94A2 /* RequestManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 586F5696278CE8B600EC94A2 /* RequestManager.swift */; };
-		586F5699278CEF5D00EC94A2 /* Weather.swift in Sources */ = {isa = PBXBuildFile; fileRef = 586F5698278CEF5D00EC94A2 /* Weather.swift */; };
-		589478352799CBB400898D10 /* WeatherController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 589478342799CBB400898D10 /* WeatherController.swift */; };
 		58B1A35E279C2745000BC4C4 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58B1A35D279C2745000BC4C4 /* GameViewController.swift */; };
 		E332717BB409E8167780A86B /* Pods_ToDoList.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 74E8CBB9F6AEF0DB55179CB0 /* Pods_ToDoList.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		48454B500C654ECDA7991048 /* Pods-ToDoList.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ToDoList.release.xcconfig"; path = "Target Support Files/Pods-ToDoList/Pods-ToDoList.release.xcconfig"; sourceTree = "<group>"; };
-		5826C5082793223700B71D12 /* ProcessingDataRequestManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProcessingDataRequestManager.swift; sourceTree = "<group>"; };
 		586B8097279B215C0023FD67 /* AppsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppsViewController.swift; sourceTree = "<group>"; };
 		586B809A279B2D9C0023FD67 /* AppsFirstCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppsFirstCell.swift; sourceTree = "<group>"; };
 		586B809B279B2D9C0023FD67 /* AppsFirstCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AppsFirstCell.xib; sourceTree = "<group>"; };
@@ -57,8 +53,6 @@
 		586BA8AF27134BB0004C0455 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		586BA8B127134BB0004C0455 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		586F5696278CE8B600EC94A2 /* RequestManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestManager.swift; sourceTree = "<group>"; };
-		586F5698278CEF5D00EC94A2 /* Weather.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Weather.swift; sourceTree = "<group>"; };
-		589478342799CBB400898D10 /* WeatherController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherController.swift; sourceTree = "<group>"; };
 		58B1A35D279C2745000BC4C4 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
 		74E8CBB9F6AEF0DB55179CB0 /* Pods_ToDoList.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ToDoList.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A42FF2002EDD0432B9133908 /* Pods-ToDoList.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ToDoList.debug.xcconfig"; path = "Target Support Files/Pods-ToDoList/Pods-ToDoList.debug.xcconfig"; sourceTree = "<group>"; };
@@ -149,7 +143,6 @@
 			isa = PBXGroup;
 			children = (
 				586F5696278CE8B600EC94A2 /* RequestManager.swift */,
-				5826C5082793223700B71D12 /* ProcessingDataRequestManager.swift */,
 				586B80B0279BB0D70023FD67 /* RequestImageManager.swift */,
 			);
 			path = Managers;
@@ -158,7 +151,6 @@
 		58A51F73272AF79F00FB75F0 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				586F5698278CEF5D00EC94A2 /* Weather.swift */,
 				586B80AE279B89010023FD67 /* Game.swift */,
 			);
 			path = Models;
@@ -177,7 +169,6 @@
 		58A51F77272AFADE00FB75F0 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				589478342799CBB400898D10 /* WeatherController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -309,12 +300,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				586F5699278CEF5D00EC94A2 /* Weather.swift in Sources */,
 				586B8098279B215C0023FD67 /* AppsViewController.swift in Sources */,
 				586B809C279B2D9C0023FD67 /* AppsFirstCell.swift in Sources */,
 				586B80AF279B89010023FD67 /* Game.swift in Sources */,
 				586B80A4279B44E80023FD67 /* FirstCellCollectionView.swift in Sources */,
-				589478352799CBB400898D10 /* WeatherController.swift in Sources */,
 				586BA8A427134BAE004C0455 /* AppDelegate.swift in Sources */,
 				586B80B1279BB0D70023FD67 /* RequestImageManager.swift in Sources */,
 				586B80AC279B4D700023FD67 /* FirstTableViewCell.swift in Sources */,
@@ -323,7 +312,6 @@
 				586B80A0279B2DBC0023FD67 /* AppsSecondCell.swift in Sources */,
 				586B80A8279B4B3D0023FD67 /* SecondCellCollectionView.swift in Sources */,
 				586BA8A627134BAE004C0455 /* SceneDelegate.swift in Sources */,
-				5826C5092793223700B71D12 /* ProcessingDataRequestManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

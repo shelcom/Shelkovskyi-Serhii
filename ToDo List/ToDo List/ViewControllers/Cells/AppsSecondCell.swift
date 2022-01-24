@@ -6,11 +6,15 @@
 //
 
 import UIKit
+import Alamofire
 
 class AppsSecondCell: UITableViewCell {
 
    @IBOutlet var secondCollectionView: UICollectionView!
    @IBOutlet var titleLabel: UILabel!
+   
+   var requestManager = RequestManager()
+   var manyBottomGames: [topGameResponse]?
    
    override func awakeFromNib() {
       super.awakeFromNib()
@@ -18,17 +22,34 @@ class AppsSecondCell: UITableViewCell {
       secondCollectionView.delegate = self
       secondCollectionView.dataSource = self
       secondCollectionView.register(UINib.init(nibName: "SecondCellCollectionView", bundle: nil), forCellWithReuseIdentifier: "SecondCellCollection")
+      
+      gameForBottomRequest()
+   }
+   
+   func gameForBottomRequest() {
+      let headers: HTTPHeaders = [
+         "x-rapidapi-host": "free-to-play-games-database.p.rapidapi.com",
+         "x-rapidapi-key": "e92a2869camsh3383fa9a8d1ee5fp1df7cdjsn40fcf2dcbd7c"
+      ]
+      
+      let url = "https://free-to-play-games-database.p.rapidapi.com/api/games?platform=browser&category=mmorpg&sort-by=release-date"
+      
+      requestManager.requestForTopGame(headers: headers, url: url) { [self] response in
+         manyBottomGames = response
+         secondCollectionView.reloadData()
+      }
    }
 }
 
 extension AppsSecondCell: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
    
    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-      return 8
+      return manyBottomGames?.count ?? 0
    }
    
    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
       let cellFirst = secondCollectionView.dequeueReusableCell(withReuseIdentifier: "SecondCellCollection", for: indexPath) as! SecondCellCollectionView
+      cellFirst.manyBottomGames = manyBottomGames ?? []
       return cellFirst
    }
    
@@ -36,38 +57,3 @@ extension AppsSecondCell: UICollectionViewDelegate, UICollectionViewDataSource, 
       return CGSize(width: 345, height: 200)
    }
 }
-
-
-
-//class TableViewCellTwo: UITableViewCell,UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout  {
-//
-//    @IBOutlet weak var sectionTitle: UILabel!
-//    @IBOutlet weak var smallCollectionView: UICollectionView!
-//    let appdel = UIApplication.shared.delegate as! AppDelegate
-//    var rowData : TableRowModel?
-//
-//    @IBAction func seeAll(_ sender: Any) {
-//    }
-//
-//
-//    override func awakeFromNib() {
-//        super.awakeFromNib()
-//        // Initialization code
-//        smallCollectionView.delegate = self
-//        smallCollectionView.dataSource = self
-//    }
-//
-//
-//    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-//        return (rowData?.collectionCells?.count)!
-//    }
-//
-//    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-//        let cell = smallCollectionView.dequeueReusableCell(withReuseIdentifier: "coll2", for: indexPath) as! CollectionViewCellTwo
-//        cell.tableData = rowData?.collectionCells![indexPath.row]
-//        return cell
-//    }
-//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-//        return CGSize(width: 345, height: 200)
-//    }
-//}

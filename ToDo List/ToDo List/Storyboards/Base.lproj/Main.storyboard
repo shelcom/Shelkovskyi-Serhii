@@ -32,7 +32,7 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Apps" leftItemsSupplementBackButton="YES" id="eV9-V0-BPM">
-                        <barButtonItem key="rightBarButtonItem" title="Item" image="apps" id="bd7-iT-O6n"/>
+                        <barButtonItem key="rightBarButtonItem" title="Item" image="person.circle.fill" catalog="system" id="bd7-iT-O6n"/>
                     </navigationItem>
                     <connections>
                         <outlet property="appsTable" destination="R6S-HM-IwI" id="gbm-ym-y5e"/>
@@ -98,6 +98,7 @@
     </scenes>
     <resources>
         <image name="apps" width="27" height="23"/>
+        <image name="person.circle.fill" catalog="system" width="128" height="121"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
