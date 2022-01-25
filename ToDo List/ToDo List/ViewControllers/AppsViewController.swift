@@ -73,21 +73,16 @@ extension AppsViewController: UITableViewDelegate, UITableViewDataSource {
       
       if indexPath.row == 0{
          let cell = appsTable.dequeueReusableCell(withIdentifier: "FirstCell") as! AppsFirstCell
+         cell.completion = { modelId in
+            let vc = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "GameViewController")
+            self.navigationController?.pushViewController(vc, animated: true)
+         }
          return cell
       } else{
          let cell = appsTable.dequeueReusableCell(withIdentifier: "SecondCell") as! AppsSecondCell
 //         cell.titleLabel.text = titlesArray[indexPath.row-1]
 //          cell.rowData = self.appdel.noOfRows?[indexPath.row-1]
          return cell
-      }
-   }
-   
-   func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-      if indexPath.row == 0{
-//         let vc = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "GameViewController")
-//               vc.modalPresentationStyle = .overFullScreen
-//         //      s
-//         present(vc, animated: true, completion: nil)
       }
    }
    

@@ -34,12 +34,14 @@ extension SecondCellCollectionView: UITableViewDelegate, UITableViewDataSource {
    
    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
       let newCell = tableInCollection.dequeueReusableCell(withIdentifier: "FirstCell") as! FirstTableViewCell
+      
       let url = manyBottomGames?[indexPath.row].thumbnail! ?? ""
       imageRequestImageManager.downloadImage(with: url){image in
          self.images  = image
       }
       newCell.newImageUIImage.image = images
       newCell.newImageUIImage.contentMode = .scaleAspectFit
+      
       newCell.titleLabel.text = manyBottomGames?[indexPath.row].title
       newCell.descriptionLabel.text = manyBottomGames?[indexPath.row].genre
       return newCell

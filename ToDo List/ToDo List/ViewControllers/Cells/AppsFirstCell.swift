@@ -16,6 +16,8 @@ class AppsFirstCell: UITableViewCell {
    var manyTopGames: [topGameResponse]?
    var requestManager = RequestManager()
    var imageRequestImageManager = RequestImageManager()
+   var prov: Bool?
+   var completion: ((String) -> ())?
    
    override func awakeFromNib() {
       super.awakeFromNib()
@@ -64,5 +66,13 @@ extension AppsFirstCell: UICollectionViewDelegate, UICollectionViewDataSource {
    
    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
 //      let vc = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "GameViewController")
+      completion?("\(manyTopGames?[indexPath.row].id)" )
+   }
+   
+   func perehod(completion: @escaping (_ proverka: Bool) -> Void) {
+      if prov! {
+         let vc = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "GameViewController")
+         
+      }
    }
 }
