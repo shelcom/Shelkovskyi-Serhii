@@ -12,18 +12,22 @@ struct oneGameResponse: Decodable {
    
    var id: Int?
    var title: String?
+   var genre: String?
+   var thumbnail: String?
    var description: String?
-   var screenshots : [Screenshots]?
+   var screenshots: [Screenshots]?
    
    enum CodingKeys : String, CodingKey {
       case id
       case title
+      case genre
+      case thumbnail
       case description
       case screenshots
    }
 }
 
-struct Screenshots: Codable {
+struct Screenshots: Decodable {
    
    var image: String?
 }

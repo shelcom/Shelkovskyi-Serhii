@@ -14,40 +14,19 @@ class AppsViewController: UIViewController {
    @IBOutlet var imageBarButton: UIBarButtonItem!
    
    var requestManager = RequestManager()
-   
    var titlesArray = ["Popular","Featured"]
+   var oneGame: oneGameResponse?
    
    override func viewDidLoad() {
       super.viewDidLoad()
       
-      self.tabBarItem.image = UIImage(named: "apps")
-      self.navigationItem.largeTitleDisplayMode = .always
-      
-//      oneGameRequest()
-//      gameForBottomRequest()
+      prepareTabBarItem()
       prepareForTable()
    }
    
-   func oneGameRequest() {
-      let headers: HTTPHeaders = [
-         "x-rapidapi-host": "free-to-play-games-database.p.rapidapi.com",
-         "x-rapidapi-key": "e92a2869camsh3383fa9a8d1ee5fp1df7cdjsn40fcf2dcbd7c"
-      ]
-      
-      let url = "https://free-to-play-games-database.p.rapidapi.com/api/game?id=452"
-      
-      requestManager.requestOfOneGame(headers: headers, url: url)
-   }
-   
-   func gameForBottomRequest() {
-      let headers: HTTPHeaders = [
-         "x-rapidapi-host": "free-to-play-games-database.p.rapidapi.com",
-         "x-rapidapi-key": "e92a2869camsh3383fa9a8d1ee5fp1df7cdjsn40fcf2dcbd7c"
-      ]
-      
-      let url = "https://free-to-play-games-database.p.rapidapi.com/api/game?id=452"
-      
-      requestManager.requestOfOneGame(headers: headers, url: url)
+   func prepareTabBarItem() {
+      self.tabBarItem.image = UIImage(named: "apps")
+      self.navigationItem.largeTitleDisplayMode = .always
    }
    
    func prepareForTable() {
@@ -74,8 +53,7 @@ extension AppsViewController: UITableViewDelegate, UITableViewDataSource {
       if indexPath.row == 0{
          let cell = appsTable.dequeueReusableCell(withIdentifier: "FirstCell") as! AppsFirstCell
          cell.completion = { modelId in
-            let vc = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "GameViewController")
-            self.navigationController?.pushViewController(vc, animated: true)
+            self.vcComplitionForCell(modelId: modelId)
          }
          return cell
       } else{
@@ -85,6 +63,24 @@ extension AppsViewController: UITableViewDelegate, UITableViewDataSource {
          return cell
       }
    }
+   
+   func vcComplitionForCell(modelId: String?) {
+      guard let vc = self.storyboard?.instantiateViewController(identifier: "GameViewController") as? GameViewController else { return }
+      vc.gameId = modelId
+      self.show(vc, sender: nil)
+   }
+   
+//   func tableView(_ tableView: UITableView, didEndDisplaying cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+//      if indexPath.row == 0 {
+//         let cell = appsTable.dequeueReusableCell(withIdentifier: "FirstCell") as! AppsFirstCell
+//         cell.imageView?.kf.cancelDownloadTask()
+//         cell.setNeedsLayout()
+//      } else {
+//         let cell = appsTable.dequeueReusableCell(withIdentifier: "SecondCell") as! AppsSecondCell
+//         cell.imageView?.kf.cancelDownloadTask()
+//         cell.setNeedsLayout()
+//      }
+//   }
    
    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
        if indexPath.row == 0{

@@ -7,6 +7,7 @@
 
 import UIKit
 import Alamofire
+import Kingfisher
 
 class AppsFirstCell: UITableViewCell {
 
@@ -16,7 +17,11 @@ class AppsFirstCell: UITableViewCell {
    var manyTopGames: [topGameResponse]?
    var requestManager = RequestManager()
    var imageRequestImageManager = RequestImageManager()
-   var prov: Bool?
+   let headers: HTTPHeaders = [
+      "x-rapidapi-host": "free-to-play-games-database.p.rapidapi.com",
+      "x-rapidapi-key": "e92a2869camsh3383fa9a8d1ee5fp1df7cdjsn40fcf2dcbd7c"
+   ]
+   let url = "https://free-to-play-games-database.p.rapidapi.com/api/games?platform=browser&category=mmorpg&sort-by=release-date"
    var completion: ((String) -> ())?
    
    override func awakeFromNib() {
@@ -30,13 +35,6 @@ class AppsFirstCell: UITableViewCell {
    }
    
    func gameForTopRequest() {
-      let headers: HTTPHeaders = [
-         "x-rapidapi-host": "free-to-play-games-database.p.rapidapi.com",
-         "x-rapidapi-key": "e92a2869camsh3383fa9a8d1ee5fp1df7cdjsn40fcf2dcbd7c"
-      ]
-      
-      let url = "https://free-to-play-games-database.p.rapidapi.com/api/games?platform=browser&category=mmorpg&sort-by=release-date"
-      
       requestManager.requestForTopGame(headers: headers, url: url) { [self] response in
          manyTopGames = response
          firstUICollection.reloadData()
@@ -54,25 +52,19 @@ extension AppsFirstCell: UICollectionViewDelegate, UICollectionViewDataSource {
       let cellFirst = firstUICollection.dequeueReusableCell(withReuseIdentifier: "FirstCollectionCell", for: indexPath) as! FirstCellCollectionView
       
       let url = manyTopGames?[indexPath.row].thumbnail! ?? ""
-      imageRequestImageManager.downloadImage(with: url){image in
-         self.images  = image
-      }
-      cellFirst.imageView.image = images
+      cellFirst.imageView.setImage(imageUrl: url)
+      cellFirst.imageView.kf.indicatorType = .activity
+      cellFirst.imageView.contentMode = .scaleAspectFill
       cellFirst.imageView.layer.cornerRadius = 10
+//      cellFirst.imageView.image = images
+      
       cellFirst.nameLabel.text = manyTopGames?[indexPath.row].title ?? ""
       cellFirst.categoryLabel.text = manyTopGames?[indexPath.row].genre ?? ""
       return cellFirst
    }
    
    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-//      let vc = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "GameViewController")
-      completion?("\(manyTopGames?[indexPath.row].id)" )
-   }
-   
-   func perehod(completion: @escaping (_ proverka: Bool) -> Void) {
-      if prov! {
-         let vc = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "GameViewController")
-         
-      }
+      completion?("\(manyTopGames?[indexPath.row].id ?? 0)" )
+      UserDefaults.standard.setValue(manyTopGames?[indexPath.row].id ?? 0, forKey: "gameId")
    }
 }

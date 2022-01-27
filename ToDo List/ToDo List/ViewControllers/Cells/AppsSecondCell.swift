@@ -32,7 +32,7 @@ class AppsSecondCell: UITableViewCell {
          "x-rapidapi-key": "e92a2869camsh3383fa9a8d1ee5fp1df7cdjsn40fcf2dcbd7c"
       ]
       
-      let url = "https://free-to-play-games-database.p.rapidapi.com/api/games?platform=browser&category=mmorpg&sort-by=release-date"
+      let url = "https://free-to-play-games-database.p.rapidapi.com/api/games?platform=browser&category=shooter&sort-by=release-date"
       
       requestManager.requestForTopGame(headers: headers, url: url) { [self] response in
          manyBottomGames = response
@@ -50,6 +50,7 @@ extension AppsSecondCell: UICollectionViewDelegate, UICollectionViewDataSource, 
    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
       let cellFirst = secondCollectionView.dequeueReusableCell(withReuseIdentifier: "SecondCellCollection", for: indexPath) as! SecondCellCollectionView
       cellFirst.manyBottomGames = manyBottomGames ?? []
+      cellFirst.id = indexPath.row
       return cellFirst
    }
    

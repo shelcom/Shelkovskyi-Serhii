@@ -14,6 +14,7 @@ class SecondCellCollectionView: UICollectionViewCell {
    
    var images: UIImage?
    var manyBottomGames: [topGameResponse]?
+   var id: Int?
    var imageRequestImageManager = RequestImageManager()
    
    override func awakeFromNib() {
@@ -35,15 +36,14 @@ extension SecondCellCollectionView: UITableViewDelegate, UITableViewDataSource {
    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
       let newCell = tableInCollection.dequeueReusableCell(withIdentifier: "FirstCell") as! FirstTableViewCell
       
-      let url = manyBottomGames?[indexPath.row].thumbnail! ?? ""
-      imageRequestImageManager.downloadImage(with: url){image in
-         self.images  = image
-      }
-      newCell.newImageUIImage.image = images
-      newCell.newImageUIImage.contentMode = .scaleAspectFit
+      let url = manyBottomGames?[id ?? 0].thumbnail! ?? ""
+      newCell.newImageUIImage.setImage(imageUrl: url)
+      newCell.newImageUIImage.kf.indicatorType = .activity
+      newCell.newImageUIImage.contentMode = .scaleAspectFill
+      newCell.newImageUIImage.layer.cornerRadius = 10
       
-      newCell.titleLabel.text = manyBottomGames?[indexPath.row].title
-      newCell.descriptionLabel.text = manyBottomGames?[indexPath.row].genre
+      newCell.titleLabel.text = manyBottomGames?[id ?? 0].title
+      newCell.descriptionLabel.text = manyBottomGames?[id ?? 0].genre
       return newCell
    }
    

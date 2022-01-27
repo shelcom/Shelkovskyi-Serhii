@@ -14,10 +14,10 @@ class RequestManager {
    private var gamesTop: [topGameResponse]?
    private var gamesBottom: [topGameResponse]?
    
-   func requestOfOneGame(headers: HTTPHeaders, url: String) {
+   func requestOfOneGame(headers: HTTPHeaders, url: String, completion: @escaping (oneGameResponse?) -> Void) {
       AF.request(url, method: .get, parameters: nil, encoding: URLEncoding.default, headers: headers).responseDecodable(of: oneGameResponse.self) { [self] response in
          game = response.value ?? nil
-//         completion(weather)
+         completion(game)
       }
    }
    
