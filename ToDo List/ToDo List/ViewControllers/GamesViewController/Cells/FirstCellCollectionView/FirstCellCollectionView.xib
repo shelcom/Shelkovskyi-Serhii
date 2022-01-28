@@ -17,17 +17,16 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="qnK-Nm-za0">
-                        <rect key="frame" x="0.0" y="44" width="298" height="160"/>
-                        <color key="backgroundColor" red="0.26274509800000001" green="0.2156862745" blue="0.3411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <rect key="frame" x="15" y="44" width="329" height="160"/>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" alpha="0.5" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="App Category" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rtU-Tl-6gh">
-                        <rect key="frame" x="0.0" y="21" width="106" height="21"/>
+                        <rect key="frame" x="15" y="21" width="106" height="21"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="App Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="48a-Eo-1M6">
-                        <rect key="frame" x="0.0" y="0.0" width="81" height="21"/>
+                        <rect key="frame" x="15" y="0.0" width="81" height="21"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
@@ -35,16 +34,16 @@
                 </subviews>
             </view>
             <constraints>
-                <constraint firstItem="48a-Eo-1M6" firstAttribute="leading" secondItem="67v-PX-svF" secondAttribute="leading" id="Cnz-mG-HJT"/>
+                <constraint firstItem="48a-Eo-1M6" firstAttribute="leading" secondItem="67v-PX-svF" secondAttribute="leading" constant="15" id="Cnz-mG-HJT"/>
                 <constraint firstItem="qnK-Nm-za0" firstAttribute="top" secondItem="rtU-Tl-6gh" secondAttribute="bottom" constant="2" id="Frb-m7-YCq"/>
                 <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="48a-Eo-1M6" secondAttribute="trailing" constant="10" id="J2W-hb-gou"/>
                 <constraint firstItem="rtU-Tl-6gh" firstAttribute="top" secondItem="48a-Eo-1M6" secondAttribute="bottom" id="JMw-Hm-P91"/>
-                <constraint firstItem="qnK-Nm-za0" firstAttribute="leading" secondItem="67v-PX-svF" secondAttribute="leading" id="Roa-IE-pJd"/>
-                <constraint firstItem="rtU-Tl-6gh" firstAttribute="leading" secondItem="67v-PX-svF" secondAttribute="leading" id="SY2-1O-Kch"/>
+                <constraint firstItem="qnK-Nm-za0" firstAttribute="leading" secondItem="67v-PX-svF" secondAttribute="leading" constant="15" id="Roa-IE-pJd"/>
+                <constraint firstItem="rtU-Tl-6gh" firstAttribute="leading" secondItem="67v-PX-svF" secondAttribute="leading" constant="15" id="SY2-1O-Kch"/>
                 <constraint firstItem="qnK-Nm-za0" firstAttribute="top" secondItem="67v-PX-svF" secondAttribute="top" constant="44" id="Vlv-XX-7Y8"/>
                 <constraint firstAttribute="bottom" secondItem="qnK-Nm-za0" secondAttribute="bottom" id="XVM-K4-yhe"/>
                 <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="rtU-Tl-6gh" secondAttribute="trailing" constant="10" id="x1z-aO-4EJ"/>
-                <constraint firstAttribute="trailing" secondItem="qnK-Nm-za0" secondAttribute="trailing" constant="46" id="z3x-kM-9zf"/>
+                <constraint firstAttribute="trailing" secondItem="qnK-Nm-za0" secondAttribute="trailing" id="z3x-kM-9zf"/>
             </constraints>
             <connections>
                 <outlet property="categoryLabel" destination="rtU-Tl-6gh" id="aRj-ct-8Fr"/>

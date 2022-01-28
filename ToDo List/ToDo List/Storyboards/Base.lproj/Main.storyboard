@@ -9,15 +9,15 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Apps-->
+        <!--Games-->
         <scene sceneID="op2-t9-Ios">
             <objects>
-                <viewController id="tJS-Ga-nYX" customClass="AppsViewController" customModule="ToDoList" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="tJS-Ga-nYX" customClass="GamesViewController" customModule="ToDoList" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="3E8-yq-xOH">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="R6S-HM-IwI">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="R6S-HM-IwI">
                                 <rect key="frame" x="0.0" y="88" width="390" height="673"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
@@ -31,7 +31,7 @@
                             <constraint firstItem="R6S-HM-IwI" firstAttribute="trailing" secondItem="EUv-tb-Twe" secondAttribute="trailing" id="wrD-9V-4Ug"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Apps" leftItemsSupplementBackButton="YES" id="eV9-V0-BPM">
+                    <navigationItem key="navigationItem" title="Games" leftItemsSupplementBackButton="YES" id="eV9-V0-BPM">
                         <barButtonItem key="rightBarButtonItem" title="Item" image="person.circle.fill" catalog="system" id="bd7-iT-O6n"/>
                     </navigationItem>
                     <connections>
@@ -97,7 +97,7 @@
         <scene sceneID="1sd-mv-Sa3">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="KZO-bE-QmX" userLabel="Apps" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Apps" image="apps" landscapeImage="apps" selectedImage="apps" id="P3P-lH-jkk"/>
+                    <tabBarItem key="tabBarItem" title="Games" image="games" landscapeImage="games" selectedImage="games" id="P3P-lH-jkk"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="trn-n7-EeS">
                         <rect key="frame" x="0.0" y="44" width="390" height="44"/>
@@ -132,7 +132,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="apps" width="27" height="23"/>
+        <image name="games" width="26" height="24"/>
         <image name="person.circle.fill" catalog="system" width="128" height="121"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

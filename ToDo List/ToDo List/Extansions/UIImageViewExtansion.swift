@@ -11,6 +11,6 @@ import Kingfisher
 
 extension UIImageView {
    func setImage(imageUrl: String) {
-      self.kf.setImage(with: URL(string: imageUrl))
+      self.kf.setImage(with: URL(string: imageUrl), options: [.memoryCacheExpiration(.never)])
    }
 }

@@ -13,26 +13,29 @@ class SecondGameCell: UITableViewCell {
    @IBOutlet var bannerCollection: UICollectionView!
    
    var arrayScreenshotsString: [Screenshots]?
-   var imageRequest = RequestImageManager()
    var requestManager = RequestManager()
    var gameImage: UIImage?
    var gameId: Int?
+   let headers: HTTPHeaders = [
+      "x-rapidapi-host": "free-to-play-games-database.p.rapidapi.com",
+      "x-rapidapi-key": "e92a2869camsh3383fa9a8d1ee5fp1df7cdjsn40fcf2dcbd7c"
+   ]
    
    override func awakeFromNib() {
       super.awakeFromNib()
       
       prepareCollection()
+      getCurrentGameId()
+      requestImages(id: gameId)
+   }
+   
+   func getCurrentGameId() {
       let currentGameId = UserDefaults.standard.integer(forKey: "gameId")
       gameId = currentGameId
-      requestImages(id: gameId)
    }
    
    func requestImages(id: Int?) {
       if gameId != 0 {
-         let headers: HTTPHeaders = [
-            "x-rapidapi-host": "free-to-play-games-database.p.rapidapi.com",
-            "x-rapidapi-key": "e92a2869camsh3383fa9a8d1ee5fp1df7cdjsn40fcf2dcbd7c"
-         ]
          let url = "https://free-to-play-games-database.p.rapidapi.com/api/game?id=\(id ?? 0)"
          requestManager.requestOfOneGame(headers: headers, url: url){ [self] response in
             arrayScreenshotsString = response?.screenshots
@@ -56,12 +59,7 @@ extension SecondGameCell: UICollectionViewDelegate, UICollectionViewDataSource, 
    
    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
       let cellFirst = bannerCollection.dequeueReusableCell(withReuseIdentifier: "CollectionCell", for: indexPath) as! GameCollectionCell
-      let oneImage = arrayScreenshotsString?[indexPath.row].image
-      let url = oneImage
-      cellFirst.image.setImage(imageUrl: url ?? "")
-      cellFirst.image.kf.indicatorType = .activity
-      cellFirst.image.contentMode = .scaleAspectFill
-      cellFirst.image.layer.cornerRadius = 6
+      cellFirst.fill(model: arrayScreenshotsString?[indexPath.row])
       return cellFirst
    }
    

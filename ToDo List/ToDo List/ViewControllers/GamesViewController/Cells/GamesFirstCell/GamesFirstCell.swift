@@ -9,14 +9,13 @@ import UIKit
 import Alamofire
 import Kingfisher
 
-class AppsFirstCell: UITableViewCell {
+class GamesFirstCell: UITableViewCell {
 
    @IBOutlet var firstUICollection: UICollectionView!
 
    var images: UIImage?
-   var manyTopGames: [topGameResponse]?
+   var manyTopGames: [manyGamesResponse]?
    var requestManager = RequestManager()
-   var imageRequestImageManager = RequestImageManager()
    let headers: HTTPHeaders = [
       "x-rapidapi-host": "free-to-play-games-database.p.rapidapi.com",
       "x-rapidapi-key": "e92a2869camsh3383fa9a8d1ee5fp1df7cdjsn40fcf2dcbd7c"
@@ -27,22 +26,25 @@ class AppsFirstCell: UITableViewCell {
    override func awakeFromNib() {
       super.awakeFromNib()
       
-      firstUICollection.delegate = self
-      firstUICollection.dataSource = self
-      firstUICollection.register(UINib.init(nibName: "FirstCellCollectionView", bundle: nil), forCellWithReuseIdentifier: "FirstCollectionCell")
-      
+      prepareUICollection()
       gameForTopRequest()
    }
    
+   func prepareUICollection() {
+      firstUICollection.delegate = self
+      firstUICollection.dataSource = self
+      firstUICollection.register(UINib.init(nibName: "FirstCellCollectionView", bundle: nil), forCellWithReuseIdentifier: "FirstCollectionCell")
+   }
+   
    func gameForTopRequest() {
-      requestManager.requestForTopGame(headers: headers, url: url) { [self] response in
+      requestManager.requestGames(headers: headers, url: url) { [self] response in
          manyTopGames = response
          firstUICollection.reloadData()
       }
    }
 }
 
-extension AppsFirstCell: UICollectionViewDelegate, UICollectionViewDataSource {
+extension GamesFirstCell: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
    
    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
       return manyTopGames?.count ?? 0
@@ -50,21 +52,17 @@ extension AppsFirstCell: UICollectionViewDelegate, UICollectionViewDataSource {
    
    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
       let cellFirst = firstUICollection.dequeueReusableCell(withReuseIdentifier: "FirstCollectionCell", for: indexPath) as! FirstCellCollectionView
-      
-      let url = manyTopGames?[indexPath.row].thumbnail! ?? ""
-      cellFirst.imageView.setImage(imageUrl: url)
-      cellFirst.imageView.kf.indicatorType = .activity
-      cellFirst.imageView.contentMode = .scaleAspectFill
-      cellFirst.imageView.layer.cornerRadius = 10
-//      cellFirst.imageView.image = images
-      
-      cellFirst.nameLabel.text = manyTopGames?[indexPath.row].title ?? ""
-      cellFirst.categoryLabel.text = manyTopGames?[indexPath.row].genre ?? ""
+      cellFirst.fill(model: manyTopGames?[indexPath.row])
       return cellFirst
    }
    
    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
       completion?("\(manyTopGames?[indexPath.row].id ?? 0)" )
       UserDefaults.standard.setValue(manyTopGames?[indexPath.row].id ?? 0, forKey: "gameId")
+   }
+   
+   func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout,
+                       sizeForItemAt indexPath: IndexPath) -> CGSize {
+      return CGSize(width:  self.firstUICollection.frame.width - 25, height: self.firstUICollection.frame.height)
    }
 }

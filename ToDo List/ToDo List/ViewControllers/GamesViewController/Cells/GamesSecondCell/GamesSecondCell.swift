@@ -8,49 +8,52 @@
 import UIKit
 import Alamofire
 
-class AppsSecondCell: UITableViewCell {
+class GamesSecondCell: UITableViewCell {
 
    @IBOutlet var secondCollectionView: UICollectionView!
    @IBOutlet var titleLabel: UILabel!
    
    var requestManager = RequestManager()
-   var manyBottomGames: [topGameResponse]?
+   var manyGames: [manyGamesResponse]?
+   var gameController = GamesController()
+   var rowData: TableRowModel?
+   let headers: HTTPHeaders = [
+      "x-rapidapi-host": "free-to-play-games-database.p.rapidapi.com",
+      "x-rapidapi-key": "e92a2869camsh3383fa9a8d1ee5fp1df7cdjsn40fcf2dcbd7c"
+   ]
+   let url = "https://free-to-play-games-database.p.rapidapi.com/api/games?platform=browser&category=shooter&sort-by=release-date"
    
    override func awakeFromNib() {
       super.awakeFromNib()
       
-      secondCollectionView.delegate = self
-      secondCollectionView.dataSource = self
-      secondCollectionView.register(UINib.init(nibName: "SecondCellCollectionView", bundle: nil), forCellWithReuseIdentifier: "SecondCellCollection")
-      
+      prepareCollectionView()
       gameForBottomRequest()
    }
    
+   func prepareCollectionView() {
+      secondCollectionView.delegate = self
+      secondCollectionView.dataSource = self
+      secondCollectionView.register(UINib.init(nibName: "SecondCellCollectionView", bundle: nil), forCellWithReuseIdentifier: "SecondCellCollection")
+   }
+   
    func gameForBottomRequest() {
-      let headers: HTTPHeaders = [
-         "x-rapidapi-host": "free-to-play-games-database.p.rapidapi.com",
-         "x-rapidapi-key": "e92a2869camsh3383fa9a8d1ee5fp1df7cdjsn40fcf2dcbd7c"
-      ]
-      
-      let url = "https://free-to-play-games-database.p.rapidapi.com/api/games?platform=browser&category=shooter&sort-by=release-date"
-      
-      requestManager.requestForTopGame(headers: headers, url: url) { [self] response in
-         manyBottomGames = response
+      requestManager.requestGames(headers: headers, url: url) { [self] response in
+         manyGames = response
+         rowData = gameController.prepareData(gameArr: manyGames)
          secondCollectionView.reloadData()
       }
    }
 }
 
-extension AppsSecondCell: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+extension GamesSecondCell: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
    
    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-      return manyBottomGames?.count ?? 0
+      return rowData?.collectionCells?.count ?? 0
    }
    
    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
       let cellFirst = secondCollectionView.dequeueReusableCell(withReuseIdentifier: "SecondCellCollection", for: indexPath) as! SecondCellCollectionView
-      cellFirst.manyBottomGames = manyBottomGames ?? []
-      cellFirst.id = indexPath.row
+      cellFirst.tableData = rowData?.collectionCells![indexPath.row]
       return cellFirst
    }
    

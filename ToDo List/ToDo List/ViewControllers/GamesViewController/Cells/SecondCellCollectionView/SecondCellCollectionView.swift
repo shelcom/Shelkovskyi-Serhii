@@ -13,16 +13,17 @@ class SecondCellCollectionView: UICollectionViewCell {
    @IBOutlet var tableInCollection: UITableView!
    
    var images: UIImage?
-   var manyBottomGames: [topGameResponse]?
-   var id: Int?
-   var imageRequestImageManager = RequestImageManager()
+   var tableData : CollectionCellModel?
    
    override func awakeFromNib() {
       super.awakeFromNib()
       
+      prepareTable()
+   }
+   
+   func prepareTable() {
       self.tableInCollection.delegate = self
       self.tableInCollection.dataSource = self
-      
       tableInCollection.register(UINib.init(nibName: "FirstTableViewCell", bundle: nil), forCellReuseIdentifier: "FirstCell")
    }
 }
@@ -30,24 +31,21 @@ class SecondCellCollectionView: UICollectionViewCell {
 extension SecondCellCollectionView: UITableViewDelegate, UITableViewDataSource {
    
    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-      return manyBottomGames?.count ?? 0
+      return tableData?.applications?.count ?? 0
    }
    
    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
       let newCell = tableInCollection.dequeueReusableCell(withIdentifier: "FirstCell") as! FirstTableViewCell
       
-      let url = manyBottomGames?[id ?? 0].thumbnail! ?? ""
-      newCell.newImageUIImage.setImage(imageUrl: url)
-      newCell.newImageUIImage.kf.indicatorType = .activity
-      newCell.newImageUIImage.contentMode = .scaleAspectFill
-      newCell.newImageUIImage.layer.cornerRadius = 10
-      
-      newCell.titleLabel.text = manyBottomGames?[id ?? 0].title
-      newCell.descriptionLabel.text = manyBottomGames?[id ?? 0].genre
+      newCell.fill(model: tableData?.applications![indexPath.row])
       return newCell
    }
    
    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-       return 60
+       return 65
+   }
+   
+   func tableView(tableView: UITableView, weightForRowAt indexPath: NSIndexPath) -> CGFloat {
+       return self.tableInCollection.frame.width - 25
    }
 }

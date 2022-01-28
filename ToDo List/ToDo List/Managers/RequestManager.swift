@@ -11,8 +11,8 @@ import Alamofire
 class RequestManager {
 
    private var game: oneGameResponse?
-   private var gamesTop: [topGameResponse]?
-   private var gamesBottom: [topGameResponse]?
+   private var gamesTop: [manyGamesResponse]?
+   private var gamesBottom: [manyGamesResponse]?
    
    func requestOfOneGame(headers: HTTPHeaders, url: String, completion: @escaping (oneGameResponse?) -> Void) {
       AF.request(url, method: .get, parameters: nil, encoding: URLEncoding.default, headers: headers).responseDecodable(of: oneGameResponse.self) { [self] response in
@@ -21,17 +21,10 @@ class RequestManager {
       }
    }
    
-   func requestForTopGame(headers: HTTPHeaders, url: String, completion: @escaping ([topGameResponse]?) -> Void) {
-      AF.request(url, method: .get, parameters: nil, encoding: URLEncoding.default, headers: headers).responseDecodable(of: [topGameResponse].self) { [self] response in
+   func requestGames(headers: HTTPHeaders, url: String, completion: @escaping ([manyGamesResponse]?) -> Void) {
+      AF.request(url, method: .get, parameters: nil, encoding: URLEncoding.default, headers: headers).responseDecodable(of: [manyGamesResponse].self) { [self] response in
          gamesTop = response.value ?? nil
          completion(gamesTop)
-      }
-   }
-   
-   func requestForBottomGame(headers: HTTPHeaders, url: String) {
-      AF.request(url, method: .get, parameters: nil, encoding: URLEncoding.default, headers: headers).responseDecodable(of: [topGameResponse].self) { [self] response in
-         gamesBottom = response.value ?? nil
-//         completion(weather)
       }
    }
 }
