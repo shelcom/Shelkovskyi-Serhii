@@ -10,28 +10,21 @@ import Alamofire
 
 class RequestManager {
 
-   private var weather: [Weathers]?
-   private var weathers: [Weather]?
-   private var weatherForFifteenHours: [WeatherForFifteenHours]?
+   private var game: oneGameResponse?
+   private var gamesTop: [manyGamesResponse]?
+   private var gamesBottom: [manyGamesResponse]?
    
-   func requestOfManyDay(headers: HTTPHeaders, url: String, completion: @escaping ([Weathers]?) -> Void) {
-      AF.request(url, method: .get, parameters: nil, encoding: URLEncoding.default, headers: headers).responseDecodable(of: WeathersResponse.self) { [self] response in
-         weather = response.value?.data ?? nil
-         completion(weather)
+   func requestOfOneGame(headers: HTTPHeaders, url: String, completion: @escaping (oneGameResponse?) -> Void) {
+      AF.request(url, method: .get, parameters: nil, encoding: URLEncoding.default, headers: headers).responseDecodable(of: oneGameResponse.self) { [self] response in
+         game = response.value ?? nil
+         completion(game)
       }
    }
    
-   func requestOfOneDay(headers: HTTPHeaders, url: String, completion: @escaping ([Weather]?) -> Void) {
-      AF.request(url, method: .get, parameters: nil, encoding: URLEncoding.default, headers: headers).responseDecodable(of: WeatherResponse.self) { [self] response in
-         weathers = response.value?.data ?? nil
-         completion(weathers)
-      }
-   }
-   
-   func requestOfFifteenHours(headers: HTTPHeaders, url: String, completion: @escaping ([WeatherForFifteenHours]?) -> Void) {
-      AF.request(url, method: .get, parameters: nil, encoding: URLEncoding.default, headers: headers).responseDecodable(of: WeatherResponseForFifteenHours.self) { [self] response in
-         weatherForFifteenHours = response.value?.data ?? nil
-         completion(weatherForFifteenHours)
+   func requestGames(headers: HTTPHeaders, url: String, completion: @escaping ([manyGamesResponse]?) -> Void) {
+      AF.request(url, method: .get, parameters: nil, encoding: URLEncoding.default, headers: headers).responseDecodable(of: [manyGamesResponse].self) { [self] response in
+         gamesTop = response.value ?? nil
+         completion(gamesTop)
       }
    }
 }
