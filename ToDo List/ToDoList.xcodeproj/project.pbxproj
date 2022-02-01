@@ -9,53 +9,20 @@
 /* Begin PBXBuildFile section */
 		586BA8A427134BAE004C0455 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 586BA8A327134BAE004C0455 /* AppDelegate.swift */; };
 		586BA8A627134BAE004C0455 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 586BA8A527134BAE004C0455 /* SceneDelegate.swift */; };
-		586BA8AB27134BAE004C0455 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 586BA8A927134BAE004C0455 /* Main.storyboard */; };
 		586BA8AD27134BB0004C0455 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 586BA8AC27134BB0004C0455 /* Assets.xcassets */; };
 		586BA8B027134BB0004C0455 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 586BA8AE27134BB0004C0455 /* LaunchScreen.storyboard */; };
-		58A5F38C27A6CF2F009CF3F9 /* Exercise.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58A5F38B27A6CF2F009CF3F9 /* Exercise.swift */; };
-		58A5F38E27A6D116009CF3F9 /* Jumping.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58A5F38D27A6D116009CF3F9 /* Jumping.swift */; };
-		58A5F39127A6D1EA009CF3F9 /* Running.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58A5F39027A6D1EA009CF3F9 /* Running.swift */; };
-		58A5F39327A6D33E009CF3F9 /* StartDoExercise.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58A5F39227A6D33E009CF3F9 /* StartDoExercise.swift */; };
-		58A5F39627A6D4C4009CF3F9 /* FactoryFirstExampleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58A5F39527A6D4C4009CF3F9 /* FactoryFirstExampleViewController.swift */; };
-		58A5F39A27A6DB10009CF3F9 /* FactorySecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58A5F39927A6DB10009CF3F9 /* FactorySecondViewController.swift */; };
-		58A5F39C27A6DBD3009CF3F9 /* Cook.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58A5F39B27A6DBD3009CF3F9 /* Cook.swift */; };
-		58A5F39E27A6DD02009CF3F9 /* Soup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58A5F39D27A6DD02009CF3F9 /* Soup.swift */; };
-		58A5F3A027A6DD65009CF3F9 /* Porridge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58A5F39F27A6DD65009CF3F9 /* Porridge.swift */; };
-		58A5F3A227A6DDEE009CF3F9 /* StartCooking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58A5F3A127A6DDEE009CF3F9 /* StartCooking.swift */; };
-		58A5F3A927A736B0009CF3F9 /* Parka.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58A5F3A827A736B0009CF3F9 /* Parka.swift */; };
-		58A5F3AB27A73CAC009CF3F9 /* Jacket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58A5F3AA27A73CAC009CF3F9 /* Jacket.swift */; };
-		58A5F3AD27A742BA009CF3F9 /* BuilderFirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58A5F3AC27A742BA009CF3F9 /* BuilderFirstViewController.swift */; };
-		58A5F3AF27A742F3009CF3F9 /* BuilderSecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58A5F3AE27A742F3009CF3F9 /* BuilderSecondViewController.swift */; };
-		58A5F3B127A7542E009CF3F9 /* Bike.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58A5F3B027A7542E009CF3F9 /* Bike.swift */; };
-		58A5F3B327A75453009CF3F9 /* Polygon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58A5F3B227A75453009CF3F9 /* Polygon.swift */; };
 		E332717BB409E8167780A86B /* Pods_ToDoList.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 74E8CBB9F6AEF0DB55179CB0 /* Pods_ToDoList.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		48454B500C654ECDA7991048 /* Pods-ToDoList.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ToDoList.release.xcconfig"; path = "Target Support Files/Pods-ToDoList/Pods-ToDoList.release.xcconfig"; sourceTree = "<group>"; };
+		5848D60627A8AB58008B3178 /* StructurePatternsPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = StructurePatternsPlayground.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		586BA8A027134BAE004C0455 /* ToDoList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ToDoList.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		586BA8A327134BAE004C0455 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		586BA8A527134BAE004C0455 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		586BA8AA27134BAE004C0455 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		586BA8AC27134BB0004C0455 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		586BA8AF27134BB0004C0455 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		586BA8B127134BB0004C0455 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		58A5F38B27A6CF2F009CF3F9 /* Exercise.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Exercise.swift; sourceTree = "<group>"; };
-		58A5F38D27A6D116009CF3F9 /* Jumping.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Jumping.swift; sourceTree = "<group>"; };
-		58A5F39027A6D1EA009CF3F9 /* Running.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Running.swift; sourceTree = "<group>"; };
-		58A5F39227A6D33E009CF3F9 /* StartDoExercise.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartDoExercise.swift; sourceTree = "<group>"; };
-		58A5F39527A6D4C4009CF3F9 /* FactoryFirstExampleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FactoryFirstExampleViewController.swift; sourceTree = "<group>"; };
-		58A5F39927A6DB10009CF3F9 /* FactorySecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FactorySecondViewController.swift; sourceTree = "<group>"; };
-		58A5F39B27A6DBD3009CF3F9 /* Cook.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cook.swift; sourceTree = "<group>"; };
-		58A5F39D27A6DD02009CF3F9 /* Soup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Soup.swift; sourceTree = "<group>"; };
-		58A5F39F27A6DD65009CF3F9 /* Porridge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Porridge.swift; sourceTree = "<group>"; };
-		58A5F3A127A6DDEE009CF3F9 /* StartCooking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartCooking.swift; sourceTree = "<group>"; };
-		58A5F3A827A736B0009CF3F9 /* Parka.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Parka.swift; sourceTree = "<group>"; };
-		58A5F3AA27A73CAC009CF3F9 /* Jacket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Jacket.swift; sourceTree = "<group>"; };
-		58A5F3AC27A742BA009CF3F9 /* BuilderFirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuilderFirstViewController.swift; sourceTree = "<group>"; };
-		58A5F3AE27A742F3009CF3F9 /* BuilderSecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuilderSecondViewController.swift; sourceTree = "<group>"; };
-		58A5F3B027A7542E009CF3F9 /* Bike.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bike.swift; sourceTree = "<group>"; };
-		58A5F3B227A75453009CF3F9 /* Polygon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Polygon.swift; sourceTree = "<group>"; };
 		74E8CBB9F6AEF0DB55179CB0 /* Pods_ToDoList.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ToDoList.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A42FF2002EDD0432B9133908 /* Pods-ToDoList.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ToDoList.debug.xcconfig"; path = "Target Support Files/Pods-ToDoList/Pods-ToDoList.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -89,15 +56,6 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		5837CC8227A1FA5900F952DC /* Factory */ = {
-			isa = PBXGroup;
-			children = (
-				58A5F38F27A6D1A4009CF3F9 /* FirstExample */,
-				58A5F39727A6D9BF009CF3F9 /* SecondExample */,
-			);
-			path = Factory;
-			sourceTree = "<group>";
-		};
 		586BA89727134BAE004C0455 = {
 			isa = PBXGroup;
 			children = (
@@ -119,125 +77,14 @@
 		586BA8A227134BAE004C0455 /* ToDo List */ = {
 			isa = PBXGroup;
 			children = (
-				58A5F3A327A728C5009CF3F9 /* Builder */,
-				5837CC8227A1FA5900F952DC /* Factory */,
-				58A7591B273700CE00ADF9DC /* Storyboards */,
-				58A51F76272AFAB400FB75F0 /* ViewControllers */,
-				58A51F73272AF79F00FB75F0 /* Protocols */,
 				586BA8A327134BAE004C0455 /* AppDelegate.swift */,
 				586BA8AE27134BB0004C0455 /* LaunchScreen.storyboard */,
 				586BA8A527134BAE004C0455 /* SceneDelegate.swift */,
 				586BA8AC27134BB0004C0455 /* Assets.xcassets */,
 				586BA8B127134BB0004C0455 /* Info.plist */,
+				5848D60627A8AB58008B3178 /* StructurePatternsPlayground.playground */,
 			);
 			path = "ToDo List";
-			sourceTree = "<group>";
-		};
-		58A51F73272AF79F00FB75F0 /* Protocols */ = {
-			isa = PBXGroup;
-			children = (
-				58A5F38B27A6CF2F009CF3F9 /* Exercise.swift */,
-				58A5F39B27A6DBD3009CF3F9 /* Cook.swift */,
-			);
-			path = Protocols;
-			sourceTree = "<group>";
-		};
-		58A51F76272AFAB400FB75F0 /* ViewControllers */ = {
-			isa = PBXGroup;
-			children = (
-				58A5F3A527A7291E009CF3F9 /* BuilderSecondViewController */,
-				58A5F3A427A72907009CF3F9 /* BuilderFirstViewController */,
-				58A5F39827A6DA88009CF3F9 /* FactorySecondViewController */,
-				58A5F39427A6D462009CF3F9 /* FactoryFirstExampleViewController */,
-			);
-			path = ViewControllers;
-			sourceTree = "<group>";
-		};
-		58A5F38F27A6D1A4009CF3F9 /* FirstExample */ = {
-			isa = PBXGroup;
-			children = (
-				58A5F38D27A6D116009CF3F9 /* Jumping.swift */,
-				58A5F39027A6D1EA009CF3F9 /* Running.swift */,
-				58A5F39227A6D33E009CF3F9 /* StartDoExercise.swift */,
-			);
-			path = FirstExample;
-			sourceTree = "<group>";
-		};
-		58A5F39427A6D462009CF3F9 /* FactoryFirstExampleViewController */ = {
-			isa = PBXGroup;
-			children = (
-				58A5F39527A6D4C4009CF3F9 /* FactoryFirstExampleViewController.swift */,
-			);
-			path = FactoryFirstExampleViewController;
-			sourceTree = "<group>";
-		};
-		58A5F39727A6D9BF009CF3F9 /* SecondExample */ = {
-			isa = PBXGroup;
-			children = (
-				58A5F39D27A6DD02009CF3F9 /* Soup.swift */,
-				58A5F39F27A6DD65009CF3F9 /* Porridge.swift */,
-				58A5F3A127A6DDEE009CF3F9 /* StartCooking.swift */,
-			);
-			path = SecondExample;
-			sourceTree = "<group>";
-		};
-		58A5F39827A6DA88009CF3F9 /* FactorySecondViewController */ = {
-			isa = PBXGroup;
-			children = (
-				58A5F39927A6DB10009CF3F9 /* FactorySecondViewController.swift */,
-			);
-			path = FactorySecondViewController;
-			sourceTree = "<group>";
-		};
-		58A5F3A327A728C5009CF3F9 /* Builder */ = {
-			isa = PBXGroup;
-			children = (
-				58A5F3A727A7369A009CF3F9 /* SecondExample */,
-				58A5F3A627A7368E009CF3F9 /* FirstExample */,
-			);
-			path = Builder;
-			sourceTree = "<group>";
-		};
-		58A5F3A427A72907009CF3F9 /* BuilderFirstViewController */ = {
-			isa = PBXGroup;
-			children = (
-				58A5F3AC27A742BA009CF3F9 /* BuilderFirstViewController.swift */,
-			);
-			path = BuilderFirstViewController;
-			sourceTree = "<group>";
-		};
-		58A5F3A527A7291E009CF3F9 /* BuilderSecondViewController */ = {
-			isa = PBXGroup;
-			children = (
-				58A5F3AE27A742F3009CF3F9 /* BuilderSecondViewController.swift */,
-			);
-			path = BuilderSecondViewController;
-			sourceTree = "<group>";
-		};
-		58A5F3A627A7368E009CF3F9 /* FirstExample */ = {
-			isa = PBXGroup;
-			children = (
-				58A5F3A827A736B0009CF3F9 /* Parka.swift */,
-				58A5F3AA27A73CAC009CF3F9 /* Jacket.swift */,
-			);
-			path = FirstExample;
-			sourceTree = "<group>";
-		};
-		58A5F3A727A7369A009CF3F9 /* SecondExample */ = {
-			isa = PBXGroup;
-			children = (
-				58A5F3B227A75453009CF3F9 /* Polygon.swift */,
-				58A5F3B027A7542E009CF3F9 /* Bike.swift */,
-			);
-			path = SecondExample;
-			sourceTree = "<group>";
-		};
-		58A7591B273700CE00ADF9DC /* Storyboards */ = {
-			isa = PBXGroup;
-			children = (
-				586BA8A927134BAE004C0455 /* Main.storyboard */,
-			);
-			path = Storyboards;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -301,7 +148,6 @@
 			files = (
 				586BA8B027134BB0004C0455 /* LaunchScreen.storyboard in Resources */,
 				586BA8AD27134BB0004C0455 /* Assets.xcassets in Resources */,
-				586BA8AB27134BAE004C0455 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -354,38 +200,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				58A5F39C27A6DBD3009CF3F9 /* Cook.swift in Sources */,
-				58A5F3A227A6DDEE009CF3F9 /* StartCooking.swift in Sources */,
 				586BA8A427134BAE004C0455 /* AppDelegate.swift in Sources */,
-				58A5F39327A6D33E009CF3F9 /* StartDoExercise.swift in Sources */,
 				586BA8A627134BAE004C0455 /* SceneDelegate.swift in Sources */,
-				58A5F38E27A6D116009CF3F9 /* Jumping.swift in Sources */,
-				58A5F3A027A6DD65009CF3F9 /* Porridge.swift in Sources */,
-				58A5F3AD27A742BA009CF3F9 /* BuilderFirstViewController.swift in Sources */,
-				58A5F3AB27A73CAC009CF3F9 /* Jacket.swift in Sources */,
-				58A5F38C27A6CF2F009CF3F9 /* Exercise.swift in Sources */,
-				58A5F3AF27A742F3009CF3F9 /* BuilderSecondViewController.swift in Sources */,
-				58A5F3A927A736B0009CF3F9 /* Parka.swift in Sources */,
-				58A5F3B327A75453009CF3F9 /* Polygon.swift in Sources */,
-				58A5F39A27A6DB10009CF3F9 /* FactorySecondViewController.swift in Sources */,
-				58A5F39627A6D4C4009CF3F9 /* FactoryFirstExampleViewController.swift in Sources */,
-				58A5F39E27A6DD02009CF3F9 /* Soup.swift in Sources */,
-				58A5F3B127A7542E009CF3F9 /* Bike.swift in Sources */,
-				58A5F39127A6D1EA009CF3F9 /* Running.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		586BA8A927134BAE004C0455 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				586BA8AA27134BAE004C0455 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		586BA8AE27134BB0004C0455 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
