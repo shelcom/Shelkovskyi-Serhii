@@ -16,7 +16,7 @@
 
 /* Begin PBXFileReference section */
 		48454B500C654ECDA7991048 /* Pods-ToDoList.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ToDoList.release.xcconfig"; path = "Target Support Files/Pods-ToDoList/Pods-ToDoList.release.xcconfig"; sourceTree = "<group>"; };
-		5848D60627A8AB58008B3178 /* StructurePatternsPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = StructurePatternsPlayground.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		583246EB27B0732900245480 /* BehavioralPatternsPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = BehavioralPatternsPlayground.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		586BA8A027134BAE004C0455 /* ToDoList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ToDoList.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		586BA8A327134BAE004C0455 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		586BA8A527134BAE004C0455 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -82,7 +82,7 @@
 				586BA8A527134BAE004C0455 /* SceneDelegate.swift */,
 				586BA8AC27134BB0004C0455 /* Assets.xcassets */,
 				586BA8B127134BB0004C0455 /* Info.plist */,
-				5848D60627A8AB58008B3178 /* StructurePatternsPlayground.playground */,
+				583246EB27B0732900245480 /* BehavioralPatternsPlayground.playground */,
 			);
 			path = "ToDo List";
 			sourceTree = "<group>";
