@@ -1,0 +1,27 @@
+//
+//  SixthViewCell.swift
+//  ToDoList
+//
+//  Created by Serhii on 16.01.2022.
+//
+
+import UIKit
+
+class SixthViewCell: UICollectionViewCell {
+   
+   @IBOutlet var titleLabel: UILabel!
+   @IBOutlet var valueLabel: UILabel!
+   
+   override func awakeFromNib() {
+      super.awakeFromNib()
+
+      contentView.layer.cornerRadius = 12
+      contentView.backgroundColor =  UIColor.black.withAlphaComponent(0.25)
+   }
+   
+   func fill(with model: AboutWather?) {
+      let value = "\(model?.intValue ?? 0)"
+      titleLabel.text = model?.title
+      valueLabel.text = String(value + " %")
+   }
+}
