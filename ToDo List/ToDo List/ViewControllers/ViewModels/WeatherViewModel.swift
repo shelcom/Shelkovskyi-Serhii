@@ -1,13 +1,51 @@
 //
-//  WeatherController.swift
+//  WeatherViewModel.swift
 //  ToDoList
 //
-//  Created by Serhii on 20.01.2022.
+//  Created by Serhii on 12.02.2022.
 //
 
 import Foundation
+import Alamofire
 
-class WeatherController {
+class WeatherViewModel {
+   
+   weak var delegate: RequestDelegateProtocol?
+   var weather: [Weathers]?
+   var weathers: [Weather]?
+   var aboutWather: [AboutWather]?
+   var weatherForFifteenHours: [WeatherForFifteenHours]?
+   private var requestManager = RequestManager()
+   private var processingDataRequestManager = ProcessingDataRequestManager()
+   
+   let flowLayout: UICollectionViewFlowLayout = {
+       let layout = UICollectionViewFlowLayout()
+       layout.minimumInteritemSpacing = 0
+       layout.minimumLineSpacing = 0
+       layout.sectionInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+       return layout
+   }()
+   
+   let sizeForSecondUICollection: CGSize = {
+      let width = CGFloat(325.0)
+      let numberOfItemsPerRow: CGFloat = 2
+      let spacing: CGFloat = 0
+      let availableWidth = width - spacing * (numberOfItemsPerRow + 1)
+      let itemDimension = floor(availableWidth / numberOfItemsPerRow)
+      return CGSize(width: itemDimension, height: itemDimension)
+   }()
+   
+   let sizeForFirstUICollection: CGSize = {
+      CGSize(width: 40, height: 200)
+   }()
+   
+   let insetForSecondUICollection: UIEdgeInsets = {
+      UIEdgeInsets(top: 0, left: 0, bottom: 10, right: 0)
+   }()
+   
+   let insetForFirstUICollection: UIEdgeInsets = {
+      UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+   }()
    
    func findIndexElement(string: String, elem: Character) -> Int {
       if let i = string.firstIndex(of: elem) {
@@ -15,6 +53,50 @@ class WeatherController {
       } else {
          return 00
       }
+   }
+   
+   func loadData() {
+      getWaether()
+      getWeathers()
+      getWaethersForFifteenHours()
+   }
+   
+   func getWaether() {
+      let headers: HTTPHeaders = [
+         "x-rapidapi-host": "weatherbit-v1-mashape.p.rapidapi.com",
+         "x-rapidapi-key": "e92a2869camsh3383fa9a8d1ee5fp1df7cdjsn40fcf2dcbd7c"
+      ]
+      let url: String = "https://weatherbit-v1-mashape.p.rapidapi.com/current?lon=32.0621&lat=49.4285"
+      requestManager.requestOfOneDay(headers: headers, url: url) { [self] response in
+         weathers = response
+         delegate?.didLoadWeatherData(with: response ?? [])
+     }
+   }
+   
+   func getWaethersForFifteenHours() {
+      let headers: HTTPHeaders = [
+         "x-rapidapi-host": "weatherbit-v1-mashape.p.rapidapi.com",
+         "x-rapidapi-key": "e92a2869camsh3383fa9a8d1ee5fp1df7cdjsn40fcf2dcbd7c"
+      ]
+      let url: String = "https://weatherbit-v1-mashape.p.rapidapi.com/forecast/hourly?lat=49.4285&lon=32.0621&hours=15"
+      requestManager.requestOfFifteenHours(headers: headers, url: url) { [self] response in
+         weatherForFifteenHours = response
+         weatherForFifteenHours?[0].timestampLocal = "Now"
+         delegate?.didLoadWeatherForFifteenHours()
+     }
+   }
+   
+   func getWeathers() {
+      let headers: HTTPHeaders = [
+         "x-rapidapi-host": "weatherbit-v1-mashape.p.rapidapi.com",
+         "x-rapidapi-key": "e92a2869camsh3383fa9a8d1ee5fp1df7cdjsn40fcf2dcbd7c"
+      ]
+      let url: String = "https://weatherbit-v1-mashape.p.rapidapi.com/forecast/daily?lat=49.4285&lon=32.0621"
+      requestManager.requestOfManyDay(headers: headers, url: url) { [self] response in
+         weather = response
+         aboutWather = processingDataRequestManager.processingData(weathers: response)
+         delegate?.didLoadWeathersData()
+     }
    }
    
    func formatDate(date: String) -> String {

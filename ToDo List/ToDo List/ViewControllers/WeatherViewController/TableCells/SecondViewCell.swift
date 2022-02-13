@@ -12,7 +12,7 @@ class SecondViewCell: UICollectionViewCell {
    @IBOutlet var titleLabel: UILabel!
    @IBOutlet var valueLabel: UILabel!
    
-   var weatherController = WeatherController()
+   var weatherViewModel = WeatherViewModel()
    
    override func awakeFromNib() {
       super.awakeFromNib()
@@ -24,6 +24,6 @@ class SecondViewCell: UICollectionViewCell {
    func fill(with model: AboutWather?) {
       let date = NSDate(timeIntervalSince1970: model?.doubleValue ?? 0)
       titleLabel.text = model?.title
-      valueLabel.text = weatherController.formateValueForSunrise(value: "\(date)")
+      valueLabel.text = weatherViewModel.formateValueForSunrise(value: "\(date)")
    }
 }

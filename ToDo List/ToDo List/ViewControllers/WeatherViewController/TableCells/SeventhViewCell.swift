@@ -12,7 +12,7 @@ class SeventhViewCell: UICollectionViewCell {
    @IBOutlet var titleLabel: UILabel!
    @IBOutlet var valueLabel: UILabel!
    
-   var weatherController = WeatherController()
+   var weatherViewModel = WeatherViewModel()
 
    override func awakeFromNib() {
       super.awakeFromNib()
@@ -24,6 +24,6 @@ class SeventhViewCell: UICollectionViewCell {
    func fill(with model: AboutWather?) {
       let value = "\(model?.doubleValue ?? 0)"
       titleLabel.text = model?.title
-      valueLabel.text = weatherController.formateValueForVisibility(value: value)
+      valueLabel.text = weatherViewModel.formateValueForVisibility(value: value)
    }
 }

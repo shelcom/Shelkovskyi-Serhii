@@ -13,7 +13,7 @@ class FirstCollectionViewCell: UICollectionViewCell {
    @IBOutlet var tempLabel: UILabel!
    @IBOutlet var imageView: UIImageView!
    
-   var weatherController = WeatherController()
+   var weatherViewModel = WeatherViewModel()
    
    override func awakeFromNib() {
       super.awakeFromNib()
@@ -27,8 +27,8 @@ class FirstCollectionViewCell: UICollectionViewCell {
       guard let icon = model.weather?.icon else { return }
       let tempToString: String = "\(temp)"
       
-      timeLabel.text = weatherController.formatDateForHours(date: time)
+      timeLabel.text = weatherViewModel.formatDateForHours(date: time)
       imageView.image = UIImage(named: icon)
-      tempLabel.text = weatherController.formatMinAndMaxTemp(temp: tempToString)
+      tempLabel.text = weatherViewModel.formatMinAndMaxTemp(temp: tempToString)
    }
 }

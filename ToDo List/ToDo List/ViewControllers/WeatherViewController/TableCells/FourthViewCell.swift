@@ -12,7 +12,7 @@ class FourthViewCell: UICollectionViewCell {
    @IBOutlet var titleLabel: UILabel!
    @IBOutlet var valueLabel: UILabel!
    
-   var weatherController = WeatherController()
+   var weatherViewModel = WeatherViewModel()
    
    override func awakeFromNib() {
       super.awakeFromNib()
@@ -23,6 +23,6 @@ class FourthViewCell: UICollectionViewCell {
    func fill(with model: AboutWather?) {
       let value = "\(model?.doubleValue ?? 0)"
       titleLabel.text = model?.title
-      valueLabel.text = weatherController.formatValueForPrecip(value: value)
+      valueLabel.text = weatherViewModel.formatValueForPrecip(value: value)
    }
 }

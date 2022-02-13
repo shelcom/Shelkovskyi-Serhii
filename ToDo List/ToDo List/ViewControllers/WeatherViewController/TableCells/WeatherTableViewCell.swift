@@ -14,7 +14,7 @@ class WeatherTableViewCell: UITableViewCell {
    @IBOutlet var minTempLabel: UILabel!
    @IBOutlet var maxTempLabel: UILabel!
    
-   var weatherController = WeatherController()
+   var weatherViewModel = WeatherViewModel()
    
    override func awakeFromNib() {
       super.awakeFromNib()
@@ -27,11 +27,11 @@ class WeatherTableViewCell: UITableViewCell {
       guard let icon = model.weather?.icon else { return }
       let minTempToString: String = "\(minTemp)"
       let maxTempToString: String = "\(maxTemp)"
-      let newDate = weatherController.formatDate(date: date)
+      let newDate = weatherViewModel.formatDate(date: date)
       
       weatherImage.image = UIImage(named: icon)
       dayLabel.text = "\(newDate)"
-      minTempLabel.text = weatherController.formatMinAndMaxTemp(temp: minTempToString)
-      maxTempLabel.text = weatherController.formatMinAndMaxTemp(temp: maxTempToString)
+      minTempLabel.text = weatherViewModel.formatMinAndMaxTemp(temp: minTempToString)
+      maxTempLabel.text = weatherViewModel.formatMinAndMaxTemp(temp: maxTempToString)
    }
 }

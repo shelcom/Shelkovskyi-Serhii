@@ -12,7 +12,7 @@ class FifthViewCell: UICollectionViewCell {
    @IBOutlet var titleLabel: UILabel!
    @IBOutlet var valueLabel: UILabel!
    
-   var weatherController = WeatherController()
+   var weatherViewModel = WeatherViewModel()
    
    override func awakeFromNib() {
       super.awakeFromNib()
@@ -24,6 +24,6 @@ class FifthViewCell: UICollectionViewCell {
    func fill(with model: AboutWather?) {
       let value = "\(model?.doubleValue ?? 0)"
       titleLabel.text = model?.title
-      valueLabel.text = weatherController.formateValueForFeelsLike(value: "\(value)")
+      valueLabel.text = weatherViewModel.formateValueForFeelsLike(value: "\(value)")
    }
 }
